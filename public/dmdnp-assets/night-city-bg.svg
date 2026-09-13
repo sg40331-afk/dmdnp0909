@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#07172b"/>
+      <stop offset="0.48" stop-color="#0f3156"/>
+      <stop offset="1" stop-color="#091220"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="31%" r="48%">
+      <stop offset="0" stop-color="#3fa4ff" stop-opacity=".55"/>
+      <stop offset=".45" stop-color="#0f78d8" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#06111f" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="windows" width="42" height="58" patternUnits="userSpaceOnUse">
+      <rect width="42" height="58" fill="transparent"/>
+      <rect x="7" y="9" width="5" height="12" rx="1" fill="#f4c86b" opacity=".7"/>
+      <rect x="22" y="17" width="5" height="12" rx="1" fill="#83c7ff" opacity=".55"/>
+      <rect x="32" y="36" width="5" height="12" rx="1" fill="#f4c86b" opacity=".45"/>
+    </pattern>
+    <linearGradient id="glass" x1="0" x2="1">
+      <stop offset="0" stop-color="#123d68"/>
+      <stop offset="1" stop-color="#0b2039"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="620" fill="url(#sky)"/>
+  <rect width="1600" height="620" fill="url(#glow)"/>
+  <circle cx="1235" cy="112" r="34" fill="#f3f7ff" opacity=".86"/>
+  <g opacity=".32" fill="#e6f4ff">
+    <circle cx="144" cy="106" r="2"/>
+    <circle cx="310" cy="58" r="1.8"/>
+    <circle cx="506" cy="138" r="2.2"/>
+    <circle cx="792" cy="76" r="1.7"/>
+    <circle cx="1038" cy="170" r="2.2"/>
+    <circle cx="1465" cy="88" r="1.8"/>
+  </g>
+  <g opacity=".68">
+    <rect x="740" y="165" width="110" height="455" fill="url(#glass)"/>
+    <rect x="740" y="165" width="110" height="455" fill="url(#windows)"/>
+    <rect x="880" y="110" width="132" height="510" fill="#0a2441"/>
+    <rect x="880" y="110" width="132" height="510" fill="url(#windows)" opacity=".9"/>
+    <rect x="1036" y="205" width="92" height="415" fill="#123b63"/>
+    <rect x="1036" y="205" width="92" height="415" fill="url(#windows)" opacity=".75"/>
+    <rect x="1152" y="135" width="154" height="485" fill="#0d2c4c"/>
+    <rect x="1152" y="135" width="154" height="485" fill="url(#windows)" opacity=".75"/>
+    <rect x="1330" y="224" width="94" height="396" fill="#0b213b"/>
+    <rect x="1330" y="224" width="94" height="396" fill="url(#windows)" opacity=".7"/>
+    <rect x="1450" y="175" width="115" height="445" fill="#123656"/>
+    <rect x="1450" y="175" width="115" height="445" fill="url(#windows)" opacity=".8"/>
+  </g>
+  <path d="M0 465 C180 430 312 455 448 430 C592 402 710 440 858 420 C1010 397 1135 425 1300 390 C1424 364 1514 382 1600 360 L1600 620 L0 620 Z" fill="#07111d" opacity=".86"/>
+  <path d="M0 546 L1600 486 L1600 620 L0 620 Z" fill="#050a12" opacity=".96"/>
+  <g opacity=".55">
+    <path d="M845 536 H1600" stroke="#f7b24d" stroke-width="3"/>
+    <path d="M970 570 H1600" stroke="#3ea8ff" stroke-width="2"/>
+    <path d="M1080 510 H1600" stroke="#ffffff" stroke-width="1.4" opacity=".45"/>
+  </g>
+</svg>

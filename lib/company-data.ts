@@ -11,6 +11,8 @@ export const companyPages = [
   { href: "/company/location", label: "오시는 길", title: "대명DnP 오시는 길", description: "방문 전 연락 후 제작 상담에 필요한 자료를 함께 준비해 주세요." },
 ];
 
+export const companyMenuPages = companyPages.filter((page) => page.href !== "/company");
+
 export const companyStats = [
   { title: "2002년 설립", text: "20년 이상 현장에서 쌓아온 사인 제품 제작 경험" },
   { title: "자체 제작설비", text: "상담부터 출력, 가공, 제작과 검수까지 직접 관리" },

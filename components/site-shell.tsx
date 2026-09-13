@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ArrowRight, ChevronDown, Menu, Phone, X } from "lucide-react";
 import { company, navItems, products } from "@/lib/dmdnp-data";
-import { companyPages } from "@/lib/company-data";
+import { companyMenuPages } from "@/lib/company-data";
 
 function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -30,7 +30,7 @@ export function SiteHeader() {
               회사소개 <ChevronDown size={14} />
             </Link>
             <div className="nav-dropdown-menu">
-              {companyPages.map((item) => <Link key={item.href} href={item.href} className={pathname === item.href ? "active" : undefined}>{item.label}</Link>)}
+              {companyMenuPages.map((item) => <Link key={item.href} href={item.href} className={pathname === item.href ? "active" : undefined}>{item.label}</Link>)}
             </div>
           </div>
           {navItems.filter((item) => item.href !== "/company").map((item) => (
@@ -52,7 +52,7 @@ export function SiteHeader() {
             <button className={`mobile-company-toggle ${isActive(pathname, "/company") ? "active" : ""}`} aria-expanded={companyOpen} onClick={() => setCompanyOpen((v) => !v)}>
               회사소개 <ChevronDown size={18} />
             </button>
-            {companyOpen ? <div className="mobile-subnav">{companyPages.map((item) => (
+            {companyOpen ? <div className="mobile-subnav">{companyMenuPages.map((item) => (
               <Link key={item.href} href={item.href} className={pathname === item.href ? "active" : undefined} onClick={() => { setOpen(false); setCompanyOpen(false); }}>
                 {item.label}
               </Link>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { company } from "@/lib/dmdnp-data";
-import { companyPages } from "@/lib/company-data";
+import { companyMenuPages, companyPages } from "@/lib/company-data";
 
 export function CompanyHero({ currentPath, title, description }: { currentPath: string; title: string; description: string }) {
   const current = companyPages.find((item) => item.href === currentPath);
@@ -19,7 +19,7 @@ export function CompanyHero({ currentPath, title, description }: { currentPath: 
       </section>
       <nav className="company-tabs" aria-label="회사소개 하위 메뉴">
         <div className="site-container">
-          {companyPages.map((item) => <Link key={item.href} href={item.href} className={item.href === currentPath ? "active" : undefined}>{item.label}</Link>)}
+          {companyMenuPages.map((item) => <Link key={item.href} href={item.href} className={item.href === currentPath ? "active" : undefined}>{item.label}</Link>)}
         </div>
       </nav>
     </>

@@ -5,7 +5,13 @@ Next.js 기반의 대명DnP 공식 홈페이지입니다. 기존 프로젝트 �
 ## 주요 경로
 
 - `/` 홈
-- `/company` 회사소개
+- `/company` 회사 개요
+- `/company/greeting` 대표 인사말
+- `/company/history` 주요 연혁
+- `/company/business` 제작 분야
+- `/company/facilities` 장비·시설
+- `/company/quality` 품질관리
+- `/company/location` 오시는 길
 - `/products` 제품안내
 - `/products/[slug]` 제품 상세
 - `/portfolio` 제작사례
@@ -18,7 +24,11 @@ Next.js 기반의 대명DnP 공식 홈페이지입니다. 기존 프로젝트 �
 
 ## 데이터 관리
 
-회사 정보, 제품 목록, 제작사례, FAQ, 블로그 글은 `lib/dmdnp-data.ts`에서 관리합니다. 전화번호, 이메일, 카카오톡 주소, 상세 주소, 사업자등록번호, 운영시간, SNS 주소는 확인 후 같은 파일에서 교체하세요.
+회사 정보, 제품 목록, 제작사례, FAQ, 블로그 글은 `lib/dmdnp-data.ts`에서 관리합니다. 회사소개 하위 메뉴, 연혁, 제작 분야, 보유 장비, 품질관리 단계, 오시는 길 표시는 `lib/company-data.ts`에서 관리합니다. 전화번호, 이메일, 카카오톡 주소, 상세 주소, 사업자등록번호, 운영시간, SNS 주소는 확인 후 같은 파일에서 교체하세요.
+
+## 지도 연결
+
+`/company/location` 지도 영역은 현재 교체용 안내 영역입니다. 네이버지도, 카카오맵 또는 구글지도 링크가 확정되면 `lib/dmdnp-data.ts` 또는 `lib/company-data.ts`에 링크를 추가하고 새 창으로 열리도록 연결하세요. 지도 API 키가 필요한 방식은 환경변수와 지도 SDK 설정이 추가로 필요합니다.
 
 ## 문의 폼
 

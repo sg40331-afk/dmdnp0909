@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ArrowRight, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, Phone, X } from "lucide-react";
 import { company, navItems, products } from "@/lib/dmdnp-data";
+import { companyPages } from "@/lib/company-data";
 
 function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -14,6 +15,7 @@ function isActive(pathname: string, href: string) {
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
 
   return (
     <header className="site-header">
@@ -23,7 +25,15 @@ export function SiteHeader() {
           <span className="brand-caption">사람을 닮은 더 나은 공간</span>
         </Link>
         <nav className="desktop-nav" aria-label="주요 메뉴">
-          {navItems.map((item) => (
+          <div className="nav-dropdown">
+            <Link href="/company" className={isActive(pathname, "/company") ? "active" : undefined} aria-haspopup="true" aria-expanded={isActive(pathname, "/company")}>
+              회사소개 <ChevronDown size={14} />
+            </Link>
+            <div className="nav-dropdown-menu">
+              {companyPages.map((item) => <Link key={item.href} href={item.href} className={pathname === item.href ? "active" : undefined}>{item.label}</Link>)}
+            </div>
+          </div>
+          {navItems.filter((item) => item.href !== "/company").map((item) => (
             <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined}>
               {item.label}
             </Link>
@@ -39,7 +49,15 @@ export function SiteHeader() {
       {open ? (
         <div className="mobile-panel">
           <div className="site-container mobile-panel-inner">
-            {navItems.map((item) => (
+            <button className={`mobile-company-toggle ${isActive(pathname, "/company") ? "active" : ""}`} aria-expanded={companyOpen} onClick={() => setCompanyOpen((v) => !v)}>
+              회사소개 <ChevronDown size={18} />
+            </button>
+            {companyOpen ? <div className="mobile-subnav">{companyPages.map((item) => (
+              <Link key={item.href} href={item.href} className={pathname === item.href ? "active" : undefined} onClick={() => { setOpen(false); setCompanyOpen(false); }}>
+                {item.label}
+              </Link>
+            ))}</div> : null}
+            {navItems.filter((item) => item.href !== "/company").map((item) => (
               <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined} onClick={() => setOpen(false)}>
                 {item.label}
               </Link>

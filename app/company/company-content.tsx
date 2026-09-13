@@ -1,0 +1,71 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
+import { VisualBlock } from "@/components/site-shell";
+import { CompanyPageFrame } from "@/components/company-shell";
+import { businessAreas, companyHistory, companyIntro, companyStats, facilities, locationInfo, qualityNotes, qualitySteps } from "@/lib/company-data";
+import { company } from "@/lib/dmdnp-data";
+
+export function CompanyOverview() {
+  return (
+    <CompanyPageFrame currentPath="/company">
+      <section className="section"><div className="site-container company-intro-grid"><VisualBlock label="대명DnP 제작시설" tone="print" source="/dmdnp-assets/hero-workshop.png" /><div><h2>대명DnP 회사 소개</h2><p>{companyIntro.summary}</p><p>{companyIntro.workflow}</p><ul className="plain-list">{companyIntro.strengths.map((item) => <li key={item}>{item}</li>)}</ul></div></div></section>
+      <section className="section ivory"><div className="site-container"><div className="company-stat-grid">{companyStats.map((item) => <article key={item.title}><strong>{item.title}</strong><p>{item.text}</p></article>)}</div></div></section>
+      <section className="section"><div className="site-container"><div className="section-heading"><div><p className="kicker">PRODUCT</p><h2>주요 제작 제품</h2></div></div><div className="grid-3">{businessAreas.slice(0, 6).map((item) => <article className="card" key={item.slug}><VisualBlock label={item.name} source={item.image} tone={item.category.includes("LED") ? "led" : item.category.includes("나무") ? "wood" : item.category.includes("실사") || item.category.includes("UV") ? "print" : item.category.includes("촉지도") ? "map" : "blue"} /><div className="card-body"><h3>{item.name}</h3><p>{item.summary}</p></div></article>)}</div></div></section>
+      <section className="section ivory"><div className="site-container"><div className="section-heading"><div><p className="kicker">CUSTOMER</p><h2>주요 고객과 사용처</h2></div></div><div className="audience-grid">{companyIntro.audiences.map((item) => <article key={item}><h3>{item}</h3><p>공간과 용도에 맞는 사인 제품을 상담합니다.</p></article>)}</div></div></section>
+      <section className="section"><div className="site-container"><h2>회사소개 상세 바로가기</h2><div className="company-link-grid">{["대표 인사말", "주요 연혁", "제작 분야", "장비·시설", "품질관리", "오시는 길"].map((label) => {
+        const href = label === "대표 인사말" ? "/company/greeting" : label === "주요 연혁" ? "/company/history" : label === "제작 분야" ? "/company/business" : label === "장비·시설" ? "/company/facilities" : label === "품질관리" ? "/company/quality" : "/company/location";
+        return <Link className="card company-link-card" href={href} key={label}><div className="card-body"><h3>{label}</h3><span className="text-link">바로가기 <ArrowRight size={16} /></span></div></Link>;
+      })}</div></div></section>
+    </CompanyPageFrame>
+  );
+}
+
+export function CompanyGreeting() {
+  return (
+    <CompanyPageFrame currentPath="/company/greeting">
+      <section className="section"><div className="site-container greeting-grid"><VisualBlock label="대표 인사말 교체용 제작 현장 이미지" tone="print" source="/dmdnp-assets/hero-workshop.png" /><article className="detail-panel"><p className="kicker">GREETING</p><h2>대표 인사말</h2><p>{company.since}부터 이어온 제작 경험과 20년 이상 현장에서 쌓아온 감각으로 품질과 납기를 중요하게 생각합니다.</p><p>고객이 제품을 잘 모르셔도 용도와 설치환경을 알려주시면 소재, 크기, 제작 방식까지 함께 안내하겠습니다.</p><p>상담부터 제작까지 책임 있게 관리해 필요한 사인 제품을 안정적으로 제작하겠습니다.</p><div className="signature"><span>대표</span><strong>{company.representative}</strong></div><div className="hero-actions"><Link className="button button-blue" href="/company">회사 개요</Link><Link className="button button-outline" href="/company/business">제작 분야</Link></div></article></div></section>
+    </CompanyPageFrame>
+  );
+}
+
+export function CompanyHistory() {
+  return (
+    <CompanyPageFrame currentPath="/company/history">
+      <section className="section"><div className="site-container timeline">{companyHistory.map((item) => <article key={item.title}><time>{item.year}</time><div><h2>{item.title}</h2><p>{item.text}</p></div></article>)}</div></section>
+    </CompanyPageFrame>
+  );
+}
+
+export function CompanyBusiness() {
+  return (
+    <CompanyPageFrame currentPath="/company/business">
+      <section className="section"><div className="site-container business-grid">{businessAreas.map((item) => <article className="card business-card" key={item.slug}><VisualBlock label={item.name} source={item.image} tone={item.category.includes("LED") ? "led" : item.category.includes("나무") ? "wood" : item.category.includes("실사") || item.category.includes("UV") ? "print" : item.category.includes("촉지도") ? "map" : "blue"} /><div className="card-body"><h2>{item.name}</h2><p>{item.summary}</p><strong>주요 사용처</strong><p>{item.uses.join(", ")}</p><div className="card-actions"><Link className="text-link" href={`/products/${item.slug}`}>제품 상세 <ArrowRight size={16} /></Link><Link className="text-link" href="/portfolio">관련 제작사례 <ArrowRight size={16} /></Link></div></div></article>)}</div></section>
+    </CompanyPageFrame>
+  );
+}
+
+export function CompanyFacilities() {
+  return (
+    <CompanyPageFrame currentPath="/company/facilities">
+      <section className="section"><div className="site-container facility-grid">{facilities.map((item) => <article className="card facility-card" key={item.name}><div className="facility-image"><Image src={item.image} alt={`${item.name} 장비 이미지`} fill sizes="(max-width: 980px) 100vw, 50vw" /></div><div className="card-body"><h2>{item.name}</h2><dl><dt>주요 기능</dt><dd>{item.function}</dd><dt>가공 소재</dt><dd>{item.materials}</dd><dt>주요 제작 제품</dt><dd>{item.products}</dd><dt>작업 가능 규격</dt><dd>{item.size}</dd><dt>실제 작업 모습</dt><dd>{item.work}</dd><dt>제작 결과물</dt><dd>{item.result}</dd></dl></div></article>)}</div></section>
+    </CompanyPageFrame>
+  );
+}
+
+export function CompanyQuality() {
+  return (
+    <CompanyPageFrame currentPath="/company/quality">
+      <section className="section"><div className="site-container quality-grid">{qualitySteps.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><CheckCircle2 /><h2>{item.title}</h2><p>{item.text}</p></article>)}</div></section>
+      <section className="section ivory"><div className="site-container"><h2>제작 전후 확인 기준</h2><div className="grid-2">{qualityNotes.map((item) => <article className="notice" key={item}>{item}</article>)}</div></div></section>
+    </CompanyPageFrame>
+  );
+}
+
+export function CompanyLocation() {
+  return (
+    <CompanyPageFrame currentPath="/company/location">
+      <section className="section"><div className="site-container location-grid"><div className="map-placeholder"><MapPin /><strong>지도 연결 준비 중</strong><p>네이버지도, 카카오맵 또는 구글지도 링크 등록 후 새 창 연결이 필요합니다.</p></div><div className="detail-panel"><h2>방문 안내</h2><ul className="plain-list">{locationInfo.map(([label, value]) => <li key={label}><strong>{label}: </strong>{value}</li>)}</ul><h3>대중교통 이용 안내</h3><p>정확한 노선 정보는 주소 확인 후 입력합니다.</p><h3>차량 방문·주차 안내</h3><p>방문 전 연락 후 주차 가능 여부와 출입 동선을 확인해 주세요.</p><div className="hero-actions"><Link className="button button-blue" href="/contact">맞춤 견적문의</Link><Link className="button button-outline" href="/contact">전화 상담</Link><Link className="button button-outline" href="/contact" target="_blank">길찾기</Link></div></div></div></section>
+    </CompanyPageFrame>
+  );
+}

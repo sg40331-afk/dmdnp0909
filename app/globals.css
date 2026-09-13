@@ -88,10 +88,6 @@ h1, h2, h3 { color: var(--navy); line-height: 1.25; letter-spacing: -.02em; }
 .plain-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
 .plain-list li { padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: #344256; }
 .one-stop-section { position: relative; overflow: hidden; background: linear-gradient(180deg, #fff 0%, #f7fbff 56%, #fff 100%); }
-.one-stop-section::before,
-.one-stop-section::after { content: ""; position: absolute; z-index: 0; opacity: .8; pointer-events: none; }
-.one-stop-section::before { left: 3%; top: 18%; width: 132px; height: 160px; background-image: radial-gradient(circle, #cad8ea 2px, transparent 3px); background-size: 18px 18px; }
-.one-stop-section::after { right: 3%; top: 20%; width: 144px; height: 144px; background-image: radial-gradient(circle, #c3d3e8 2px, transparent 3px); background-size: 18px 18px; }
 .one-stop-section .site-container { position: relative; z-index: 1; }
 .one-stop-heading { text-align: center; margin-bottom: 34px; }
 .one-stop-heading .kicker { display: inline-flex; align-items: center; gap: 18px; color: #1373e8; }
@@ -100,8 +96,6 @@ h1, h2, h3 { color: var(--navy); line-height: 1.25; letter-spacing: -.02em; }
 .one-stop-heading h2 { margin: 0; font-size: clamp(31px, 3.4vw, 48px); letter-spacing: -.03em; }
 .one-stop-heading span { color: var(--blue); }
 .one-stop-layout { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 104px minmax(0, 1fr); gap: 18px; align-items: center; }
-.one-stop-layout::before { content: "WOOD\A ACRYLIC\A METAL\A LED\A PRINT"; white-space: pre; position: absolute; left: -64px; bottom: 34px; color: #b8c7db; font-size: 12px; font-weight: 900; letter-spacing: .28em; line-height: 2; }
-.one-stop-layout::after { content: "IDEA\A MATERIAL\A MANUFACTURING\A INSTALLATION\A ALL IN ONE"; white-space: pre; position: absolute; right: -94px; bottom: 24px; color: #b8c7db; font-size: 12px; font-weight: 900; letter-spacing: .14em; line-height: 2; }
 .one-stop-card { min-height: 430px; padding: 30px 28px; border-radius: 8px; border: 1px solid rgba(255,255,255,.8); box-shadow: 0 24px 60px rgba(8,38,66,.1); backdrop-filter: blur(10px); }
 .pain-card { background: linear-gradient(135deg, rgba(255,247,245,.95), rgba(255,255,255,.88)); box-shadow: 0 24px 60px rgba(231,76,76,.1); }
 .solution-card { background: linear-gradient(135deg, rgba(241,248,255,.96), rgba(255,255,255,.9)); box-shadow: 0 24px 60px rgba(9,104,216,.13); }

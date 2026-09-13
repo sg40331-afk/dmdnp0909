@@ -33,7 +33,6 @@ const solutions = [
   [Layers3, "용도에 맞는 소재 추천"],
   [ImageIcon, "제작 전 시안 확인"],
   [Settings, "자체 장비를 이용한 직접 제작"],
-  [Truck, "검수 후 출고 및 시공 상담"],
 ] as const;
 
 const process = [

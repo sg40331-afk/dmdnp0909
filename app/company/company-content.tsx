@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, MessageCircle, Settings, ShieldCheck } from "lucide-react";
 import { VisualBlock } from "@/components/site-shell";
-import { CompanyPageFrame } from "@/components/company-shell";
+import { CompanyCta, CompanyPageFrame, CompanyTabs } from "@/components/company-shell";
 import { businessAreas, companyHistory, companyIntro, companyStats, facilities, locationInfo, qualityNotes, qualitySteps } from "@/lib/company-data";
 import { company } from "@/lib/dmdnp-data";
 
@@ -23,9 +23,32 @@ export function CompanyOverview() {
 
 export function CompanyGreeting() {
   return (
-    <CompanyPageFrame currentPath="/company/greeting">
-      <section className="section"><div className="site-container greeting-grid"><VisualBlock label="대표 인사말 교체용 제작 현장 이미지" tone="print" source="/dmdnp-assets/hero-workshop.png" /><article className="detail-panel greeting-message"><p className="kicker">GREETING</p><h2>대표 인사말</h2><p>안녕하세요. 대명DnP 대표 {company.representative}입니다.</p><p>대명DnP는 {company.since}부터 현장에서 다양한 사인 제품을 제작하며 고객의 공간에 필요한 안내와 홍보물을 만들어 왔습니다. 작은 현판 하나라도 설치되는 장소와 보는 사람, 사용되는 기간에 따라 적합한 소재와 제작 방식이 달라진다는 마음으로 상담하고 있습니다.</p><p>사인 제작은 단순히 예쁜 결과물을 만드는 일만은 아니라고 생각합니다. 고객이 원하는 문구가 잘 보이는지, 설치 환경에 맞는 소재인지, 납기 안에 안정적으로 제작할 수 있는지, 완성 후 사용하기에 불편함은 없는지까지 함께 살펴야 합니다. 그래서 대명DnP는 상담, 시안 확인, 출력, 가공, 조립, 검수와 출고 과정을 한 흐름으로 관리하려고 노력합니다.</p><p>제품을 처음 의뢰하시는 분들은 어떤 소재를 선택해야 하는지, 크기는 어느 정도가 적당한지, 파일은 어떻게 준비해야 하는지 막막하실 수 있습니다. 그런 경우에도 용도와 설치 장소만 알려주시면 가능한 제작 방향을 차근차근 안내해 드리겠습니다. 확인되지 않은 부분은 임의로 판단하지 않고, 필요한 내용을 다시 확인하며 제작 품질과 납기를 지키겠습니다.</p><p>앞으로도 대명DnP는 오래 쌓아온 현장 경험을 바탕으로 믿고 맡길 수 있는 사인 제작 파트너가 되겠습니다. 문의해 주시는 모든 제품을 책임감 있게 살피고, 공간에 어울리는 결과물로 보답하겠습니다.</p><div className="signature"><span>대표</span><strong>{company.representative}</strong></div></article></div></section>
-    </CompanyPageFrame>
+    <>
+      <CompanyTabs currentPath="/company/greeting" />
+      <section className="ceo-message">
+        <div className="ceo-photo">
+          <Image src="/dmdnp-assets/hero-workshop.png" alt="대명DnP 제작 현장에서 사인 제품을 제작하는 모습" fill priority sizes="(max-width: 980px) 100vw, 52vw" />
+          <div className="ceo-photo-copy"><span>SINCE 2002 · DAEMYUNG DnP</span></div>
+        </div>
+        <article className="ceo-copy">
+          <p className="kicker">CEO MESSAGE</p>
+          <h1>좋은 사인은<br />더 좋은 공간을 만듭니다</h1>
+          <div className="ceo-rule" />
+          <p>안녕하세요. 대명DnP 대표 {company.representative}입니다. 대명DnP는 {company.since}부터 한결같이 사인 제작을 생각해 온 제조 전문 기업입니다. 다양한 공간에 필요한 사인을 가장 실용적이고 아름답게 구현하여 고객의 공간에 새로운 가치를 더하고자 합니다.</p>
+          <p>제작 전 충분한 상담을 통해 용도와 설치 환경에 맞는 최적의 소재와 방법을 제안하고, 작은 부분까지 세심하게 제작합니다. 완성 후에도 책임 있는 자세로 지속적인 관리와 신뢰를 이어가겠습니다.</p>
+          <blockquote>고객의 용도에 맞는 제품을 정직하게 제안하고,<br />끝까지 책임 있게 제작하겠습니다.</blockquote>
+          <div className="ceo-signature"><span>대명DnP 대표</span><strong>{company.representative}</strong><em aria-hidden="true">signature</em></div>
+        </article>
+      </section>
+      <section className="ceo-values">
+        <div className="site-container">
+          <article><MessageCircle /><div><h2>정직한 상담</h2><p>고객의 목적과 환경에 맞는 최적의 제품을 성실하게 제안합니다.</p></div></article>
+          <article><Settings /><div><h2>직접 제작</h2><p>다양한 사인 제품을 자체 제작하여 안정적인 품질로 제공합니다.</p></div></article>
+          <article><ShieldCheck /><div><h2>책임 있는 품질</h2><p>제작부터 납품까지 끝까지 책임지는 품질 관리를 약속드립니다.</p></div></article>
+        </div>
+      </section>
+      <CompanyCta />
+    </>
   );
 }
 

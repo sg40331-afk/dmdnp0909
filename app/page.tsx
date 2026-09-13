@@ -112,10 +112,23 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section process-showcase">
           <div className="site-container">
-            <div className="section-heading"><div><p className="kicker">PROCESS</p><h2>기획부터 제작·출력·가공까지 원스톱</h2></div><p>상담부터 납품까지 같은 기준으로 관리합니다.</p></div>
-            <div className="process-row">{process.map(([Icon, title, text]) => <article className="process-step" key={title}><Icon /><strong>{title}</strong><small>{text}</small></article>)}</div>
+            <div className="process-showcase-heading">
+              <p className="kicker">PROCESS</p>
+              <h2>기획부터 제작·출력·가공까지 <span>원스톱</span></h2>
+              <p>상담부터 납품까지 같은 기준으로 관리합니다.</p>
+            </div>
+            <div className="process-panel">
+              <div className="process-panel-title">
+                <span><Settings /></span>
+                <div>
+                  <p>ONE STOP PROCESS</p>
+                  <h3>상담부터 출고까지 한 흐름으로</h3>
+                </div>
+              </div>
+              <div className="process-list">{process.map(([Icon, title, text], i) => <article key={title}><span className="process-icon"><Icon /></span><strong>{String(i + 1).padStart(2, "0")}</strong><div><h4>{title}</h4><p>{text}</p></div></article>)}</div>
+            </div>
           </div>
         </section>
 

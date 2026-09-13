@@ -129,7 +129,7 @@ h1, h2, h3 { color: var(--navy); line-height: 1.25; letter-spacing: -.02em; }
 .process-showcase-heading h2 { margin: 0; font-size: clamp(31px, 3vw, 42px); }
 .process-showcase-heading h2 span { color: var(--blue); }
 .process-showcase-heading > p:not(.kicker) { margin: 12px auto 0; max-width: 560px; color: var(--muted); }
-.process-panel { position: relative; max-width: 980px; margin-inline: auto; padding: 34px; border: 1px solid #dbeaff; border-radius: 8px; background: linear-gradient(135deg, rgba(241,248,255,.96), rgba(255,255,255,.94)); box-shadow: 0 24px 60px rgba(9,104,216,.12); }
+.process-panel { position: relative; width: 100%; margin-inline: auto; padding: 34px; border: 1px solid #dbeaff; border-radius: 8px; background: linear-gradient(135deg, rgba(241,248,255,.96), rgba(255,255,255,.94)); box-shadow: 0 24px 60px rgba(9,104,216,.12); }
 .process-panel-title { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
 .process-panel-title > span { width: 64px; height: 64px; border-radius: 50%; display: inline-grid; place-items: center; color: #fff; background: linear-gradient(135deg, #1b7df0, #0758c9); box-shadow: 0 14px 28px rgba(9,104,216,.2); }
 .process-panel-title svg { width: 32px; height: 32px; }

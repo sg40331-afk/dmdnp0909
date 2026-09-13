@@ -12,6 +12,15 @@ const audiences = [
   ["매장 외부홍보", "LED 전광판, 외부 사인"],
 ];
 
+const homeProductImages = [
+  "/dmdnp-assets/product-card-wood.jpg",
+  "/dmdnp-assets/product-card-acrylic.jpg",
+  "/dmdnp-assets/product-card-led.jpg",
+  "/dmdnp-assets/product-card-uv.jpg",
+  "/dmdnp-assets/product-card-banner.jpg",
+  "/dmdnp-assets/product-card-tactile.jpg",
+];
+
 const process = [
   [MessageCircle, "상담·설계", "용도와 공간에 맞는 제작 방향을 제안합니다."],
   [PenTool, "디자인·시안", "전문 디자이너의 맞춤 시안을 확인합니다."],
@@ -53,7 +62,7 @@ export default function Home() {
             <div className="grid-3">
               {products.slice(0, 6).map((item, i) => (
                 <article className="card" key={item.slug}>
-                  <VisualBlock label={item.name} tone={i === 0 ? "wood" : i === 2 ? "led" : i === 3 || i === 4 ? "print" : i === 5 ? "map" : "blue"} />
+                  <VisualBlock label={item.name} source={homeProductImages[i]} tone={i === 0 ? "wood" : i === 2 ? "led" : i === 3 || i === 4 ? "print" : i === 5 ? "map" : "blue"} />
                   <div className="card-body"><h3>{item.name}</h3><p>{item.summary}</p><Link className="text-link" href={`/products/${item.slug}`}>자세히 보기 <ArrowRight size={16} /></Link></div>
                 </article>
               ))}

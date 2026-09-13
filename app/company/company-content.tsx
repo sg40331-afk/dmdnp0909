@@ -25,20 +25,24 @@ export function CompanyGreeting() {
   return (
     <>
       <CompanyTabs currentPath="/company/greeting" />
-      <section className="ceo-message">
-        <div className="ceo-photo">
-          <Image src="/dmdnp-assets/hero-workshop.png" alt="대명DnP 제작 현장에서 사인 제품을 제작하는 모습" fill priority sizes="(max-width: 980px) 100vw, 52vw" />
-          <div className="ceo-photo-copy"><span>SINCE 2002 · DAEMYUNG DnP</span></div>
+      <section className="ceo-stage">
+        <div className="site-container">
+          <div className="ceo-message">
+            <div className="ceo-photo">
+              <Image src="/dmdnp-assets/hero-workshop.png" alt="대명DnP 제작 현장에서 사인 제품을 제작하는 모습" fill priority sizes="(max-width: 980px) 100vw, 560px" />
+              <div className="ceo-photo-copy"><span>SINCE 2002 · DAEMYUNG DnP</span></div>
+            </div>
+            <article className="ceo-copy">
+              <p className="kicker">CEO MESSAGE</p>
+              <h1>좋은 사인은<br />더 좋은 공간을 만듭니다</h1>
+              <div className="ceo-rule" />
+              <p>안녕하세요. 대명DnP 대표 {company.representative}입니다. 대명DnP는 {company.since}부터 한결같이 사인 제작을 생각해 온 제조 전문 기업입니다. 다양한 공간에 필요한 사인을 가장 실용적이고 아름답게 구현하여 고객의 공간에 새로운 가치를 더하고자 합니다.</p>
+              <p>제작 전 충분한 상담을 통해 용도와 설치 환경에 맞는 최적의 소재와 방법을 제안하고, 작은 부분까지 세심하게 제작합니다. 완성 후에도 책임 있는 자세로 지속적인 관리와 신뢰를 이어가겠습니다.</p>
+              <blockquote>고객의 용도에 맞는 제품을 정직하게 제안하고,<br />끝까지 책임 있게 제작하겠습니다.</blockquote>
+              <div className="ceo-signature"><span>대명DnP 대표</span><strong>{company.representative}</strong><em aria-hidden="true">signature</em></div>
+            </article>
+          </div>
         </div>
-        <article className="ceo-copy">
-          <p className="kicker">CEO MESSAGE</p>
-          <h1>좋은 사인은<br />더 좋은 공간을 만듭니다</h1>
-          <div className="ceo-rule" />
-          <p>안녕하세요. 대명DnP 대표 {company.representative}입니다. 대명DnP는 {company.since}부터 한결같이 사인 제작을 생각해 온 제조 전문 기업입니다. 다양한 공간에 필요한 사인을 가장 실용적이고 아름답게 구현하여 고객의 공간에 새로운 가치를 더하고자 합니다.</p>
-          <p>제작 전 충분한 상담을 통해 용도와 설치 환경에 맞는 최적의 소재와 방법을 제안하고, 작은 부분까지 세심하게 제작합니다. 완성 후에도 책임 있는 자세로 지속적인 관리와 신뢰를 이어가겠습니다.</p>
-          <blockquote>고객의 용도에 맞는 제품을 정직하게 제안하고,<br />끝까지 책임 있게 제작하겠습니다.</blockquote>
-          <div className="ceo-signature"><span>대명DnP 대표</span><strong>{company.representative}</strong><em aria-hidden="true">signature</em></div>
-        </article>
       </section>
       <section className="ceo-values">
         <div className="site-container">

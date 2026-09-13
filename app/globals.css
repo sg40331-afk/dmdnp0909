@@ -152,10 +152,29 @@ h1, h2, h3 { color: var(--navy); line-height: 1.25; letter-spacing: -.02em; }
 .stats { display: grid; gap: 12px; }
 .stats div { padding: 22px; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
 .stats strong { color: var(--blue); font-size: 28px; display: block; }
-.faq-list { display: grid; gap: 10px; }
-.faq-list details { border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: 16px 18px; }
-.faq-list summary { cursor: pointer; font-weight: 900; color: var(--navy); }
-.faq-list p { color: var(--muted); }
+.faq-showcase { background: linear-gradient(180deg, #fff 0%, #f4f9ff 100%); }
+.faq-showcase-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: stretch; }
+.faq-panel { position: relative; min-height: 430px; overflow: hidden; padding: 56px 44px; border-radius: 8px; color: #fff; background: radial-gradient(circle at 76% 35%, rgba(45,132,245,.36), transparent 32%), linear-gradient(135deg, #082642 0%, #0758c9 100%); box-shadow: 0 24px 60px rgba(8,38,66,.16); }
+.faq-panel::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 22% 32%, rgba(255,255,255,.08), transparent 24%), linear-gradient(135deg, rgba(255,255,255,.06), transparent 48%); pointer-events: none; }
+.faq-panel > * { position: relative; z-index: 1; }
+.faq-panel .kicker { color: #80bdff; }
+.faq-panel h2 { margin: 0 0 22px; color: #fff; font-size: clamp(36px, 4.2vw, 58px); letter-spacing: -.04em; }
+.faq-panel p:not(.kicker) { max-width: 360px; margin: 0 0 38px; color: #d9ebff; font-size: 20px; line-height: 1.55; }
+.faq-more { display: inline-flex; align-items: center; gap: 18px; min-height: 62px; padding: 0 30px; border: 2px solid rgba(255,255,255,.78); border-radius: 8px; color: #fff; font-weight: 900; font-size: 20px; }
+.faq-visual { position: absolute; right: 42px; bottom: 48px; width: 180px; height: 170px; color: #fff; opacity: .72; }
+.faq-visual span { position: absolute; top: 0; right: 62px; width: 82px; height: 82px; display: grid; place-items: center; border-radius: 26px 26px 26px 6px; background: rgba(255,255,255,.86); color: var(--blue); font-size: 54px; font-weight: 900; box-shadow: 0 16px 32px rgba(0,0,0,.16); }
+.faq-visual small { position: absolute; right: 0; bottom: 4px; width: 128px; height: 78px; display: grid; place-items: center; border: 4px solid rgba(214,233,255,.78); border-radius: 8px; color: rgba(214,233,255,.8); font-size: 30px; font-weight: 900; }
+.faq-list { display: grid; gap: 18px; align-content: start; }
+.faq-list details { border: 1px solid #d7e9ff; border-radius: 8px; background: rgba(255,255,255,.96); box-shadow: 0 12px 34px rgba(9,104,216,.09); overflow: hidden; }
+.faq-list details[open] { border-color: #4ea0ff; box-shadow: 0 18px 44px rgba(9,104,216,.15); }
+.faq-list summary { min-height: 84px; cursor: pointer; display: grid; grid-template-columns: 64px 40px minmax(0, 1fr) 48px; align-items: center; gap: 18px; padding: 18px 28px; color: var(--navy); font-size: 24px; font-weight: 900; list-style: none; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary span { width: 58px; height: 58px; border-radius: 50%; display: inline-grid; place-items: center; color: #fff; background: linear-gradient(135deg, #4db0ff, #0968d8); font-weight: 900; box-shadow: 0 10px 22px rgba(9,104,216,.22); }
+.faq-list details:not([open]) summary span { background: #e7f3ff; color: var(--blue); box-shadow: none; }
+.faq-list summary > svg { width: 34px; height: 34px; color: var(--navy); }
+.faq-list summary::after { content: "+"; justify-self: end; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--blue); color: #fff; font-size: 32px; font-weight: 500; line-height: 1; }
+.faq-list details[open] summary::after { content: "-"; padding-bottom: 4px; }
+.faq-list details > p { margin: 0 28px 24px 150px; padding: 22px 28px; border-radius: 8px; background: #eef7ff; color: #45627f; font-size: 19px; line-height: 1.65; }
 .quote-cta { margin-block: 40px 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 36px; border-radius: 8px; color: #fff; background: linear-gradient(110deg, var(--blue), #0b3158); }
 .quote-cta h2 { color: #fff; margin: 0 0 8px; font-size: 28px; }
 .quote-cta p { margin: 0; color: #eaf3ff; }
@@ -191,6 +210,8 @@ textarea { min-height: 140px; resize: vertical; }
   .one-stop-center { order: 2; min-height: 120px; }
   .solution-card { order: 3; }
   .one-stop-center::before { top: 0; bottom: 0; }
+  .faq-showcase-grid { grid-template-columns: 1fr; }
+  .faq-panel { min-height: 360px; }
   .hero::after { opacity: .9; }
   .hero h1 { max-width: 620px; }
   .grid-3, .portfolio-grid, .audience-grid { grid-template-columns: repeat(2, 1fr); }
@@ -229,6 +250,18 @@ textarea { min-height: 140px; resize: vertical; }
   .process-list article { min-height: 0; grid-template-columns: 48px 42px minmax(0, 1fr); align-items: center; text-align: left; padding: 14px; }
   .process-icon { width: 48px; height: 48px; }
   .process-list article > strong { text-align: center; }
+  .faq-panel { min-height: 330px; padding: 34px 22px; }
+  .faq-panel h2 { font-size: 39px; }
+  .faq-panel p:not(.kicker) { font-size: 17px; max-width: 250px; margin-bottom: 24px; }
+  .faq-more { min-height: 52px; padding: 0 20px; font-size: 16px; }
+  .faq-visual { right: 18px; bottom: 28px; width: 130px; height: 122px; }
+  .faq-visual span { width: 62px; height: 62px; right: 42px; font-size: 40px; border-radius: 20px 20px 20px 6px; }
+  .faq-visual small { width: 96px; height: 60px; font-size: 22px; }
+  .faq-list summary { min-height: 68px; grid-template-columns: 48px 28px minmax(0, 1fr) 38px; gap: 10px; padding: 14px; font-size: 17px; }
+  .faq-list summary span { width: 46px; height: 46px; }
+  .faq-list summary > svg { width: 25px; height: 25px; }
+  .faq-list summary::after { width: 38px; height: 38px; font-size: 27px; }
+  .faq-list details > p { margin: 0 14px 16px; padding: 16px; font-size: 16px; }
   .quote-cta { display: block; padding: 26px 20px; }
   .button { width: 100%; }
   .copyright { display: block; }

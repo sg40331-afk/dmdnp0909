@@ -35,6 +35,8 @@ const solutions = [
   [Settings, "자체 장비를 이용한 직접 제작"],
 ] as const;
 
+const faqIcons = [Box, FileText, CalendarDays, Layers3, Settings, MapPin] as const;
+
 const process = [
   [MessageCircle, "상담·설계", "용도와 공간에 맞는 제작 방향을 제안합니다."],
   [PenTool, "디자인·시안", "전문 디자이너의 맞춤 시안을 확인합니다."],
@@ -138,7 +140,21 @@ export default function Home() {
 
         <section className="section ivory"><div className="site-container about-band"><div><p className="kicker">ABOUT US</p><h2>20년 이상의 제작 경험과 전문 장비</h2><p>대명DnP는 2002년부터 다양한 사인 제품을 직접 기획하고 제작해온 인천 남동구의 사인 제품 제조업체입니다. 상담부터 제작까지 직접 관리하는 흐름으로 품질과 납기를 안정적으로 맞춥니다.</p><Link className="button button-blue" href="/company">회사소개 보기 <ArrowRight size={17} /></Link></div><div className="stats"><div><strong>2002</strong><span>설립연도</span></div><div><strong>자체 설비</strong><span>UV 평판프린터, 레이저, CNC 등</span></div><div><strong>인천·수도권</strong><span>제작 및 납품 상담 대응</span></div></div></div></section>
 
-        <section className="section"><div className="site-container grid-2"><div><p className="kicker">FAQ</p><h2>자주 묻는 질문</h2><p>사인 제작 전 많이 묻는 질문을 모았습니다.</p><Link className="button button-outline" href="/faq">더 많은 질문 보기</Link></div><div className="faq-list">{faqs.slice(0, 4).map((item) => <details key={item.question}><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div></div></section>
+        <section className="section faq-showcase">
+          <div className="site-container faq-showcase-grid">
+            <aside className="faq-panel">
+              <p className="kicker">FAQ</p>
+              <h2>자주 묻는 질문</h2>
+              <p>사인 제작 전 많이 묻는 질문을 모았습니다.</p>
+              <Link className="faq-more" href="/faq">더 많은 질문 보기 <ArrowRight size={22} /></Link>
+              <div className="faq-visual" aria-hidden="true"><span>?</span><small>SIGN</small></div>
+            </aside>
+            <div className="faq-list">{faqs.slice(0, 6).map((item, i) => {
+              const Icon = faqIcons[i];
+              return <details key={item.question} open={i === 0}><summary><span>{String(i + 1).padStart(2, "0")}</span><Icon />{item.question}</summary><p>{item.answer}</p></details>;
+            })}</div>
+          </div>
+        </section>
         <QuoteCta />
       </main>
       <SiteFooter />

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, Factory, MapPin, MessageCircle, PenTool, Settings, Truck, Wrench } from "lucide-react";
 import { faqs, portfolioItems, products } from "@/lib/dmdnp-data";
@@ -42,7 +41,6 @@ export default function Home() {
                 <div><MapPin />인천·수도권 대응</div>
               </div>
             </div>
-            <div className="hero-machine"><Image src="/dmdnp-assets/hero-workshop.png" alt="대명DnP 대형 UV 프린터 제작 현장" fill priority sizes="(max-width: 980px) 100vw, 45vw" /></div>
           </div>
         </section>
 
@@ -90,3 +88,6 @@ export default function Home() {
     </>
   );
 }
+
+
+

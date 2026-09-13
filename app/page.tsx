@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CalendarDays, Factory, MapPin, MessageCircle, PenTool, Settings, Truck, Wrench } from "lucide-react";
+import { AlertCircle, ArrowRight, Box, CalendarDays, Check, CheckCircle2, Clock3, Factory, FileText, Image as ImageIcon, Layers3, MapPin, MessageCircle, MonitorCheck, PenTool, Settings, Truck, Wrench } from "lucide-react";
 import { faqs, portfolioItems, products } from "@/lib/dmdnp-data";
 import { QuoteCta, SiteFooter, SiteHeader, VisualBlock } from "@/components/site-shell";
 
@@ -20,6 +20,21 @@ const homeProductImages = [
   "/dmdnp-assets/product-card-banner.jpg",
   "/dmdnp-assets/product-card-tactile.jpg",
 ];
+
+const painPoints = [
+  [FileText, "제품마다 제작업체를 따로 알아봐야 하는 불편"],
+  [Box, "원하는 소재와 크기로 제작 가능한지 알기 어려움"],
+  [MonitorCheck, "디자인 시안과 실제 결과물의 차이"],
+  [Clock3, "제작 기간과 설치 가능 여부에 대한 불안"],
+] as const;
+
+const solutions = [
+  [MessageCircle, "한 곳에서 상담"],
+  [Layers3, "용도에 맞는 소재 추천"],
+  [ImageIcon, "제작 전 시안 확인"],
+  [Settings, "자체 장비를 이용한 직접 제작"],
+  [Truck, "검수 후 출고 및 시공 상담"],
+] as const;
 
 const process = [
   [MessageCircle, "상담·설계", "용도와 공간에 맞는 제작 방향을 제안합니다."],
@@ -70,10 +85,31 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section ivory">
-          <div className="site-container problem-solution">
-            <div><p className="kicker">PAIN POINT</p><h2>제품마다 다른 업체를 찾는 번거로움</h2><ul>{["제품마다 제작업체를 따로 알아봐야 하는 불편", "원하는 소재와 크기로 제작 가능한지 알기 어려움", "디자인 시안과 실제 결과물의 차이", "제작 기간과 설치 가능 여부에 대한 불안"].map((x) => <li key={x}>{x}</li>)}</ul></div>
-            <div><p className="kicker">SOLUTION</p><h2>상담부터 제작까지 한 곳에서</h2><ul>{["한 곳에서 상담", "용도에 맞는 소재 추천", "제작 전 시안 확인", "자체 장비를 이용한 직접 제작", "검수 후 출고 및 시공 상담"].map((x) => <li key={x}>{x}</li>)}</ul></div>
+        <section className="section one-stop-section">
+          <div className="site-container">
+            <div className="one-stop-heading">
+              <p className="kicker">WHY DAEMYUNG DnP</p>
+              <h2>복잡한 사인 제작, <span>대명DnP에서 한 번에</span> 해결합니다</h2>
+            </div>
+            <div className="one-stop-layout">
+              <article className="one-stop-card pain-card">
+                <div className="one-stop-card-head">
+                  <span><AlertCircle /></span>
+                  <div><p>PAIN POINT</p><h3>제품마다 다른 업체를 찾는 번거로움</h3></div>
+                </div>
+                <ul>{painPoints.map(([Icon, text], i) => <li key={text}><span className="item-icon"><Icon /></span><strong>{String(i + 1).padStart(2, "0")}</strong><em />{text}</li>)}</ul>
+              </article>
+              <div className="one-stop-center" aria-hidden="true">
+                <div><ArrowRight /><strong>ONE<br />STOP</strong></div>
+              </div>
+              <article className="one-stop-card solution-card">
+                <div className="one-stop-card-head">
+                  <span><CheckCircle2 /></span>
+                  <div><p>SOLUTION</p><h3>상담부터 제작까지 한 곳에서</h3></div>
+                </div>
+                <ul>{solutions.map(([Icon, text]) => <li key={text}><span className="item-icon"><Icon /></span><strong><Check /></strong><em />{text}</li>)}</ul>
+              </article>
+            </div>
           </div>
         </section>
 

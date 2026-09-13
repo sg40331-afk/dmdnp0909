@@ -29,7 +29,7 @@ export function CompanyGreeting() {
         <div className="site-container">
           <div className="ceo-message">
             <div className="ceo-photo">
-              <Image src="/dmdnp-assets/hero-workshop.png" alt="대명DnP 제작 현장에서 사인 제품을 제작하는 모습" fill priority sizes="(max-width: 980px) 100vw, 560px" />
+              <Image src="/dmdnp-assets/ceo-message.jpg" alt="대명DnP 대표가 제작 현장에서 UV 출력 장비를 확인하는 모습" fill priority sizes="(max-width: 980px) 100vw, 560px" />
               <div className="ceo-photo-copy"><span>SINCE 2002 · DAEMYUNG DnP</span></div>
             </div>
             <article className="ceo-copy">

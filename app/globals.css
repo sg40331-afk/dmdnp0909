@@ -43,8 +43,8 @@ img { max-width: 100%; display: block; }
 .button-light { background: #fff; color: var(--blue); }
 
 .hero { position: relative; min-height: 455px; overflow: hidden; isolation: isolate; background: #07182c; }
-.hero::before { content: ""; position: absolute; inset: -1.5%; z-index: -2; background-image: linear-gradient(90deg, #06182e 0%, rgba(6,24,46,.96) 26%, rgba(6,24,46,.68) 43%, rgba(6,24,46,.12) 64%, rgba(6,24,46,0) 100%), url("/dmdnp-assets/hero-city-night.jpg"); background-size: cover; background-position: center right; animation: heroCityDrift 22s ease-in-out infinite alternate; will-change: transform, background-position; }
-.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(circle at 74% 34%, rgba(9,104,216,.08), transparent 30%), linear-gradient(90deg, rgba(6,24,46,.34) 0%, rgba(6,24,46,.06) 43%, transparent 70%); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background-image: linear-gradient(90deg, #06182e 0%, rgba(6,24,46,.94) 25%, rgba(6,24,46,.58) 42%, rgba(6,24,46,.06) 62%, rgba(6,24,46,0) 100%), url("/dmdnp-assets/hero-city-night.jpg"); background-size: cover; background-position: center right; animation: heroCityDrift 26s ease-in-out infinite alternate; will-change: transform, background-position; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(circle at 74% 34%, rgba(9,104,216,.05), transparent 30%), linear-gradient(90deg, rgba(6,24,46,.28) 0%, rgba(6,24,46,.03) 43%, transparent 70%); }
 .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 680px); align-items: center; gap: 36px; padding: 76px 0 58px; }
 .kicker { margin: 0 0 10px; color: #8fc5ff; font-size: 12px; font-weight: 900; letter-spacing: .28em; text-transform: uppercase; }
 h1, h2, h3 { color: var(--navy); line-height: 1.25; letter-spacing: -.02em; }
@@ -59,8 +59,8 @@ h1, h2, h3 { color: var(--navy); line-height: 1.25; letter-spacing: -.02em; }
 .hero-machine::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,38,66,.05), rgba(8,38,66,.2)); }
 
 @keyframes heroCityDrift {
-  0% { transform: scale(1.01) translate3d(-.5%, 0, 0); background-position: 76% 50%; }
-  100% { transform: scale(1.035) translate3d(1%, -.4%, 0); background-position: 90% 49%; }
+  0% { transform: scale(1.005) translate3d(-.25%, 0, 0); background-position: 78% 50%; }
+  100% { transform: scale(1.018) translate3d(.5%, -.2%, 0); background-position: 88% 49%; }
 }
 
 .section { padding: 82px 0; }

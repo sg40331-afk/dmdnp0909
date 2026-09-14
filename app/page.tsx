@@ -142,7 +142,13 @@ export default function Home() {
         <section className="section reason-section">
           <div className="site-container reason-layout">
             <div className="reason-image">
-              <Image src="/dmdnp-assets/hero-workshop.png" alt="대명DnP 제작 현장과 장비" fill sizes="(max-width: 980px) 100vw, 48vw" />
+              <Image
+                src="/dmdnp-assets/company-why-daemyung-workshop.webp"
+                alt="대명DnP 작업자가 UV 출력물의 크기와 품질을 확인하는 모습"
+                fill
+                sizes="(max-width: 980px) 100vw, 48vw"
+                className="reason-image-photo"
+              />
             </div>
             <div>
               <p className="kicker">WHY DAEMYUNG DnP</p>

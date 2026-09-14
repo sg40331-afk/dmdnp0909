@@ -244,11 +244,16 @@ textarea { min-height: 140px; resize: vertical; }
 .ceo-values svg { width: 48px; height: 48px; color: var(--blue); }
 .ceo-values h2 { margin: 0 0 7px; font-size: 23px; }
 .ceo-values p { margin: 0; color: #415672; word-break: keep-all; }
-.timeline { position: relative; display: grid; gap: 18px; max-width: 920px; }
-.timeline article { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 22px; align-items: start; }
-.timeline time { padding: 12px 16px; border-radius: 999px; background: var(--blue); color: #fff; font-weight: 900; text-align: center; }
-.timeline article div { padding: 22px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 8px 22px rgba(8,38,66,.06); }
-.timeline h2 { margin: 0 0 8px; font-size: 23px; }
+.history-board { max-width: 980px; }
+.history-group { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 34px; padding: 28px 0; border-top: 1px dotted #9ba7b5; }
+.history-group:first-child { padding-top: 0; border-top: 0; }
+.history-group h2 { margin: 0; color: #111827; font-size: 29px; font-weight: 900; line-height: 1.1; }
+.history-items { display: grid; gap: 12px; }
+.history-items article { display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 16px; align-items: start; }
+.history-items time { min-height: 28px; padding: 7px 10px; background: #8b929b; color: #fff; font-size: 13px; font-weight: 900; line-height: 1; letter-spacing: .08em; text-align: center; white-space: nowrap; }
+.history-items article:first-child time { background: #111827; }
+.history-items h3 { margin: 0 0 5px; color: var(--navy); font-size: 18px; line-height: 1.35; }
+.history-items p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .business-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .business-card h2, .facility-card h2, .quality-grid h2 { font-size: 21px; }
 .card-actions { display: grid; gap: 8px; margin-top: 14px; }
@@ -330,8 +335,10 @@ textarea { min-height: 140px; resize: vertical; }
   .ceo-signature { flex-wrap: wrap; }
   .ceo-values article { grid-template-columns: 56px minmax(0, 1fr); padding: 22px; }
   .ceo-values svg { width: 42px; height: 42px; }
-  .timeline article { grid-template-columns: 1fr; gap: 10px; }
-  .timeline time { width: fit-content; }
+  .history-group { grid-template-columns: 1fr; gap: 14px; padding: 24px 0; }
+  .history-group h2 { font-size: 25px; }
+  .history-items article { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; }
+  .history-items time { padding-inline: 8px; font-size: 12px; }
   .facility-card dl { grid-template-columns: 1fr; }
   .facility-image { min-height: 190px; }
   .map-placeholder { min-height: 300px; }

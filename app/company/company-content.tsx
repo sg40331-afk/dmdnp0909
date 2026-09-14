@@ -59,7 +59,26 @@ export function CompanyGreeting() {
 export function CompanyHistory() {
   return (
     <CompanyPageFrame currentPath="/company/history">
-      <section className="section"><div className="site-container timeline">{companyHistory.map((item) => <article key={item.title}><time>{item.year}</time><div><h2>{item.title}</h2><p>{item.text}</p></div></article>)}</div></section>
+      <section className="section">
+        <div className="site-container history-board">
+          {companyHistory.map((group) => (
+            <section className="history-group" key={group.period} aria-labelledby={`history-${group.period}`}>
+              <h2 id={`history-${group.period}`}>{group.period}</h2>
+              <div className="history-items">
+                {group.items.map((item) => (
+                  <article key={`${group.period}-${item.date}-${item.title}`}>
+                    <time>{item.date}</time>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.text}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </section>
     </CompanyPageFrame>
   );
 }

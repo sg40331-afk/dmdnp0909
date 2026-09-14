@@ -56,10 +56,6 @@ export default function Home() {
               <p className="kicker">SIGN PRODUCT MANUFACTURER</p>
               <h1>다양한 사인 제품, 한곳에서 직접 제작합니다</h1>
               <p>UV인쇄부터 나무현판·아크릴 안내판·LED 전광판까지 상담·디자인·제작을 한 번에 진행합니다.</p>
-              <div className="hero-actions">
-                <Link className="button button-blue" href="/products">제품 둘러보기 <ArrowRight size={18} /></Link>
-                <Link className="button button-outline" href="/contact">맞춤 견적 받기</Link>
-              </div>
             </div>
           </div>
         </section>

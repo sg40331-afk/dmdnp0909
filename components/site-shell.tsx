@@ -128,15 +128,15 @@ export function VisualBlock({ label, tone = "blue", source: sourceOverride }: { 
   return <div className={`visual-block visual-${tone}`}><Image src={source} alt={label} fill sizes="(max-width: 980px) 50vw, 33vw" /></div>;
 }
 
-export function QuoteCta({ title = "필요한 사인 제품, 대명DnP에 편하게 문의하세요" }: { title?: string }) {
+export function QuoteCta({ title = "필요한 사인 제품, 편하게 문의하세요" }: { title?: string }) {
   return (
     <section className="quote-cta site-container">
       <div>
         <h2>{title}</h2>
-        <p>제품 종류와 크기를 잘 모르셔도 용도와 설치 장소를 알려주시면 적합한 제작 방법을 안내해 드립니다.</p>
+        <p>제품 종류와 크기를 잘 모르셔도 용도와 설치 장소를 알려주시면 적합한 소재와 제작 방법을 안내해 드립니다.</p>
       </div>
       <div className="cta-actions">
-        <Link className="button button-orange" href="/contact">맞춤 견적 받기 <ArrowRight size={18} /></Link>
+        <Link className="button button-orange" href="/contact">빠른 견적 문의 <ArrowRight size={18} /></Link>
         <Link className="button button-outline" href="/contact"><Phone size={17} /> 전화 상담</Link>
       </div>
     </section>

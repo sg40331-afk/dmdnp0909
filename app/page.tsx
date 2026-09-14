@@ -1,48 +1,52 @@
+import Image from "next/image";
 import Link from "next/link";
-import { AlertCircle, ArrowRight, Box, CalendarDays, Check, CheckCircle2, Clock3, FileText, Image as ImageIcon, Layers3, MapPin, MessageCircle, MonitorCheck, PenTool, Settings, Truck, Wrench } from "lucide-react";
+import { ArrowRight, Award, CheckCircle2, Eye, Factory, MessageCircle, PenTool, Printer, Settings, ShieldCheck, Truck, Wrench } from "lucide-react";
 import { faqs, portfolioItems, products } from "@/lib/dmdnp-data";
-import { QuoteCta, SiteFooter, SiteHeader, VisualBlock } from "@/components/site-shell";
+import { facilities } from "@/lib/company-data";
+import { QuoteCta, SiteFooter, SiteHeader } from "@/components/site-shell";
 
-const audiences = [
-  ["카페·음식점", "나무현판, 메뉴판, 실사출력"],
-  ["회사·사무실", "아크릴 안내판, 현판, 실내 사인"],
-  ["공장·건설현장", "안전표지, 금속·아크릴 안내판"],
-  ["관공서·공공시설", "촉지도, 점자안내판, 종합안내판"],
-  ["행사·홍보", "현수막, 배너, 출력물"],
-  ["매장 외부홍보", "LED 전광판, 외부 사인"],
-];
+const productCards = [
+  { image: "/dmdnp-assets/wood-sign.png", category: "나무현판", title: "나무현판·메뉴판", benefit: "원목의 질감과 맞춤 디자인", description: "매장 분위기와 브랜드 톤에 맞춰 현판과 메뉴판을 제작합니다.", tags: ["카페", "음식점"], position: "center 45%" },
+  { image: "/dmdnp-assets/acrylic-sign.png", category: "아크릴", title: "아크릴 안내판", benefit: "깔끔하고 세련된 공간 안내", description: "회의실, 사무실, 건물 안내에 어울리는 정돈된 사인을 제작합니다.", tags: ["사무실", "병원"], position: "center 48%" },
+  { image: "/dmdnp-assets/led-sign.png", category: "LED 전광판", title: "LED 전광판", benefit: "주야간 선명한 홍보 효과", description: "매장 홍보와 공지 문구를 멀리서도 잘 보이게 표현합니다.", tags: ["매장", "홍보"], position: "center 50%" },
+  { image: "/dmdnp-assets/uv-print.png", category: "UV인쇄", title: "UV 평판인쇄", benefit: "다양한 소재에 직접 고해상도 출력", description: "아크릴, 목재, 금속, 포맥스 등 평판 소재에 직접 출력합니다.", tags: ["패널", "전시"], position: "center 56%" },
+  { image: "/dmdnp-assets/banner-print.png", category: "실사출력", title: "실사출력·현수막", benefit: "대형 출력부터 후가공까지", description: "현수막, 배너, 홍보 출력물을 용도와 설치 환경에 맞게 제작합니다.", tags: ["행사", "배너"], position: "center 52%" },
+  { image: "/dmdnp-assets/tactile-map.png", category: "촉지도", title: "촉지도·점자안내판", benefit: "공공시설 맞춤형 안내 제작", description: "도면과 이용 동선을 확인해 촉지도와 점자 안내판을 제작합니다.", tags: ["공공시설", "안내"], position: "center 50%" },
+] as const;
 
-const homeProductImages = [
+const portfolioImages = [
   "/dmdnp-assets/product-card-wood.jpg",
   "/dmdnp-assets/product-card-acrylic.jpg",
   "/dmdnp-assets/product-card-led.jpg",
   "/dmdnp-assets/product-card-uv.jpg",
   "/dmdnp-assets/product-card-banner.jpg",
   "/dmdnp-assets/product-card-tactile.jpg",
-];
-
-const painPoints = [
-  [FileText, "제품마다 제작업체를 따로 알아봐야 하는 불편"],
-  [Box, "원하는 소재와 크기로 제작 가능한지 알기 어려움"],
-  [MonitorCheck, "디자인 시안과 실제 결과물의 차이"],
-  [Clock3, "제작 기간과 설치 가능 여부에 대한 불안"],
 ] as const;
 
-const solutions = [
-  [MessageCircle, "한 곳에서 상담"],
-  [Layers3, "용도에 맞는 소재 추천"],
-  [ImageIcon, "제작 전 시안 확인"],
-  [Settings, "자체 장비를 이용한 직접 제작"],
+const portfolioTitles = [
+  "카페용 원목 현판",
+  "사무실 아크릴 안내판",
+  "매장용 LED 전광판",
+  "UV 출력 안내 패널",
+  "행사 안내 현수막",
+  "공공시설 촉지도",
 ] as const;
 
-const faqIcons = [Box, FileText, CalendarDays, Layers3, Settings, MapPin] as const;
+const reasonItems = [
+  [Award, "20년 이상의 제작 경험", "2002년부터 다양한 사인 제품을 제작해온 경험"],
+  [Factory, "자체 제작설비 운영", "UV 평판프린터·레이저·CNC 등 직접 운영"],
+  [Eye, "맞춤 디자인과 시안 확인", "제작 전에 크기·소재·디자인을 확인"],
+  [MessageCircle, "제작부터 설치까지 상담", "제품 제작과 납품, 인천·수도권 설치 상담"],
+] as const;
+
+const faqIcons = [CheckCircle2, PenTool, Settings, Factory, Wrench, Truck] as const;
 
 const process = [
-  [MessageCircle, "상담·설계", "용도와 공간에 맞는 제작 방향을 제안합니다."],
-  [PenTool, "디자인·시안", "전문 디자이너의 맞춤 시안을 확인합니다."],
-  [Settings, "직접 제작", "자체 장비로 정확하고 꼼꼼하게 제작합니다."],
-  [Wrench, "검수·후가공", "마감 상태와 표기 내용을 확인합니다."],
-  [Truck, "출고·설치", "납품과 설치 상담까지 이어갑니다."],
+  [MessageCircle, "상담·설계", "용도와 설치 공간을 확인합니다."],
+  [PenTool, "디자인·시안 확인", "크기와 표기 내용을 점검합니다."],
+  [Settings, "직접 제작", "자체 장비로 출력·가공합니다."],
+  [ShieldCheck, "검수·후가공", "마감과 수량을 확인합니다."],
+  [Truck, "출고·설치", "납품과 설치 상담을 이어갑니다."],
 ] as const;
 
 const trustStats = [
@@ -82,47 +86,101 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section product-section">
           <div className="site-container">
             <div className="section-heading">
               <div><p className="kicker">PRODUCT</p><h2>대명DnP 주요 제작 제품</h2></div>
               <p>공간에 필요한 사인 제품을 직접 기획하고 제작합니다.</p>
             </div>
-            <div className="grid-3">
+            <div className="product-card-grid">
               {products.slice(0, 6).map((item, i) => (
-                <article className="card" key={item.slug}>
-                  <VisualBlock label={item.name} source={homeProductImages[i]} tone={i === 0 ? "wood" : i === 2 ? "led" : i === 3 || i === 4 ? "print" : i === 5 ? "map" : "blue"} />
-                  <div className="card-body"><h3>{item.name}</h3><p>{item.summary}</p><Link className="text-link" href={`/products/${item.slug}`}>자세히 보기 <ArrowRight size={16} /></Link></div>
-                </article>
+                <Link className="product-card" key={item.slug} href={`/products/${item.slug}`}>
+                  <div className="product-card-image">
+                    <Image src={productCards[i].image} alt={`${productCards[i].title} 제작 사진`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" style={{ objectPosition: productCards[i].position }} />
+                    <div className="product-card-overlay">
+                      <span>{productCards[i].category}</span>
+                      <strong>{productCards[i].title}</strong>
+                      <small>{productCards[i].benefit}</small>
+                    </div>
+                  </div>
+                  <div className="product-card-body">
+                    <p>{productCards[i].description}</p>
+                    <div className="product-tags">{productCards[i].tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                    <span className="text-link">자세히 보기 <ArrowRight size={16} /></span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section one-stop-section">
+        <section className="section portfolio-section">
           <div className="site-container">
-            <div className="one-stop-heading">
-              <p className="kicker">WHY DAEMYUNG DnP</p>
-              <h2>복잡한 사인 제작, <span>대명DnP에서 한 번에</span> 해결합니다</h2>
-            </div>
-            <div className="one-stop-layout">
-              <article className="one-stop-card pain-card">
-                <div className="one-stop-card-head">
-                  <span><AlertCircle /></span>
-                  <div><p>PAIN POINT</p><h3>제품마다 다른 업체를 찾는 번거로움</h3></div>
-                </div>
-                <ul>{painPoints.map(([Icon, text], i) => <li key={text}><span className="item-icon"><Icon /></span><strong>{String(i + 1).padStart(2, "0")}</strong><em />{text}</li>)}</ul>
-              </article>
-              <div className="one-stop-center" aria-hidden="true">
-                <div><ArrowRight /><strong>ONE<br />STOP</strong></div>
+            <div className="section-heading">
+              <div>
+                <p className="kicker">PORTFOLIO</p>
+                <h2>대명DnP 실제 제작사례</h2>
+                <p>직접 제작하고 납품한 다양한 사인 제품을 확인해 보세요.</p>
               </div>
-              <article className="one-stop-card solution-card">
-                <div className="one-stop-card-head">
-                  <span><CheckCircle2 /></span>
-                  <div><p>SOLUTION</p><h3>상담부터 제작까지 한 곳에서</h3></div>
+              <Link className="button button-outline" href="/portfolio">전체 제작사례 보기 <ArrowRight size={17} /></Link>
+            </div>
+            <div className="portfolio-card-grid">{portfolioItems.slice(0, 6).map((item, i) => (
+              <Link className="portfolio-card" key={item.slug} href={`/portfolio/${item.slug}`}>
+                <div className="portfolio-card-image"><Image src={portfolioImages[i]} alt={`${portfolioTitles[i]} 제작사례 이미지`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" /></div>
+                <div className="portfolio-card-body">
+                  <span>{item.category}</span>
+                  <h3>{portfolioTitles[i]}</h3>
+                  <p>{item.material} / {item.place}</p>
+                  <small>{item.method}</small>
+                  <strong className="text-link">상세보기 <ArrowRight size={16} /></strong>
                 </div>
-                <ul>{solutions.map(([Icon, text]) => <li key={text}><span className="item-icon"><Icon /></span><strong><Check /></strong><em />{text}</li>)}</ul>
-              </article>
+              </Link>
+            ))}</div>
+          </div>
+        </section>
+
+        <section className="section reason-section">
+          <div className="site-container reason-layout">
+            <div className="reason-image">
+              <Image src="/dmdnp-assets/hero-workshop.png" alt="대명DnP 제작 현장과 장비" fill sizes="(max-width: 980px) 100vw, 48vw" />
+            </div>
+            <div>
+              <p className="kicker">WHY DAEMYUNG DnP</p>
+              <h2>대명DnP를 선택하는 이유</h2>
+              <p className="section-lead">상담부터 디자인·출력·가공·납품까지 한곳에서 진행합니다.</p>
+              <div className="reason-list">
+                {reasonItems.map(([Icon, title, text]) => (
+                  <article key={title}>
+                    <Icon />
+                    <div><h3>{title}</h3><p>{text}</p></div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section equipment-section">
+          <div className="site-container">
+            <div className="section-heading">
+              <div>
+                <p className="kicker">EQUIPMENT</p>
+                <h2>직접 운영하는 제작 장비</h2>
+                <p>외주에만 의존하지 않고 주요 공정을 자체 장비로 직접 제작합니다.</p>
+              </div>
+            </div>
+            <div className="equipment-layout">
+              <div className="equipment-main">
+                <Image src="/dmdnp-assets/uv-print.png" alt="UV 평판프린터 작업 장면" fill sizes="(max-width: 980px) 100vw, 42vw" />
+              </div>
+              <div className="equipment-list">
+                {facilities.slice(0, 6).map((item, i) => (
+                  <article key={item.name}>
+                    {i === 0 ? <Printer /> : i === 1 ? <Factory /> : i === 2 ? <Settings /> : i === 3 ? <Printer /> : i === 4 ? <Wrench /> : <Factory />}
+                    <div><h3>{item.name}</h3><p>{item.function}</p></div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -131,27 +189,14 @@ export default function Home() {
           <div className="site-container">
             <div className="process-showcase-heading">
               <p className="kicker">PROCESS</p>
-              <h2>기획부터 제작·출력·가공까지 <span>원스톱</span></h2>
-              <p>상담부터 납품까지 같은 기준으로 관리합니다.</p>
+              <h2>제작 과정</h2>
+              <p>상담부터 출고까지 필요한 확인만 간결하게 진행합니다.</p>
             </div>
             <div className="process-panel">
-              <div className="process-panel-title">
-                <span><Settings /></span>
-                <div>
-                  <p>ONE STOP PROCESS</p>
-                  <h3>상담부터 출고까지 한 흐름으로</h3>
-                </div>
-              </div>
               <div className="process-list">{process.map(([Icon, title, text], i) => <article key={title}><span className="process-icon"><Icon /></span><strong>{String(i + 1).padStart(2, "0")}</strong><div><h4>{title}</h4><p>{text}</p></div></article>)}</div>
             </div>
           </div>
         </section>
-
-        <section className="section ivory"><div className="site-container"><div className="section-heading"><div><p className="kicker">MATCHING</p><h2>제품별 추천 고객</h2></div></div><div className="audience-grid">{audiences.map(([name, text]) => <article key={name}><h3>{name}</h3><p>{text}</p></article>)}</div></div></section>
-
-        <section className="section"><div className="site-container"><div className="section-heading"><div><p className="kicker">PORTFOLIO</p><h2>제작사례</h2></div><Link className="button button-outline" href="/portfolio">전체 사례 보기 <ArrowRight size={17} /></Link></div><div className="portfolio-grid">{portfolioItems.slice(0, 6).map((item) => <Link className="card" key={item.slug} href={`/portfolio/${item.slug}`}><VisualBlock label={item.category} tone={item.category.includes("LED") ? "led" : item.category.includes("나무") ? "wood" : item.category.includes("촉지도") ? "map" : "blue"} /><div className="card-body"><h3>{item.title}</h3><p>{item.place}</p></div></Link>)}</div></div></section>
-
-        <section className="section ivory"><div className="site-container about-band"><div><p className="kicker">ABOUT US</p><h2>20년 이상의 제작 경험과 전문 장비</h2><p>대명DnP는 2002년부터 다양한 사인 제품을 직접 기획하고 제작해온 인천 남동구의 사인 제품 제조업체입니다. 상담부터 제작까지 직접 관리하는 흐름으로 품질과 납기를 안정적으로 맞춥니다.</p><Link className="button button-blue" href="/company">회사소개 보기 <ArrowRight size={17} /></Link></div><div className="stats"><div><strong>2002</strong><span>설립연도</span></div><div><strong>자체 설비</strong><span>UV 평판프린터, 레이저, CNC 등</span></div><div><strong>인천·수도권</strong><span>제작 및 납품 상담 대응</span></div></div></div></section>
 
         <section className="section faq-showcase">
           <div className="site-container faq-showcase-grid">

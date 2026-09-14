@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AlertCircle, ArrowRight, Box, CalendarDays, Check, CheckCircle2, Clock3, Factory, FileText, Image as ImageIcon, Layers3, MapPin, MessageCircle, MonitorCheck, PenTool, Settings, Truck, Wrench } from "lucide-react";
+import { AlertCircle, ArrowRight, Box, CalendarDays, Check, CheckCircle2, Clock3, FileText, Image as ImageIcon, Layers3, MapPin, MessageCircle, MonitorCheck, PenTool, Settings, Truck, Wrench } from "lucide-react";
 import { faqs, portfolioItems, products } from "@/lib/dmdnp-data";
 import { QuoteCta, SiteFooter, SiteHeader, VisualBlock } from "@/components/site-shell";
 
@@ -59,11 +59,6 @@ export default function Home() {
               <div className="hero-actions">
                 <Link className="button button-blue" href="/products">제품 둘러보기 <ArrowRight size={18} /></Link>
                 <Link className="button button-outline" href="/contact">맞춤 견적 받기</Link>
-              </div>
-              <div className="trust-strip">
-                <div><CalendarDays />2002년 설립</div>
-                <div><Factory />자체 설비 직접 제작</div>
-                <div><MapPin />인천·수도권 대응</div>
               </div>
             </div>
           </div>

@@ -45,6 +45,13 @@ const process = [
   [Truck, "출고·설치", "납품과 설치 상담까지 이어갑니다."],
 ] as const;
 
+const trustStats = [
+  ["2002년", "설립 및 제작 경험"],
+  ["5,000건+", "누적 제작 실적"],
+  ["자체 제작설비", "UV·레이저·CNC 직접 운영"],
+  ["인천·수도권", "제작·납품·설치 상담"],
+] as const;
+
 export default function Home() {
   return (
     <>
@@ -52,11 +59,26 @@ export default function Home() {
       <main>
         <section className="hero">
           <div className="site-container hero-inner">
-            <div>
+            <div className="hero-copy">
               <p className="kicker">SIGN PRODUCT MANUFACTURER</p>
-              <h1>다양한 사인 제품, 한곳에서 직접 제작합니다</h1>
-              <p>UV인쇄부터 나무현판·아크릴 안내판·LED 전광판까지 상담·디자인·제작을 한 번에 진행합니다.</p>
+              <h1><span>간판부터 UV인쇄까지</span><span>필요한 사인물을 직접 제작합니다</span></h1>
+              <p>나무현판·아크릴 안내판·LED 전광판·실사출력·촉지도를<br />상담부터 디자인, 제작, 설치까지 한 번에 진행합니다.</p>
+              <div className="hero-actions">
+                <Link className="hero-button hero-button-primary" href="/contact">빠른 견적 문의 <ArrowRight size={18} /></Link>
+                <Link className="hero-button hero-button-secondary" href="/portfolio">제작사례 보기</Link>
+              </div>
             </div>
+          </div>
+        </section>
+
+        <section className="trust-summary" aria-label="대명DnP 신뢰 정보">
+          <div className="site-container trust-summary-grid">
+            {trustStats.map(([value, label]) => (
+              <article key={value}>
+                <strong>{value}</strong>
+                <span>{label}</span>
+              </article>
+            ))}
           </div>
         </section>
 

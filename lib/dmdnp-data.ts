@@ -235,7 +235,13 @@ export function getPost(slug: string) {
   return blogPosts.find((item) => item.slug === slug);
 }
 
-export function getBlogImageSource(relatedProduct: string) {
+export function getBlogImageSource(relatedProduct: string, slug?: string) {
+  if (slug === "may-22-office-acrylic-logo") return "/dmdnp-assets/blog-may-22-acrylic-office.svg";
+  if (slug === "may-26-wood-menu-board") return "/dmdnp-assets/blog-may-26-wood-menu.svg";
+  if (slug === "may-29-storefront-led") return "/dmdnp-assets/blog-may-29-led-storefront.svg";
+  if (slug === "jun-02-uv-metal-panel") return "/dmdnp-assets/blog-jun-02-uv-metal.svg";
+  if (slug === "jun-05-large-print-color") return "/dmdnp-assets/blog-jun-05-large-print.svg";
+  if (slug === "jun-09-braille-sign-height") return "/dmdnp-assets/blog-jun-09-braille-height.svg";
   if (relatedProduct.includes("wood")) return "/dmdnp-assets/product-card-wood.jpg";
   if (relatedProduct.includes("acrylic")) return "/dmdnp-assets/product-card-acrylic.jpg";
   if (relatedProduct.includes("led")) return "/dmdnp-assets/product-card-led.jpg";

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-label="텍스트 없는 매장 외부 LED 전광판 이미지">
+  <defs><linearGradient id="night" y1="0" y2="1"><stop offset="0" stop-color="#071a32"/><stop offset="1" stop-color="#0f3358"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="900" height="520" fill="url(#night)"/><rect x="90" y="80" width="720" height="360" rx="8" fill="#152640"/><rect x="125" y="225" width="650" height="150" rx="7" fill="#061220" stroke="#273f5a" stroke-width="10"/>
+  <g filter="url(#glow)"><path d="M160 303c90-68 156 68 247 0s154-68 247 0" fill="none" stroke="#1597ff" stroke-width="24"/><path d="M160 320c90-68 156 68 247 0s154-68 247 0" fill="none" stroke="#ff8b24" stroke-width="16"/><path d="M160 286c90-68 156 68 247 0s154-68 247 0" fill="none" stroke="#42d6ff" stroke-width="10"/></g>
+  <rect x="120" y="380" width="660" height="58" fill="#eef3f8"/><rect x="152" y="400" width="72" height="38" fill="#dbe5ef"/><rect x="686" y="400" width="64" height="38" fill="#dbe5ef"/><circle cx="280" cy="114" r="24" fill="#ffb24c" opacity=".45"/>
+</svg>

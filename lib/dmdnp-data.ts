@@ -8,11 +8,11 @@ export const company = {
   serviceArea: "인천 및 수도권",
   domain: "dmdnp.co.kr",
   address: "인천 남동구 호구포로 50 엘아이지식산업센타 514",
-  phone: "032-418-4033 / 010-5201-7977",
+  phone: "032-428-4033 / 010-5201-7977",
   email: "sg4033@hanmail.net",
   kakao: "[추후 입력: 카카오톡 상담 주소]",
-  hours: "[추후 입력: 운영시간]",
-  businessNumber: "[추후 입력: 사업자등록번호]",
+  hours: "[09:00~18:00]",
+  businessNumber: "[137-01-83805]",
   sns: "[추후 입력: SNS 주소]",
 };
 

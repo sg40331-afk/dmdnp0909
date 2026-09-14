@@ -141,14 +141,87 @@ export const faqs = [
   { question: "인천 외 지역도 주문할 수 있나요?", answer: "인천과 수도권을 중심으로 대응합니다. 그 외 지역은 제품과 납품 방식에 따라 상담이 필요합니다." },
 ];
 
-export const blogPosts = [
-  { slug: "wood-sign-checklist", title: "나무현판 주문 전 확인할 다섯 가지", category: "제품 선택 가이드", date: "2026-09-09", summary: "원목 현판과 메뉴판을 주문하기 전 크기, 마감, 설치 위치, 문구, 관리 방법을 확인하는 법을 정리했습니다.", relatedProduct: "wood-sign-menu", body: ["나무현판은 소재의 결, 두께, 마감 방식에 따라 분위기가 크게 달라집니다. 실내인지 실외인지 먼저 정하면 필요한 코팅과 부착 방식을 더 정확히 고를 수 있습니다.", "문구와 로고는 너무 작게 넣으면 멀리서 읽기 어렵습니다. 설치 거리와 보는 방향을 기준으로 글자 크기를 정하는 것이 좋습니다.", "메뉴판은 교체 가능성이 있는 항목과 고정 문구를 구분하면 유지 관리가 쉬워집니다."] },
-  { slug: "acrylic-thickness-install", title: "아크릴 안내판 두께와 설치 방법 선택하기", category: "제작 방법", date: "2026-09-09", summary: "투명 아크릴, 컬러 아크릴, 벽부착 부속 선택 기준을 안내합니다.", relatedProduct: "acrylic-sign", body: ["아크릴 안내판은 두께와 모서리 마감이 전체 인상을 좌우합니다. 작은 실명판은 얇은 소재도 가능하지만, 큰 안내판은 휨과 고정 방식을 함께 봐야 합니다.", "스탠드오프 부속은 입체감이 있고 깔끔하지만 벽면 타공이 필요할 수 있습니다. 부착 위치의 벽 재질을 미리 확인해 주세요."] },
-  { slug: "led-size-resolution", title: "LED 전광판 크기와 해상도 정하는 방법", category: "간판·사인 정보", date: "2026-09-09", summary: "설치 거리, 문구량, 시야각을 기준으로 LED 전광판 규격을 정하는 방법입니다.", relatedProduct: "led-display", body: ["LED 전광판은 멀리서 읽을 문구인지, 가까운 보행자가 볼 문구인지에 따라 필요한 크기와 해상도가 달라집니다.", "문구를 많이 넣는 것보다 핵심 안내를 짧게 반복하는 구성이 더 잘 보이는 경우가 많습니다."] },
-  { slug: "uv-flatbed-products", title: "UV 평판인쇄로 제작할 수 있는 제품", category: "장비와 제작현장", date: "2026-09-09", summary: "아크릴, 목재, 금속, 포맥스 등 다양한 소재 위 직접 인쇄의 활용처를 소개합니다.", relatedProduct: "uv-flatbed-print", body: ["UV 평판인쇄는 평평한 소재 위에 직접 출력할 수 있어 안내판, 패널, 굿즈, 전시물 제작에 폭넓게 쓰입니다.", "소재의 색과 표면 상태에 따라 화이트 잉크나 코팅 방식이 필요할 수 있습니다."] },
-  { slug: "large-print-file-guide", title: "실사출력과 현수막 제작 파일 준비 방법", category: "제작 방법", date: "2026-09-09", summary: "대형 출력물 제작 전 해상도, 여백, 재단선, 문구 검수 기준을 설명합니다.", relatedProduct: "banner-large-print", body: ["현수막과 배너는 멀리서 보는 매체라 핵심 문구가 선명해야 합니다. 작은 글씨와 복잡한 배경은 피하는 것이 좋습니다.", "완성 크기, 재단 여백, 아일렛 위치를 미리 정하면 출력 후 수정 가능성을 줄일 수 있습니다."] },
-  { slug: "tactile-map-before-order", title: "촉지도와 점자안내판 제작 전 확인사항", category: "자주 묻는 질문", date: "2026-09-09", summary: "도면, 표기 내용, 설치 위치, 이용자 동선을 확인하는 체크리스트입니다.", relatedProduct: "braille-tactile-map", body: ["촉지도와 점자안내판은 보기 좋은 디자인뿐 아니라 실제 이용자가 길을 찾는 흐름이 중요합니다.", "층별 도면, 출입구 위치, 주요 시설명, 설치 높이와 방향을 함께 확인해야 합니다."] },
+type BlogTopic = {
+  slug: string;
+  title: string;
+  category: string;
+  date: string;
+  summary: string;
+  relatedProduct: string;
+  focus: string;
+  material: string;
+  setting: string;
+  imageTone: "wood" | "blue" | "led" | "print" | "map";
+};
+
+function createBlogBody(topic: BlogTopic) {
+  return [
+    `${topic.title}를 준비할 때는 먼저 제품이 놓일 공간과 보는 사람의 동선을 함께 확인해야 합니다. ${topic.setting}에서는 문구를 읽는 거리, 조명의 밝기, 벽면이나 유리면의 상태가 결과 품질에 직접 영향을 줍니다. 같은 디자인이라도 설치 위치가 달라지면 글자 크기, 여백, 마감 방식이 달라지므로 주문 전에 현장 사진과 대략적인 치수를 함께 정리해 두는 것이 좋습니다.`,
+    `${topic.focus}는 상담 단계에서 가장 먼저 맞춰야 하는 기준입니다. 제작자는 용도와 예산만으로 제품을 바로 정하지 않고, 실제 사용 기간과 관리 방식까지 살펴본 뒤 ${topic.material}의 두께, 표면 처리, 출력 방식, 고정 방법을 제안합니다. 이 과정을 건너뛰면 완성 후에는 보기에는 좋아도 설치가 어렵거나 유지 관리가 번거로운 제품이 될 수 있습니다.`,
+    `파일을 준비할 때는 로고 원본, 사용 문구, 색상 기준, 완성 크기를 한 번에 전달하는 편이 좋습니다. 이미지 파일만 보내는 경우 확대했을 때 깨지는지 확인이 필요하고, 글자가 포함된 디자인은 오타와 줄바꿈을 제작 전에 확정해야 합니다. 특히 사인 제품은 인쇄 후 바로 수정하기 어렵기 때문에 시안 확인 단계에서 문구, 방향, 수량, 납품 형태를 꼼꼼히 보는 것이 중요합니다.`,
+    `제작 방식은 소재에 따라 달라집니다. 평판 인쇄는 표면 위에 직접 색을 올리는 방식이라 작은 안내문이나 패널에 적합하고, 실사출력은 넓은 면적의 홍보물에 유리합니다. 레이저나 CNC 가공이 필요한 제품은 절단선, 모서리, 타공 위치가 정확해야 하며, ${topic.material}의 표면 상태에 따라 후가공 시간이 달라질 수 있습니다.`,
+    `견적을 빠르게 받으려면 설치 장소, 가로세로 크기, 수량, 원하는 납기, 실내용 또는 실외용 여부를 함께 알려 주세요. 기존 사인이 있다면 교체 전 사진을 보내는 것도 좋습니다. 제작자는 그 정보를 바탕으로 같은 크기라도 더 적합한 소재를 제안하거나, 문구를 줄여 시인성을 높이는 방식으로 결과를 조정할 수 있습니다.`,
+    `${topic.setting}에서 자주 생기는 문제는 완성품 자체보다 설치 조건에서 시작됩니다. 벽면이 고르지 않거나, 전원이 필요한 위치가 멀거나, 통행 동선 때문에 돌출 부속을 쓰기 어려운 경우가 있습니다. 그래서 제작 전 상담에서는 제품의 모양뿐 아니라 부착 방식, 포장, 운반, 현장 작업 가능 시간까지 함께 확인해야 일정이 안정적으로 진행됩니다.`,
+    `완성품 검수는 색상, 재단, 타공, 수량, 포장 상태를 기준으로 봅니다. 고객이 확인해야 할 부분은 주문한 문구가 맞는지, 설치 방향이 맞는지, 부속이 빠지지 않았는지입니다. 대명DnP는 상담부터 출력, 가공, 검수와 출고까지 한 흐름으로 관리해 제품별로 필요한 확인 과정을 줄이고 결과의 편차를 낮추는 데 집중합니다.`,
+    `정리하면 ${topic.title}의 핵심은 예쁜 시안을 만드는 것에서 끝나지 않습니다. 현장 조건에 맞는 소재를 고르고, 읽히는 크기로 문구를 정리하며, 제작 전 확인할 내용을 빠짐없이 정돈하는 것이 더 중요합니다. 주문 전 작은 정보라도 미리 공유하면 불필요한 재작업을 줄이고, 공간에 오래 어울리는 사인 제품을 만들 수 있습니다.`,
+  ];
+}
+
+const blogTopics: BlogTopic[] = [
+  { slug: "may-01-wood-sign-size", title: "나무현판 크기 정할 때 먼저 볼 기준", category: "제품 선택 가이드", date: "2026-05-01", summary: "매장 입구, 카운터, 벽면 위치에 따라 나무현판 크기와 글자 비율을 정하는 방법입니다.", relatedProduct: "wood-sign-menu", focus: "크기와 글자 비율", material: "원목과 합판, 오일 마감", setting: "카페와 음식점 입구", imageTone: "wood" },
+  { slug: "may-05-acrylic-door-sign", title: "아크릴 실명판을 깔끔하게 만드는 조건", category: "제작 방법", date: "2026-05-05", summary: "사무실 문패와 회의실 안내판을 제작할 때 두께, 모서리, 부착 방식을 확인하는 글입니다.", relatedProduct: "acrylic-sign", focus: "두께와 벽부착 방식", material: "투명 아크릴과 컬러 아크릴", setting: "사무실 복도와 회의실 문 앞", imageTone: "blue" },
+  { slug: "may-08-led-text-visibility", title: "LED 전광판 문구가 잘 보이는 구성", category: "간판·사인 정보", date: "2026-05-08", summary: "전광판 문구량, 글자 크기, 반복 속도를 조정해 멀리서도 읽히게 만드는 기준입니다.", relatedProduct: "led-display", focus: "시인성과 문구 반복", material: "LED 모듈과 컨트롤러", setting: "도로변 매장과 건물 외부", imageTone: "led" },
+  { slug: "may-12-uv-acrylic-print", title: "아크릴 위 UV 인쇄가 필요한 경우", category: "장비와 제작현장", date: "2026-05-12", summary: "투명 소재 위에 로고와 색상을 선명하게 표현할 때 확인해야 할 화이트 인쇄 기준입니다.", relatedProduct: "uv-flatbed-print", focus: "화이트 인쇄와 색상 선명도", material: "투명 아크릴과 UV 잉크", setting: "브랜드 안내판과 쇼룸 진열대", imageTone: "print" },
+  { slug: "may-15-banner-file-check", title: "현수막 파일 보내기 전 체크리스트", category: "제작 방법", date: "2026-05-15", summary: "해상도, 재단 여백, 아일렛 위치, 문구 검수를 제작 전에 확인하는 방법입니다.", relatedProduct: "banner-large-print", focus: "해상도와 여백", material: "현수막 원단과 실사출력", setting: "행사장과 외부 홍보 공간", imageTone: "print" },
+  { slug: "may-19-tactile-map-layout", title: "촉지도 배치에서 중요한 동선 기준", category: "공공시설 안내", date: "2026-05-19", summary: "출입구, 엘리베이터, 화장실 위치를 기준으로 촉지도 정보를 정리하는 방법입니다.", relatedProduct: "braille-tactile-map", focus: "이용자 동선과 정보 우선순위", material: "촉지도 패널과 점자 표기", setting: "공공시설 로비와 층별 안내 공간", imageTone: "map" },
+  { slug: "may-22-office-acrylic-logo", title: "사무실 로고 사인을 아크릴로 만들 때", category: "제품 선택 가이드", date: "2026-05-22", summary: "벽면 로고 사인의 두께, 간격, 조명 반사를 고려해 아크릴 소재를 고르는 기준입니다.", relatedProduct: "acrylic-sign", focus: "로고 비례와 벽면 고정", material: "아크릴 입체 문자와 부착 부속", setting: "회사 입구와 회의실 벽면", imageTone: "blue" },
+  { slug: "may-26-wood-menu-board", title: "나무 메뉴판 제작 전 메뉴 변경 가능성 보기", category: "제품 선택 가이드", date: "2026-05-26", summary: "고정 문구와 교체 문구를 구분해 나무 메뉴판을 오래 쓰는 제작 방식입니다.", relatedProduct: "wood-sign-menu", focus: "교체 가능성과 문구 배열", material: "나무판, 각인, 출력 패널", setting: "카페 카운터와 매장 내부 벽면", imageTone: "wood" },
+  { slug: "may-29-storefront-led", title: "매장 외부 LED 전광판 설치 전 확인할 것", category: "간판·사인 정보", date: "2026-05-29", summary: "전원 위치, 시야각, 비바람 노출 여부를 기준으로 전광판 규격을 정리합니다.", relatedProduct: "led-display", focus: "전원과 외부 환경", material: "외부용 LED 전광판", setting: "상가 외벽과 도로변 출입구", imageTone: "led" },
+  { slug: "jun-02-uv-metal-panel", title: "금속 패널에 UV 인쇄할 때 주의점", category: "장비와 제작현장", date: "2026-06-02", summary: "금속 표면 위 인쇄에서 접착력, 색상 표현, 보호 마감을 확인하는 방법입니다.", relatedProduct: "uv-flatbed-print", focus: "표면 접착과 보호 마감", material: "금속 패널과 UV 잉크", setting: "공장 안내판과 설비 명판", imageTone: "print" },
+  { slug: "jun-05-large-print-color", title: "실사출력 색상이 흐려 보이는 이유", category: "제작 방법", date: "2026-06-05", summary: "화면 색과 출력 색의 차이, 소재 표면, 조명 조건을 기준으로 색상 기대치를 맞춥니다.", relatedProduct: "banner-large-print", focus: "출력 색상과 조명", material: "실사출력 필름과 배너 소재", setting: "전시 부스와 매장 홍보물", imageTone: "print" },
+  { slug: "jun-09-braille-sign-height", title: "점자안내판 설치 높이를 정하는 방법", category: "공공시설 안내", date: "2026-06-09", summary: "이용자가 손으로 읽기 쉬운 높이와 접근 동선을 기준으로 설치 위치를 정합니다.", relatedProduct: "braille-tactile-map", focus: "설치 높이와 접근성", material: "점자 표기판과 촉지 부속", setting: "복지시설과 공공기관 복도", imageTone: "map" },
+  { slug: "jun-12-acrylic-standoff", title: "아크릴 안내판 스탠드오프 부속 선택", category: "제작 방법", date: "2026-06-12", summary: "벽에서 띄워 설치하는 안내판의 입체감과 타공 조건을 함께 확인합니다.", relatedProduct: "acrylic-sign", focus: "스탠드오프 부속과 타공", material: "아크릴 판재와 금속 부속", setting: "회사 로비와 병원 안내 공간", imageTone: "blue" },
+  { slug: "jun-16-wood-finish-care", title: "나무현판 마감과 관리 방법", category: "제품 선택 가이드", date: "2026-06-16", summary: "오일, 바니시, 코팅 방식에 따라 달라지는 질감과 관리 포인트를 정리했습니다.", relatedProduct: "wood-sign-menu", focus: "표면 마감과 관리", material: "원목, 오일, 보호 코팅", setting: "실내 매장과 반외부 출입구", imageTone: "wood" },
+  { slug: "jun-19-led-resolution-distance", title: "LED 전광판 해상도와 시청 거리", category: "간판·사인 정보", date: "2026-06-19", summary: "가까이 보는 전광판과 멀리 보는 전광판의 픽셀 기준을 쉽게 설명합니다.", relatedProduct: "led-display", focus: "시청 거리와 해상도", material: "LED 모듈과 프레임", setting: "건물 입구와 옥외 홍보 공간", imageTone: "led" },
+  { slug: "jun-23-uv-foam-board", title: "포맥스 안내판에 UV 인쇄하기", category: "장비와 제작현장", date: "2026-06-23", summary: "가볍고 경제적인 포맥스 안내판의 두께와 설치 방식을 정리합니다.", relatedProduct: "uv-flatbed-print", focus: "두께와 가벼운 설치", material: "포맥스 판재와 UV 인쇄", setting: "실내 안내판과 임시 행사 표지", imageTone: "print" },
+  { slug: "jun-26-banner-outdoor-use", title: "외부 현수막을 오래 쓰려면", category: "제작 방법", date: "2026-06-26", summary: "바람, 햇빛, 고정 위치에 따라 현수막 소재와 마감 방식을 선택합니다.", relatedProduct: "banner-large-print", focus: "외부 내구성과 고정", material: "현수막 원단, 아일렛, 로프", setting: "건물 외벽과 야외 행사장", imageTone: "print" },
+  { slug: "jun-30-public-wayfinding", title: "공공시설 안내판 문구 정리법", category: "공공시설 안내", date: "2026-06-30", summary: "이용자가 빠르게 길을 찾도록 시설명, 방향, 층 정보를 정리하는 기준입니다.", relatedProduct: "braille-tactile-map", focus: "방향 정보와 시설명 정리", material: "아크릴, 금속, 점자 패널", setting: "도서관과 주민센터 안내 공간", imageTone: "map" },
+  { slug: "jul-03-acrylic-color-choice", title: "컬러 아크릴 안내판 색상 고르기", category: "제품 선택 가이드", date: "2026-07-03", summary: "브랜드 색상, 배경 벽면, 조명 반사를 고려해 컬러 아크릴을 선택합니다.", relatedProduct: "acrylic-sign", focus: "색상 대비와 브랜드 톤", material: "컬러 아크릴과 출력 필름", setting: "매장 내부와 쇼룸 벽면", imageTone: "blue" },
+  { slug: "jul-07-wood-sign-lettering", title: "나무현판 글자 각인과 인쇄 차이", category: "제작 방법", date: "2026-07-07", summary: "각인, 실크 인쇄, UV 인쇄 방식의 느낌과 사용 환경 차이를 설명합니다.", relatedProduct: "wood-sign-menu", focus: "각인 방식과 표현 질감", material: "나무판, 각인, UV 인쇄", setting: "카페 간판과 메뉴 사인", imageTone: "wood" },
+  { slug: "jul-10-led-maintenance", title: "LED 전광판 관리에서 자주 놓치는 것", category: "간판·사인 정보", date: "2026-07-10", summary: "문구 업데이트, 밝기 조절, 전원 관리 등 사용 중 확인할 항목입니다.", relatedProduct: "led-display", focus: "사용 중 관리와 문구 운영", material: "LED 전광판과 컨트롤 장치", setting: "상가 외부와 실내 홍보 공간", imageTone: "led" },
+  { slug: "jul-14-uv-white-ink", title: "UV 인쇄에서 화이트 잉크가 필요한 이유", category: "장비와 제작현장", date: "2026-07-14", summary: "투명·어두운 소재 위에서 색상이 선명하게 보이도록 화이트 인쇄를 활용합니다.", relatedProduct: "uv-flatbed-print", focus: "화이트 베이스와 색상 표현", material: "투명 아크릴, 금속, UV 잉크", setting: "브랜드 패널과 제품 표시판", imageTone: "print" },
+  { slug: "jul-17-print-cutting-line", title: "대형 출력물 재단선과 여백 잡기", category: "제작 방법", date: "2026-07-17", summary: "출력 후 재단 오차를 줄이기 위해 안전 여백과 재단선을 준비하는 방법입니다.", relatedProduct: "banner-large-print", focus: "재단선과 안전 여백", material: "실사출력지와 배너 원단", setting: "전시장 배너와 벽면 그래픽", imageTone: "print" },
+  { slug: "jul-21-tactile-map-content", title: "촉지도에 꼭 넣어야 할 정보", category: "공공시설 안내", date: "2026-07-21", summary: "출입구, 계단, 엘리베이터, 화장실 등 촉지도 핵심 정보를 정리합니다.", relatedProduct: "braille-tactile-map", focus: "표기 정보 우선순위", material: "촉지도 판재와 점자 표기", setting: "복합시설 로비와 층별 안내", imageTone: "map" },
+  { slug: "jul-24-acrylic-office-sign", title: "회사 사무실 안내판을 통일감 있게 만들기", category: "제품 선택 가이드", date: "2026-07-24", summary: "부서명, 회의실명, 방향 안내를 같은 기준으로 맞추는 제작 방법입니다.", relatedProduct: "acrylic-sign", focus: "규격 통일과 정보 체계", material: "아크릴 판재와 출력 필름", setting: "사무실 복도와 층별 안내", imageTone: "blue" },
+  { slug: "jul-28-wood-outdoor-risk", title: "외부 나무현판 제작 전 확인할 위험 요소", category: "제품 선택 가이드", date: "2026-07-28", summary: "비, 햇빛, 습도에 노출되는 위치에서 나무현판을 사용할 때의 주의점입니다.", relatedProduct: "wood-sign-menu", focus: "외부 노출과 변형 방지", material: "방수 마감 목재와 보호 코팅", setting: "외부 출입구와 반외부 테라스", imageTone: "wood" },
+  { slug: "jul-31-led-message-plan", title: "LED 전광판 문구 운영 계획 세우기", category: "간판·사인 정보", date: "2026-07-31", summary: "홍보 문구, 공지 문구, 시간대별 메시지를 나눠 운영하는 방법입니다.", relatedProduct: "led-display", focus: "문구 운영과 시간대 구성", material: "LED 전광판과 운영 프로그램", setting: "매장 외부와 안내 데스크", imageTone: "led" },
+  { slug: "aug-04-uv-sample-check", title: "UV 인쇄 샘플 확인이 필요한 경우", category: "장비와 제작현장", date: "2026-08-04", summary: "색상 정확도와 소재 표현이 중요한 제품은 샘플 확인으로 오차를 줄입니다.", relatedProduct: "uv-flatbed-print", focus: "샘플 출력과 색상 확인", material: "아크릴, 금속, 목재, UV 잉크", setting: "전시물과 브랜드 패널 제작", imageTone: "print" },
+  { slug: "aug-07-banner-wind-install", title: "바람 많은 곳의 현수막 설치 준비", category: "제작 방법", date: "2026-08-07", summary: "타공 위치, 고정 방식, 소재 선택을 통해 외부 현수막 파손을 줄입니다.", relatedProduct: "banner-large-print", focus: "바람 대응과 고정 방식", material: "현수막 원단과 고정 부속", setting: "야외 행사장과 건물 난간", imageTone: "print" },
+  { slug: "aug-11-public-sign-readability", title: "공공 안내판은 읽히는 순서가 중요합니다", category: "공공시설 안내", date: "2026-08-11", summary: "방문자가 먼저 봐야 할 정보를 위계화해 안내판 가독성을 높입니다.", relatedProduct: "braille-tactile-map", focus: "정보 위계와 가독성", material: "아크릴, 금속, 점자 안내판", setting: "공공기관 로비와 복도", imageTone: "map" },
+  { slug: "aug-14-acrylic-cleaning", title: "아크릴 안내판 관리와 청소 방법", category: "제품 선택 가이드", date: "2026-08-14", summary: "스크래치와 정전기 먼지를 줄이기 위한 아크릴 표면 관리 방법입니다.", relatedProduct: "acrylic-sign", focus: "표면 관리와 스크래치 예방", material: "아크릴 판재와 보호 필름", setting: "실내 안내판과 사무실 표지", imageTone: "blue" },
+  { slug: "aug-18-wood-brand-mood", title: "나무현판으로 매장 분위기 잡는 법", category: "제품 선택 가이드", date: "2026-08-18", summary: "목재 색상과 서체 선택으로 매장 첫인상을 자연스럽게 정리합니다.", relatedProduct: "wood-sign-menu", focus: "브랜드 분위기와 서체", material: "원목, 스테인, 각인", setting: "카페와 공방 입구", imageTone: "wood" },
+  { slug: "aug-21-led-indoor-vs-outdoor", title: "실내용과 실외용 LED 전광판 차이", category: "간판·사인 정보", date: "2026-08-21", summary: "밝기, 방수, 시청 거리 기준으로 실내용과 실외용 전광판을 구분합니다.", relatedProduct: "led-display", focus: "밝기와 방수 조건", material: "실내용·실외용 LED 모듈", setting: "실내 매장과 외부 간판 자리", imageTone: "led" },
+  { slug: "aug-25-uv-wood-print", title: "목재 위에 UV 인쇄할 때의 느낌", category: "장비와 제작현장", date: "2026-08-25", summary: "나무결 위에 직접 인쇄할 때 색상과 질감이 어떻게 달라지는지 설명합니다.", relatedProduct: "uv-flatbed-print", focus: "나무결과 인쇄 표현", material: "목재 판재와 UV 잉크", setting: "메뉴판과 감성 안내판", imageTone: "wood" },
+  { slug: "aug-28-print-delivery-packaging", title: "대형 출력물 포장과 납품 시 주의점", category: "제작 방법", date: "2026-08-28", summary: "접힘, 오염, 파손을 줄이기 위해 출력물 특성에 맞게 포장합니다.", relatedProduct: "banner-large-print", focus: "포장과 운반 방식", material: "현수막, 배너, 출력 필름", setting: "전시 납품과 행사장 반입", imageTone: "print" },
+  { slug: "sep-01-tactile-sign-proof", title: "점자안내판 시안 확인에서 볼 항목", category: "공공시설 안내", date: "2026-09-01", summary: "점자 표기, 시설명, 방향, 설치 위치를 제작 전 시안에서 확인합니다.", relatedProduct: "braille-tactile-map", focus: "점자 표기와 시안 검수", material: "점자 패널과 촉지 표시", setting: "공공시설 안내 데스크와 복도", imageTone: "map" },
+  { slug: "sep-04-acrylic-light-reflection", title: "아크릴 안내판 조명 반사 줄이는 방법", category: "제작 방법", date: "2026-09-04", summary: "조명이 강한 공간에서 아크릴 반사를 줄이고 문구를 잘 보이게 합니다.", relatedProduct: "acrylic-sign", focus: "반사와 조명 조건", material: "무광 아크릴과 출력 필름", setting: "밝은 로비와 병원 안내 공간", imageTone: "blue" },
+  { slug: "sep-08-wood-sign-checklist", title: "나무현판 주문 전 확인할 다섯 가지", category: "제품 선택 가이드", date: "2026-09-08", summary: "원목 현판과 메뉴판을 주문하기 전 크기, 마감, 설치 위치, 문구, 관리 방법을 정리했습니다.", relatedProduct: "wood-sign-menu", focus: "크기, 마감, 설치 위치", material: "원목 현판과 메뉴판", setting: "매장 입구와 카운터 주변", imageTone: "wood" },
+  { slug: "sep-11-acrylic-thickness-install", title: "아크릴 안내판 두께와 설치 방법 선택하기", category: "제작 방법", date: "2026-09-11", summary: "투명 아크릴, 컬러 아크릴, 벽부착 부속 선택 기준을 안내합니다.", relatedProduct: "acrylic-sign", focus: "두께와 설치 부속 선택", material: "투명 아크릴과 컬러 아크릴", setting: "회의실과 사무실 안내 공간", imageTone: "blue" },
+  { slug: "sep-15-led-size-resolution", title: "LED 전광판 크기와 해상도 정하는 방법", category: "간판·사인 정보", date: "2026-09-15", summary: "설치 거리, 문구량, 시야각을 기준으로 LED 전광판 규격을 정하는 방법입니다.", relatedProduct: "led-display", focus: "크기와 해상도", material: "LED 모듈과 전광판 프레임", setting: "도로변과 매장 외부", imageTone: "led" },
+  { slug: "sep-18-uv-flatbed-products", title: "UV 평판인쇄로 제작할 수 있는 제품", category: "장비와 제작현장", date: "2026-09-18", summary: "아크릴, 목재, 금속, 포맥스 등 다양한 소재 위 직접 인쇄의 활용처를 소개합니다.", relatedProduct: "uv-flatbed-print", focus: "소재별 직접 인쇄", material: "아크릴, 목재, 금속, 포맥스", setting: "제작실과 제품 샘플 공간", imageTone: "print" },
+  { slug: "sep-22-large-print-file-guide", title: "실사출력과 현수막 제작 파일 준비 방법", category: "제작 방법", date: "2026-09-22", summary: "대형 출력물 제작 전 해상도, 여백, 재단선, 문구 검수 기준을 설명합니다.", relatedProduct: "banner-large-print", focus: "파일 준비와 재단 기준", material: "현수막 원단과 대형 출력지", setting: "홍보물 제작과 행사장 배너", imageTone: "print" },
+  { slug: "sep-25-tactile-map-before-order", title: "촉지도와 점자안내판 제작 전 확인사항", category: "공공시설 안내", date: "2026-09-25", summary: "도면, 표기 내용, 설치 위치, 이용자 동선을 확인하는 체크리스트입니다.", relatedProduct: "braille-tactile-map", focus: "도면과 설치 위치 확인", material: "촉지도와 점자안내판", setting: "공공시설과 복지시설 안내 공간", imageTone: "map" },
+  { slug: "sep-29-sign-order-consulting", title: "사인 제품 견적 상담을 빠르게 받는 방법", category: "자주 묻는 질문", date: "2026-09-29", summary: "제품 종류를 몰라도 용도, 크기, 설치 장소를 알려주면 상담이 쉬워지는 이유를 정리했습니다.", relatedProduct: "acrylic-sign", focus: "상담 정보 정리와 견적 기준", material: "아크릴, 목재, 금속, 출력물", setting: "매장, 사무실, 공공시설 상담 현장", imageTone: "blue" },
 ];
+
+export const blogPosts = blogTopics.map((topic) => ({
+  ...topic,
+  body: createBlogBody(topic),
+  images: [
+    `${topic.title} 제작 소재와 시안 확인 이미지`,
+    `${topic.setting} 적용 예시 이미지`,
+  ],
+}));
 
 export function getProduct(slug: string) {
   return products.find((item) => item.slug === slug);

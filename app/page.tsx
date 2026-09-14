@@ -10,8 +10,8 @@ const productCards = [
   { image: "/dmdnp-assets/acrylic-sign.png", category: "아크릴", title: "아크릴 안내판", benefit: "깔끔하고 세련된 공간 안내", description: "회의실, 사무실, 건물 안내에 어울리는 정돈된 사인을 제작합니다.", tags: ["사무실", "병원"], position: "center 48%" },
   { image: "/dmdnp-assets/led-sign.png", category: "LED 전광판", title: "LED 전광판", benefit: "주야간 선명한 홍보 효과", description: "매장 홍보와 공지 문구를 멀리서도 잘 보이게 표현합니다.", tags: ["매장", "홍보"], position: "center 50%" },
   { image: "/dmdnp-assets/uv-print.png", category: "UV인쇄", title: "UV 평판인쇄", benefit: "다양한 소재에 직접 고해상도 출력", description: "아크릴, 목재, 금속, 포맥스 등 평판 소재에 직접 출력합니다.", tags: ["패널", "전시"], position: "center 56%" },
-  { image: "/dmdnp-assets/banner-print.png", category: "실사출력", title: "실사출력·현수막", benefit: "대형 출력부터 후가공까지", description: "현수막, 배너, 홍보 출력물을 용도와 설치 환경에 맞게 제작합니다.", tags: ["행사", "배너"], position: "center 52%" },
-  { image: "/dmdnp-assets/tactile-map.png", category: "촉지도", title: "촉지도·점자안내판", benefit: "공공시설 맞춤형 안내 제작", description: "도면과 이용 동선을 확인해 촉지도와 점자 안내판을 제작합니다.", tags: ["공공시설", "안내"], position: "center 50%" },
+  { image: "/dmdnp-assets/banner-print.png", category: "실사출력", title: "실사출력·현수막", benefit: "대형 출력부터 후가공까지", description: "현수막, 배너, 홍보 출력물을 용도와 설치 환경에 맞게 제작합니다.", tags: ["행사", "배너"], position: "center 62%" },
+  { image: "/dmdnp-assets/tactile-map.png", category: "촉지도", title: "촉지도·점자안내판", benefit: "공공시설 맞춤형 안내 제작", description: "도면과 이용 동선을 확인해 촉지도와 점자 안내판을 제작합니다.", tags: ["공공시설", "안내"], position: "center 58%" },
 ] as const;
 
 const portfolioImages = [

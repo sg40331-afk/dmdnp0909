@@ -14,7 +14,7 @@ export default function ContactPage() {
               <p>전화: {company.phone}</p>
               <p>이메일: {company.email}</p>
               <p>주소: {company.address}</p>
-              <p className="notice">연락처와 상세 주소는 실제 운영 정보 확인 후 교체해 주세요.</p>
+              <p className="notice">전화 상담 또는 이메일로 제품 종류, 크기, 설치 위치를 알려주시면 제작 방향을 안내해 드립니다.</p>
             </div>
             <form className="form-card">
               <div className="form-row"><label>이름<input name="name" placeholder="성함 또는 업체명" /></label><label>연락처<input name="phone" placeholder="연락 가능한 번호" /></label></div>

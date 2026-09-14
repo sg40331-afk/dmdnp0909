@@ -14,7 +14,7 @@ function isActive(pathname: string, href: string) {
 }
 
 export function SiteHeader() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
 
@@ -80,7 +80,7 @@ export function SiteFooter() {
         <div>
           <Link href="/" className="footer-brand">대명DnP</Link>
           <p>사람을 닮은 더 나은 공간, 대명DnP</p>
-          <small>확인되지 않은 연락처와 상세 주소는 공통 데이터 파일에서 교체하도록 표시했습니다.</small>
+          <small>상담부터 제작·납품까지 직접 관리하는 사인 제품 제작 업체입니다.</small>
         </div>
         <div>
           <strong>제품안내</strong>

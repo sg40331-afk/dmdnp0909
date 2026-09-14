@@ -9,6 +9,7 @@ import { company, navItems, products } from "@/lib/dmdnp-data";
 import { companyMenuPages } from "@/lib/company-data";
 
 function isActive(pathname: string, href: string) {
+  if (href.startsWith("http")) return false;
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -34,7 +35,7 @@ export function SiteHeader() {
             </div>
           </div>
           {navItems.filter((item) => item.href !== "/company").map((item) => (
-            <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined}>
+            <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined}>
               {item.label}
             </Link>
           ))}
@@ -58,7 +59,7 @@ export function SiteHeader() {
               </Link>
             ))}</div> : null}
             {navItems.filter((item) => item.href !== "/company").map((item) => (
-              <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined} onClick={() => setOpen(false)}>
+              <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} onClick={() => setOpen(false)}>
                 {item.label}
               </Link>
             ))}
@@ -90,7 +91,7 @@ export function SiteFooter() {
         <div>
           <strong>바로가기</strong>
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>{item.label}</Link>
+            <Link key={item.href} href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined}>{item.label}</Link>
           ))}
         </div>
         <div>

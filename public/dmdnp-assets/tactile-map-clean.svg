@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-label="텍스트 없는 촉지도 안내판 이미지">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f5f8fb"/>
+      <stop offset="1" stop-color="#dbe5ef"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#213149"/>
+      <stop offset="1" stop-color="#111b2c"/>
+    </linearGradient>
+    <linearGradient id="raised" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#b8c6d4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0c1a2b" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="900" height="520" fill="url(#bg)"/>
+  <path d="M0 375c120-22 184-81 307-89 151-10 239 64 391 31 86-18 149-59 202-103v306H0z" fill="#c7d3de" opacity=".55"/>
+  <g filter="url(#shadow)">
+    <path d="M120 92h660c35 0 58 28 51 62l-50 245c-7 32-35 55-68 55H82c-36 0-59-31-50-66l61-245c8-30 29-51 27-51z" fill="url(#panel)"/>
+  </g>
+  <g transform="translate(170 132)" fill="none" stroke="url(#raised)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 44h170v92H15z"/>
+    <path d="M185 44h95v56h96v94h-92v70H137v-80H15v-48"/>
+    <path d="M376 100h162v92H376z"/>
+    <path d="M538 100h98v164H496v-72"/>
+    <path d="M137 264H15v-80"/>
+    <path d="M284 194h92v70"/>
+    <path d="M496 264h-120"/>
+    <path d="M76 44v92"/>
+    <path d="M232 100v94"/>
+    <path d="M444 100v92"/>
+  </g>
+  <g transform="translate(166 128)" fill="#eef5fb" opacity=".92">
+    <rect x="36" y="64" width="42" height="34" rx="3"/>
+    <rect x="106" y="66" width="44" height="38" rx="3"/>
+    <rect x="412" y="124" width="54" height="42" rx="3"/>
+    <rect x="554" y="132" width="40" height="42" rx="3"/>
+    <rect x="306" y="218" width="48" height="36" rx="3"/>
+    <circle cx="91" cy="220" r="13"/>
+    <circle cx="617" cy="250" r="13"/>
+  </g>
+</svg>

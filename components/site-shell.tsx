@@ -124,8 +124,8 @@ export function PageHero({ kicker, title, text }: { kicker: string; title: strin
 }
 
 export function VisualBlock({ label, tone = "blue", source: sourceOverride }: { label: string; tone?: "blue" | "wood" | "led" | "print" | "map"; source?: string }) {
-  const source = sourceOverride ?? (label.includes("나무") ? "/dmdnp-assets/wood-sign.png" : label.includes("아크릴") ? "/dmdnp-assets/acrylic-sign.png" : label.includes("LED") ? "/dmdnp-assets/led-sign.png" : label.includes("실사") || label.includes("현수막") ? "/dmdnp-assets/banner-print.png" : label.includes("촉지도") || label.includes("점자") ? "/dmdnp-assets/tactile-map.png" : label.includes("UV") || label.includes("제작시설") ? "/dmdnp-assets/uv-print.png" : "/dmdnp-assets/hero-workshop.png");
-  return <div className={`visual-block visual-${tone}`}><Image src={source} alt={label} fill sizes="(max-width: 980px) 50vw, 33vw" /><span>{label}</span></div>;
+  const source = sourceOverride ?? (label.includes("나무") ? "/dmdnp-assets/wood-sign.png" : label.includes("아크릴") ? "/dmdnp-assets/acrylic-sign.png" : label.includes("LED") ? "/dmdnp-assets/led-sign.png" : label.includes("실사") || label.includes("현수막") ? "/dmdnp-assets/banner-print.png" : label.includes("촉지도") || label.includes("점자") ? "/dmdnp-assets/tactile-map-clean.svg" : label.includes("UV") || label.includes("제작시설") ? "/dmdnp-assets/uv-print.png" : "/dmdnp-assets/hero-workshop.png");
+  return <div className={`visual-block visual-${tone}`}><Image src={source} alt={label} fill sizes="(max-width: 980px) 50vw, 33vw" /></div>;
 }
 
 export function QuoteCta({ title = "필요한 사인 제품, 대명DnP에 편하게 문의하세요" }: { title?: string }) {

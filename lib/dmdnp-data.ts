@@ -234,3 +234,13 @@ export function getPortfolio(slug: string) {
 export function getPost(slug: string) {
   return blogPosts.find((item) => item.slug === slug);
 }
+
+export function getBlogImageSource(relatedProduct: string) {
+  if (relatedProduct.includes("wood")) return "/dmdnp-assets/product-card-wood.jpg";
+  if (relatedProduct.includes("acrylic")) return "/dmdnp-assets/product-card-acrylic.jpg";
+  if (relatedProduct.includes("led")) return "/dmdnp-assets/product-card-led.jpg";
+  if (relatedProduct.includes("uv")) return "/dmdnp-assets/product-card-uv.jpg";
+  if (relatedProduct.includes("banner")) return "/dmdnp-assets/product-card-banner.jpg";
+  if (relatedProduct.includes("braille") || relatedProduct.includes("tactile")) return "/dmdnp-assets/tactile-map-clean.svg";
+  return "/dmdnp-assets/hero-workshop.png";
+}

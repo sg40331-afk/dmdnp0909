@@ -85,8 +85,6 @@ h1, h2, h3 { color: var(--navy); line-height: 1.25; letter-spacing: -.02em; }
 .visual-block { min-height: 190px; color: #fff; font-weight: 900; position: relative; overflow: hidden; background: #d9e6f2; }
 .visual-block img { object-fit: cover; transition: transform .25s ease; }
 .card:hover .visual-block img { transform: scale(1.035); }
-.visual-block::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(8,38,66,.68)); }
-.visual-block span { position: absolute; left: 16px; bottom: 16px; z-index: 2; background: rgba(8,38,66,.86); padding: 7px 10px; border-radius: 4px; }
 .visual-wood { background: linear-gradient(135deg, #875a32, #d8b382); }
 .visual-led { background: repeating-linear-gradient(90deg, #071d34 0 8px, #0b3158 8px 16px); }
 .visual-print { background: linear-gradient(135deg, #0c7ed9, #f6f8fb 55%, #ef9a2d); }

@@ -2,7 +2,7 @@ import { company, products } from "./dmdnp-data";
 
 // Company pages are data-driven so non-developers can update text, specs, and links in one place.
 export const companyPages = [
-  { href: "/company", label: "회사 개요", title: "다양한 사인 제품을 직접 만드는 대명DnP", description: "상담, 디자인, 출력, 가공, 제작, 검수와 출고까지 한 흐름으로 관리합니다." },
+  { href: "/company", label: "회사 개요", title: "다양한 사인 제품을 직접 만드는 대명DnP", description: `${company.name}는 ${company.since} 설립 이후 인천 남동공단 제작시설을 기반으로 다양한 사인 제품을 직접 제작해 온 사인 제품 제조업체입니다.` },
   { href: "/company/greeting", label: "대표 인사말", title: "대표 인사말", description: "2002년부터 현장에서 쌓아온 경험으로 필요한 사인 제품을 책임 있게 안내합니다." },
   { href: "/company/history", label: "주요 연혁", title: "대명DnP가 걸어온 길", description: "확인된 내용은 연도와 함께, 확인이 필요한 항목은 별도 표시로 정리했습니다." },
   { href: "/company/business", label: "제작 분야", title: "공간에 맞는 사인 제품을 직접 제작합니다", description: "목재, 아크릴, 금속, LED, 출력물까지 용도에 맞게 제안합니다." },

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPin, MessageCircle, Settings, ShieldCheck } from "lucide-react";
 import { VisualBlock } from "@/components/site-shell";
 import { CompanyCta, CompanyPageFrame, CompanyTabs } from "@/components/company-shell";
+import { CompanyIntroVideo } from "@/components/company-intro-video";
 import { businessAreas, companyHistory, companyIntro, companyStats, facilities, locationInfo, qualityNotes, qualitySteps } from "@/lib/company-data";
 import { company } from "@/lib/dmdnp-data";
 
@@ -15,18 +16,7 @@ export function CompanyOverview() {
             <h2>대명DnP 회사 소개</h2>
             <p>대명DnP는 2002년 설립 이후 인천 남동공단 제작시설을 기반으로 다양한 사인 제품을 직접 제작해 온 사인 제품 제조업체입니다.</p>
           </div>
-          <div className="company-intro-video-frame">
-            <video
-              src="/dmdnp-assets/company-intro-video-20260902.mp4"
-              aria-label="대명DnP 제작시설과 사인 제품 제작 현장 영상"
-              autoPlay
-              muted
-              loop
-              controls
-              playsInline
-              preload="auto"
-            />
-          </div>
+          <CompanyIntroVideo />
         </div>
       </section>
       <section className="section ivory"><div className="site-container"><div className="company-stat-grid">{companyStats.map((item) => <article key={item.title}><strong>{item.title}</strong><p>{item.text}</p></article>)}</div></div></section>

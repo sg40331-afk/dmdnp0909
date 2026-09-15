@@ -294,8 +294,14 @@ textarea { min-height: 140px; resize: vertical; }
 .company-intro-copy { max-width: 980px; }
 .company-intro-copy h2 { margin: 0 0 12px; font-size: clamp(30px, 3vw, 42px); word-break: keep-all; }
 .company-intro-copy p { margin: 0; color: #25313A; font-size: clamp(18px, 1.7vw, 22px); line-height: 1.75; word-break: keep-all; }
-.company-intro-video-frame { overflow: hidden; border-radius: 10px; background: #dce5ec; box-shadow: 0 20px 45px rgba(9,42,67,.12); }
+.company-intro-video-frame { position: relative; overflow: hidden; border-radius: 10px; background: #dce5ec; box-shadow: 0 20px 45px rgba(9,42,67,.12); }
 .company-intro-video-frame video { display: block; width: 100%; aspect-ratio: 16 / 9; max-height: 720px; object-fit: cover; object-position: center center; background: #092A43; }
+.video-sound-button { position: absolute; left: 50%; bottom: clamp(22px, 4vw, 44px); z-index: 2; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 62px; padding: 0 30px; border: 2px solid rgba(255,255,255,.92); border-radius: 999px; background: #F47A20; color: #fff; font-size: 20px; font-weight: 900; box-shadow: 0 18px 38px rgba(9,42,67,.28); transform: translateX(-50%); cursor: pointer; transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
+.video-sound-button:hover { background: #dc6816; transform: translate(-50%, -2px); box-shadow: 0 22px 46px rgba(9,42,67,.34); }
+.video-sound-button:focus-visible { outline: 4px solid rgba(19,115,232,.35); outline-offset: 4px; }
+.video-sound-button svg { width: 26px; height: 26px; }
+.video-sound-note { margin: 16px 0 0; color: #59656E; font-size: 17px; font-weight: 700; line-height: 1.55; text-align: center; word-break: keep-all; }
+.video-sound-note strong { color: var(--orange); }
 .company-intro-grid, .greeting-grid, .location-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; align-items: start; }
 .company-stat-grid, .company-link-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .company-stat-grid article { padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: var(--shadow); }
@@ -500,6 +506,9 @@ textarea { min-height: 140px; resize: vertical; }
   .faq-list details > p { margin: 0 14px 16px; padding: 16px; font-size: 16px; }
   .quote-cta { display: block; padding: 38px 20px; }
   .quote-cta h2 { font-size: 28px; }
+  .video-sound-button { min-height: 54px; padding: 0 22px; font-size: 17px; }
+  .video-sound-button svg { width: 22px; height: 22px; }
+  .video-sound-note { font-size: 15px; }
   .button { width: 100%; }
   .copyright { display: block; }
 }

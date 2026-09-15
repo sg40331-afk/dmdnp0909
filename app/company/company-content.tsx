@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MessageCircle, Settings, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, ClipboardCheck, FileSearch, MessageCircle, PackageCheck, Palette, Ruler, ScanLine, Settings, ShieldCheck, Truck } from "lucide-react";
 import { VisualBlock } from "@/components/site-shell";
 import { CompanyCta, CompanyPageFrame, CompanyTabs } from "@/components/company-shell";
 import { CompanyIntroVideo } from "@/components/company-intro-video";
 import { businessAreas, companyHistory, companyIntro, companyStats, facilities, qualityNotes, qualitySteps } from "@/lib/company-data";
 import { company } from "@/lib/dmdnp-data";
+
+const qualityIcons = [ClipboardCheck, FileSearch, Palette, ScanLine, Settings, ShieldCheck, PackageCheck, Truck] as const;
 
 export function CompanyOverview() {
   return (
@@ -111,7 +113,30 @@ export function CompanyFacilities() {
 export function CompanyQuality() {
   return (
     <CompanyPageFrame currentPath="/company/quality">
-      <section className="section"><div className="site-container quality-grid">{qualitySteps.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><CheckCircle2 /><h2>{item.title}</h2><p>{item.text}</p></article>)}</div></section>
+      <section className="section quality-flow-section">
+        <div className="site-container">
+          <div className="quality-flow-heading">
+            <p className="kicker">QUALITY PROCESS</p>
+            <h2>제작 전후 8단계 품질관리</h2>
+            <p>상담 내용 확인부터 포장과 출고까지 단계별로 꼼꼼하게 점검합니다.</p>
+          </div>
+          <div className="quality-grid">
+            {qualitySteps.map((item, index) => {
+              const Icon = qualityIcons[index] ?? CheckCircle2;
+              return (
+                <article key={item.title}>
+                  <span className="quality-number">{String(index + 1).padStart(2, "0")}</span>
+                  <div className="quality-icon"><Icon /></div>
+                  <div>
+                    <h2>{item.title}</h2>
+                    <p>{item.text}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
       <section className="section ivory"><div className="site-container"><h2>제작 전후 확인 기준</h2><div className="grid-2">{qualityNotes.map((item) => <article className="notice" key={item}>{item}</article>)}</div></div></section>
     </CompanyPageFrame>
   );

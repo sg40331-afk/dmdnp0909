@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, CheckCircle2, Eye, Factory, MessageCircle, PenTool, Printer, Settings, ShieldCheck, Truck, Wrench } from "lucide-react";
 import { faqs, portfolioItems, products } from "@/lib/dmdnp-data";
-import { facilities } from "@/lib/company-data";
 import { QuoteCta, SiteFooter, SiteHeader } from "@/components/site-shell";
 
 const productCards = [
@@ -47,6 +46,17 @@ const process = [
   [Settings, "직접 제작", "자체 장비로 출력·가공합니다."],
   [ShieldCheck, "검수·후가공", "마감과 수량을 확인합니다."],
   [Truck, "출고·설치", "납품과 설치 상담을 이어갑니다."],
+] as const;
+
+const equipmentItems = [
+  [Printer, "UV 평판프린터", "아크릴·금속·목재 평판 소재 직접 출력"],
+  [Printer, "대형 실사출력기", "현수막·배너·대형 홍보물 출력"],
+  [Wrench, "철판 절곡기", "금속 판재 접힘과 형태 가공"],
+  [Settings, "3D 프린터", "입체 부품과 샘플 제작"],
+  [Factory, "파이버레이저", "금속 절단과 정밀 가공"],
+  [Factory, "CO2 레이저", "아크릴·목재 절단과 각인"],
+  [Settings, "채널벤딩기", "채널 문자 사인 성형"],
+  [Wrench, "글자커팅기", "시트 문자와 그래픽 커팅"],
 ] as const;
 
 const trustStats = [
@@ -177,13 +187,22 @@ export default function Home() {
             </div>
             <div className="equipment-layout">
               <div className="equipment-main">
-                <Image src="/dmdnp-assets/uv-print.png" alt="UV 평판프린터 작업 장면" fill sizes="(max-width: 980px) 100vw, 42vw" />
+                <video
+                  className="equipment-video"
+                  src="/dmdnp-assets/equipment-workshop-0916.mp4"
+                  aria-label="대명DnP 제작 장비와 작업 현장을 보여주는 영상"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
               </div>
               <div className="equipment-list">
-                {facilities.slice(0, 6).map((item, i) => (
-                  <article key={item.name}>
-                    {i === 0 ? <Printer /> : i === 1 ? <Factory /> : i === 2 ? <Settings /> : i === 3 ? <Printer /> : i === 4 ? <Wrench /> : <Factory />}
-                    <div><h3>{item.name}</h3><p>{item.function}</p></div>
+                {equipmentItems.map(([Icon, name, description]) => (
+                  <article key={name}>
+                    <Icon />
+                    <div><h3>{name}</h3><p>{description}</p></div>
                   </article>
                 ))}
               </div>

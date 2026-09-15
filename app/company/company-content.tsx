@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MapPin, MessageCircle, Settings, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle, Settings, ShieldCheck } from "lucide-react";
 import { VisualBlock } from "@/components/site-shell";
 import { CompanyCta, CompanyPageFrame, CompanyTabs } from "@/components/company-shell";
 import { CompanyIntroVideo } from "@/components/company-intro-video";
-import { businessAreas, companyHistory, companyIntro, companyStats, facilities, locationInfo, qualityNotes, qualitySteps } from "@/lib/company-data";
+import { businessAreas, companyHistory, companyIntro, companyStats, facilities, qualityNotes, qualitySteps } from "@/lib/company-data";
 import { company } from "@/lib/dmdnp-data";
 
 export function CompanyOverview() {
@@ -120,7 +120,49 @@ export function CompanyQuality() {
 export function CompanyLocation() {
   return (
     <CompanyPageFrame currentPath="/company/location">
-      <section className="section"><div className="site-container location-grid"><div className="map-placeholder"><MapPin /><strong>지도 연결 준비 중</strong><p>네이버지도, 카카오맵 또는 구글지도 링크 등록 후 새 창 연결이 필요합니다.</p></div><div className="detail-panel"><h2>방문 안내</h2><ul className="plain-list">{locationInfo.map(([label, value]) => <li key={label}><strong>{label}: </strong>{value}</li>)}</ul><h3>대중교통 이용 안내</h3><p>정확한 노선 정보는 주소 확인 후 입력합니다.</p><h3>차량 방문·주차 안내</h3><p>방문 전 연락 후 주차 가능 여부와 출입 동선을 확인해 주세요.</p><div className="hero-actions"><Link className="button button-blue" href="/contact">맞춤 견적문의</Link><Link className="button button-outline" href="/contact">전화 상담</Link><Link className="button button-outline" href="/contact" target="_blank">길찾기</Link></div></div></div></section>
+      <section className="section">
+        <div className="site-container company-location-page">
+          <div className="google-map-frame">
+            <iframe
+              title="대명DnP 구글 지도"
+              src="https://www.google.com/maps?q=%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%82%A8%EB%8F%99%EA%B5%AC%20%ED%98%B8%EA%B5%AC%ED%8F%AC%EB%A1%9C%2050%20%EC%97%98%EC%95%84%EC%9D%B4%EC%A7%80%EC%8B%9D%EC%82%B0%EC%97%85%EC%84%BC%ED%84%B0&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+
+          <div className="location-info-panel">
+            <div className="location-address-card">
+              <p className="kicker">LOCATION</p>
+              <h2>대명DnP 오시는 길</h2>
+              <dl>
+                <dt>주소</dt>
+                <dd>인천광역시 남동구 호구포로 50<br />엘아이지식산업센터 5층 514호 대명DnP</dd>
+              </dl>
+            </div>
+
+            <div className="route-guide-list">
+              <article>
+                <h3>전철 이용 시</h3>
+                <p>수인분당선 호구포역 2번 출구로 나오신 후, 택시 또는 버스를 이용하시면 편리합니다.</p>
+                <p>호구포역에서 택시로 약 5분 거리이며, 도보로 이동할 경우 약 15~20분 정도 소요됩니다. 엘아이지식산업센터에 도착하신 후 엘리베이터를 이용해 5층 514호로 오시면 됩니다.</p>
+              </article>
+              <article>
+                <h3>버스 이용 시</h3>
+                <p>인천 시내버스 16-1번을 이용해 ‘엘아이지식산업센터’ 정류장에서 하차해 주세요.</p>
+                <p>정류장에서 엘아이지식산업센터까지 가까우며, 건물 안으로 들어오신 후 엘리베이터를 이용해 5층 514호 대명DnP로 오시면 됩니다.</p>
+              </article>
+              <article>
+                <h3>승용차 이용 시</h3>
+                <p>내비게이션에 ‘엘아이지식산업센터’ 또는 ‘인천광역시 남동구 호구포로 50’을 검색해 주세요.</p>
+                <p>건물 내 주차장을 이용할 수 있습니다. 주차 후 엘리베이터를 타고 5층 514호로 오시면 됩니다.</p>
+              </article>
+              <p className="route-guide-note">※ 버스 노선과 운행 시간은 변경될 수 있으므로 방문 전에 지도 또는 인천버스정보시스템에서 확인해 주세요.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </CompanyPageFrame>
   );
 }

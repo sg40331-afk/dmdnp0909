@@ -359,6 +359,21 @@ textarea { min-height: 140px; resize: vertical; }
 .map-placeholder { min-height: 420px; display: grid; place-items: center; align-content: center; gap: 12px; padding: 30px; border: 1px dashed #9ac7ff; border-radius: 8px; background: linear-gradient(135deg, #eef7ff, #fff); text-align: center; color: var(--navy); }
 .map-placeholder svg { color: var(--blue); width: 46px; height: 46px; }
 .map-placeholder strong { font-size: 28px; }
+.company-location-page { display: grid; gap: 34px; }
+.google-map-frame { overflow: hidden; min-height: 520px; border: 1px solid var(--line); border-radius: 10px; background: #edf4f8; box-shadow: 0 20px 45px rgba(9,42,67,.1); }
+.google-map-frame iframe { display: block; width: 100%; height: 520px; border: 0; }
+.location-info-panel { display: grid; grid-template-columns: .75fr 1.25fr; gap: 24px; align-items: start; }
+.location-address-card, .route-guide-list { border: 1px solid var(--line); border-radius: 10px; background: #fff; box-shadow: var(--shadow); }
+.location-address-card { padding: 30px; }
+.location-address-card h2 { margin: 0 0 22px; font-size: clamp(28px, 3vw, 40px); word-break: keep-all; }
+.location-address-card dl { margin: 0; }
+.location-address-card dt { margin-bottom: 8px; color: var(--blue); font-weight: 900; }
+.location-address-card dd { margin: 0; color: #25313A; font-size: 19px; line-height: 1.75; font-weight: 800; word-break: keep-all; }
+.route-guide-list { display: grid; gap: 0; overflow: hidden; }
+.route-guide-list article { padding: 26px 30px; border-bottom: 1px solid var(--line); }
+.route-guide-list h3 { margin: 0 0 12px; color: var(--navy); font-size: 22px; word-break: keep-all; }
+.route-guide-list p { margin: 8px 0 0; color: #485866; line-height: 1.75; word-break: keep-all; }
+.route-guide-note { margin: 0; padding: 22px 30px; color: #5b6d7b; background: #F5F7F8; font-size: 15px; line-height: 1.65; word-break: keep-all; }
 .company-cta .button-light { border: 1px solid rgba(255,255,255,.5); }
 .site-footer { background: var(--navy); color: #c8d6e3; padding: 54px 0 24px; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.45fr; gap: 34px; }
@@ -474,6 +489,12 @@ textarea { min-height: 140px; resize: vertical; }
   .facility-card dl { grid-template-columns: 1fr; }
   .facility-image { min-height: 190px; }
   .map-placeholder { min-height: 300px; }
+  .google-map-frame { min-height: 340px; }
+  .google-map-frame iframe { height: 340px; }
+  .location-info-panel { grid-template-columns: 1fr; }
+  .location-address-card, .route-guide-list article, .route-guide-note { padding: 22px; }
+  .location-address-card dd { font-size: 17px; }
+  .route-guide-list h3 { font-size: 20px; }
   .one-stop-heading { margin-bottom: 24px; }
   .one-stop-heading .kicker::before, .one-stop-heading .kicker::after { width: 24px; }
   .one-stop-card { padding: 22px 16px; }

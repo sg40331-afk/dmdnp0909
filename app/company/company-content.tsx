@@ -19,9 +19,12 @@ export function CompanyOverview() {
             <video
               src="/dmdnp-assets/company-intro-video-20260902.mp4"
               aria-label="대명DnP 제작시설과 사인 제품 제작 현장 영상"
+              autoPlay
+              muted
+              loop
               controls
               playsInline
-              preload="metadata"
+              preload="auto"
             />
           </div>
         </div>

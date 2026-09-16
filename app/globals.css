@@ -333,16 +333,20 @@ textarea { min-height: 140px; resize: vertical; }
 .ceo-values svg { width: 48px; height: 48px; color: var(--blue); }
 .ceo-values h2 { margin: 0 0 7px; font-size: 23px; }
 .ceo-values p { margin: 0; color: #415672; word-break: keep-all; }
-.history-board { max-width: 980px; }
-.history-group { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 34px; padding: 28px 0; border-top: 1px dotted #9ba7b5; }
+.history-board { position: relative; max-width: 1040px; padding: 18px 0 18px 54px; }
+.history-board::before { content: ""; position: absolute; left: 18px; top: 12px; bottom: 12px; width: 10px; border-radius: 999px; background: linear-gradient(180deg, var(--navy) 0%, var(--blue) 48%, #F47A20 100%); box-shadow: 0 18px 40px rgba(9,42,67,.18); }
+.history-board::after { content: "DAEMYUNG DnP HISTORY"; position: absolute; left: -40px; top: 50%; color: rgba(9,42,67,.1); font-size: 12px; font-weight: 900; letter-spacing: .32em; transform: rotate(-90deg) translateX(-50%); transform-origin: left top; white-space: nowrap; }
+.history-group { position: relative; display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 34px; padding: 26px 0; border-top: 1px solid #e2e9ef; }
 .history-group:first-child { padding-top: 0; border-top: 0; }
-.history-group h2 { margin: 0; color: #111827; font-size: 29px; font-weight: 900; line-height: 1.1; }
+.history-group::before { content: ""; position: absolute; left: -43px; top: 32px; width: 24px; height: 24px; border: 5px solid #fff; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 2px #cfe4ff, 0 12px 24px rgba(19,115,232,.22); }
+.history-group:first-child::before { top: 5px; background: #F47A20; box-shadow: 0 0 0 2px #ffe1c8, 0 12px 24px rgba(244,122,32,.22); }
+.history-group h2 { display: inline-flex; align-items: center; justify-content: center; width: fit-content; min-width: 118px; min-height: 48px; margin: 0; padding: 0 18px; border-radius: 999px; color: #fff; background: var(--navy); font-size: 24px; font-weight: 900; line-height: 1.1; box-shadow: 0 12px 28px rgba(9,42,67,.14); }
 .history-items { display: grid; gap: 12px; }
-.history-items article { display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 16px; align-items: start; }
-.history-items time { min-height: 28px; padding: 7px 10px; background: #8b929b; color: #fff; font-size: 13px; font-weight: 900; line-height: 1; letter-spacing: .08em; text-align: center; white-space: nowrap; }
-.history-items article:first-child time { background: #111827; }
-.history-items h3 { margin: 0 0 5px; color: var(--navy); font-size: 18px; line-height: 1.35; }
-.history-items p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.history-items article { display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 16px; align-items: start; padding: 14px 16px; border: 1px solid #dce6ee; border-radius: 10px; background: linear-gradient(145deg, #fff 0%, #f8fbfd 100%); box-shadow: 0 12px 28px rgba(9,42,67,.07); }
+.history-items time { min-height: 30px; padding: 8px 10px; border-radius: 999px; background: #95a2ad; color: #fff; font-size: 12px; font-weight: 900; line-height: 1; letter-spacing: .08em; text-align: center; white-space: nowrap; }
+.history-items article:first-child time { background: var(--blue); }
+.history-items h3 { margin: 0 0 5px; color: var(--navy); font-size: 18px; line-height: 1.35; word-break: keep-all; }
+.history-items p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; word-break: keep-all; }
 .business-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .business-card h2, .facility-card h2 { font-size: 21px; }
 .card-actions { display: grid; gap: 8px; margin-top: 14px; }
@@ -500,8 +504,13 @@ textarea { min-height: 140px; resize: vertical; }
   .ceo-signature { flex-wrap: wrap; }
   .ceo-values article { grid-template-columns: 56px minmax(0, 1fr); padding: 22px; }
   .ceo-values svg { width: 42px; height: 42px; }
+  .history-board { padding-left: 34px; }
+  .history-board::before { left: 8px; width: 8px; }
+  .history-board::after { display: none; }
   .history-group { grid-template-columns: 1fr; gap: 14px; padding: 24px 0; }
-  .history-group h2 { font-size: 25px; }
+  .history-group::before { left: -36px; top: 29px; width: 20px; height: 20px; border-width: 4px; }
+  .history-group:first-child::before { top: 4px; }
+  .history-group h2 { min-height: 42px; font-size: 22px; }
   .history-items article { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; }
   .history-items time { padding-inline: 8px; font-size: 12px; }
   .facility-card dl { grid-template-columns: 1fr; }

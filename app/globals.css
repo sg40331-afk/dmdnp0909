@@ -340,7 +340,7 @@ textarea { min-height: 140px; resize: vertical; }
 .history-group:first-child { padding-top: 0; border-top: 0; }
 .history-group::before { content: ""; position: absolute; left: -43px; top: 32px; width: 24px; height: 24px; border: 5px solid #fff; border-radius: 50%; background: #8fbce5; box-shadow: 0 0 0 2px #d8e8f6, 0 12px 24px rgba(42,97,143,.14); }
 .history-group:first-child::before { top: 5px; background: #eeb98f; box-shadow: 0 0 0 2px #f8dfcc, 0 12px 24px rgba(176,105,51,.14); }
-.history-group h2 { display: inline-flex; align-items: center; justify-content: center; width: 132px; min-height: 48px; margin: 0; padding: 0 18px; border: 1px solid #c9d7e3; border-radius: 999px; color: var(--navy); background: #f5f9fc; font-size: 24px; font-weight: 900; line-height: 1.1; box-shadow: 0 12px 28px rgba(9,42,67,.08); }
+.history-group h2 { display: inline-flex; align-items: center; justify-content: center; width: 132px; min-height: 46px; margin: 0; padding: 0 18px; border: 1px solid #c9d7e3; border-radius: 8px; color: var(--navy); background: #f5f9fc; font-size: 24px; font-weight: 900; line-height: 1.1; box-shadow: 0 12px 28px rgba(9,42,67,.08); }
 .history-items { display: grid; gap: 12px; }
 .history-items article { display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 16px; align-items: start; padding: 14px 16px; border: 1px solid #dce6ee; border-radius: 10px; background: linear-gradient(145deg, #fff 0%, #f8fbfd 100%); box-shadow: 0 12px 28px rgba(9,42,67,.07); }
 .history-items time { min-height: 30px; padding: 8px 10px; border-radius: 999px; background: #95a2ad; color: #fff; font-size: 12px; font-weight: 900; line-height: 1; letter-spacing: .08em; text-align: center; white-space: nowrap; }

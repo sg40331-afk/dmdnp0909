@@ -1,4 +1,4 @@
-export const siteUrl = "https://dmdnp.co.kr";
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://dmdnp.co.kr").replace(/\/$/, "");
 
 export const company = {
   name: "대명DnP",
@@ -7,7 +7,7 @@ export const company = {
   region: "인천광역시 남동구",
   serviceArea: "인천 및 수도권",
   domain: "dmdnp.co.kr",
-  address: "인천 남동구 호구포로 50 엘아이지식산업센타 514",
+  address: "인천광역시 남동구 호구포로 50 엘아이지식산업센터 514호",
   phone: "032-428-4033 / 010-5201-7977",
   email: "sg4033@hanmail.net",
   kakao: "[추후 입력: 카카오톡 상담 주소]",

@@ -1,5 +1,14 @@
+import { Metadata } from "next";
 import { company, products } from "@/lib/dmdnp-data";
 import { PageHero, SiteFooter, SiteHeader } from "@/components/site-shell";
+import { BreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "문의하기",
+  description: "대명DnP 사인 제품 제작 견적 문의, 전화 상담, 이메일과 방문 주소를 확인하세요.",
+  alternates: { canonical: "/contact" },
+  openGraph: { title: "대명DnP 문의하기", description: "필요한 사인 제품 제작 상담을 문의하세요.", url: "/contact" },
+};
 
 export default function ContactPage() {
   return (
@@ -24,6 +33,7 @@ export default function ContactPage() {
             </form>
           </div>
         </section>
+        <BreadcrumbJsonLd items={[{ name: "홈", href: "/" }, { name: "문의하기", href: "/contact" }]} />
       </main>
       <SiteFooter />
     </>

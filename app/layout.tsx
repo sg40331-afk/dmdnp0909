@@ -1,43 +1,72 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { company, siteUrl } from "@/lib/dmdnp-data";
+import { absoluteUrl, defaultSeoDescription, defaultSeoTitle, localBusinessJsonLd, ogImagePath, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
+
+const ogImageUrl = absoluteUrl(ogImagePath);
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "대명DnP | 사인 제품 직접 제작 전문업체",
+    default: defaultSeoTitle,
     template: "%s | 대명DnP",
   },
-  description: "인천 남동구의 대명DnP는 나무현판, 아크릴 안내판, LED 전광판, UV 평판인쇄, 실사출력, 촉지도와 점자안내판을 상담부터 제작까지 진행합니다.",
+  description: defaultSeoDescription,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "대명DnP 공식 홈페이지",
-    description: "다양한 사인 제품을 한곳에서 직접 제작합니다.",
+    title: defaultSeoTitle,
+    description: defaultSeoDescription,
     url: siteUrl,
     siteName: company.name,
     locale: "ko_KR",
     type: "website",
+    images: [
+      {
+        url: ogImageUrl,
+        type: "image/svg+xml",
+        width: 1200,
+        height: 630,
+        alt: "대명DnP 간판 LED전광판 UV인쇄 사인 제품 제작 안내 이미지",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultSeoTitle,
+    description: defaultSeoDescription,
+    images: [{ url: ogImageUrl, alt: "대명DnP 간판 LED전광판 UV인쇄 사인 제품 제작 안내 이미지" }],
+  },
+  other: {
+    "og:image:secure_url": ogImageUrl,
+    "og:image:type": "image/svg+xml",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:alt": "대명DnP 간판 LED전광판 UV인쇄 사인 제품 제작 안내 이미지",
+    "twitter:image:alt": "대명DnP 간판 LED전광판 UV인쇄 사인 제품 제작 안내 이미지",
   },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: company.name,
-    url: siteUrl,
-    founder: company.representative,
-    foundingDate: "2002",
-    areaServed: company.serviceArea,
-    address: company.address,
-  };
-
   return (
     <html lang="ko">
       <body>
         {children}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+        {gaMeasurementId ? (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} strategy="afterInteractive" />
+            <Script id="ga4" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${gaMeasurementId}');`}
+            </Script>
+          </>
+        ) : null}
       </body>
     </html>
   );

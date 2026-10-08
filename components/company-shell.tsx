@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { company } from "@/lib/dmdnp-data";
 import { companyMenuPages, companyPages } from "@/lib/company-data";
+import { BreadcrumbJsonLd } from "@/lib/seo";
 
 export function CompanyHero({ currentPath, title, description }: { currentPath: string; title: string; description: string }) {
   const current = companyPages.find((item) => item.href === currentPath);
@@ -34,32 +35,23 @@ export function CompanyTabs({ currentPath }: { currentPath: string }) {
 
 export function CompanyPageFrame({ currentPath, children }: { currentPath: string; children: React.ReactNode }) {
   const page = companyPages.find((item) => item.href === currentPath) ?? companyPages[0];
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "홈", item: "/" },
-      { "@type": "ListItem", position: 2, name: "회사소개", item: "/company" },
-      { "@type": "ListItem", position: 3, name: page.label, item: page.href },
-    ],
-  };
-  const companyJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: company.name,
-    founder: company.representative,
-    foundingDate: "2002",
-    address: company.address,
-    areaServed: company.serviceArea,
-    url: company.domain,
-  };
+  const breadcrumbItems =
+    currentPath === "/company"
+      ? [
+          { name: "홈", href: "/" },
+          { name: "회사소개", href: "/company" },
+        ]
+      : [
+          { name: "홈", href: "/" },
+          { name: "회사소개", href: "/company" },
+          { name: page.label, href: page.href },
+        ];
   return (
     <>
       <CompanyHero currentPath={currentPath} title={page.title} description={page.description} />
       {children}
       <CompanyCta />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(companyJsonLd) }} />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
     </>
   );
 }

@@ -1,5 +1,14 @@
+import { Metadata } from "next";
 import { MessageCircle, PenTool, Settings, Truck, Wrench } from "lucide-react";
 import { PageHero, QuoteCta, SiteFooter, SiteHeader } from "@/components/site-shell";
+import { BreadcrumbJsonLd } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "제작과정",
+  description: "대명DnP의 상담, 디자인 시안, 직접 제작, 검수, 출고와 설치 상담 과정을 확인하세요.",
+  alternates: { canonical: "/process" },
+  openGraph: { title: "대명DnP 제작과정", description: "기획부터 제작·출력·가공까지 원스톱 제작 과정을 확인하세요.", url: "/process" },
+};
 
 const steps = [
   [MessageCircle, "상담·설계", "용도와 설치 공간을 확인합니다."],
@@ -17,6 +26,7 @@ export default function ProcessPage() {
         <PageHero kicker="PROCESS" title="기획부터 제작·출력·가공까지 원스톱" text="상담부터 납품까지 같은 기준으로 관리해 결과물의 완성도를 높입니다." />
         <section className="section"><div className="site-container process-row">{steps.map(([Icon, title, text]) => <article className="process-step" key={title}><Icon /><strong>{title}</strong><small>{text}</small></article>)}</div></section>
         <QuoteCta />
+        <BreadcrumbJsonLd items={[{ name: "홈", href: "/" }, { name: "제작과정", href: "/process" }]} />
       </main>
       <SiteFooter />
     </>

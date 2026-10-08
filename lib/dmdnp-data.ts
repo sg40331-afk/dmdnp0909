@@ -11,7 +11,7 @@ export const company = {
   address: "인천광역시 남동구 호구포로 50 엘아이지식산업센터 514호",
   phone: "032-428-4033 / 010-5201-7977",
   email: "sg4033@hanmail.net",
-  kakao: "[추후 입력: 카카오톡 상담 주소]",
+  kakao: "http://pf.kakao.com/_fgxjFX/chat",
   hours: "[09:00~18:00]",
   businessNumber: "[137-01-83805]",
   sns: "[추후 입력: SNS 주소]",

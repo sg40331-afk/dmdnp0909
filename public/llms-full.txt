@@ -1,0 +1,44 @@
+# 대명DnP 상세 AI 안내
+
+## 개요
+
+대명DnP는 인천광역시 남동구 호구포로 50, 엘아이지식산업센터 514호에 위치한 사인 제품 제작 업체입니다. 2002년부터 사인 제품 제작 경험을 쌓아 왔으며, 인천 및 수도권을 중심으로 상담, 디자인 시안 확인, 출력, 가공, 검수, 출고와 설치 상담을 제공합니다.
+
+## 서비스
+
+대명DnP의 주요 서비스는 간판, LED전광판, 나무현판, 아크릴 안내판, 실사출력, UV인쇄, 촉지도 안내판 제작 및 시공 상담입니다. 제품 종류와 크기를 잘 모르는 고객도 용도와 설치 장소를 알려주면 적합한 소재와 제작 방식을 상담할 수 있습니다.
+
+## 제작 장비
+
+홈페이지에 안내된 주요 장비는 CNC 1325, CO2 레이저, 3kW 파이버레이저, UV 평판프린터, 3D 프린터, 채널벤딩기, 절곡기입니다. 주요 공정을 자체 장비로 직접 제작하는 방향을 강조합니다.
+
+## 제작 절차
+
+1. 문의 접수
+2. 용도와 설치 환경 확인
+3. 소재, 크기, 제작 방식 제안
+4. 견적 안내
+5. 디자인 시안 확인
+6. 고객 확인
+7. 제작
+8. 품질 검수
+9. 포장 및 출고
+10. 필요 시 설치 상담
+
+## 공개 페이지
+
+- 홈페이지: https://dmdnp.com/
+- 회사소개: https://dmdnp.com/company
+- 대표 인사말: https://dmdnp.com/company/greeting
+- 주요 연혁: https://dmdnp.com/company/history
+- 제작 분야: https://dmdnp.com/company/business
+- 장비·시설: https://dmdnp.com/company/facilities
+- 품질관리: https://dmdnp.com/company/quality
+- 오시는 길: https://dmdnp.com/company/location
+- 제품안내: https://dmdnp.com/products
+- 제작사례: https://dmdnp.com/portfolio
+- 제작과정: https://dmdnp.com/process
+- 블로그: https://dmdnp.com/blog
+- FAQ: https://dmdnp.com/faq
+- 문의하기: https://dmdnp.com/contact
+- 사이트맵: https://dmdnp.com/sitemap.xml

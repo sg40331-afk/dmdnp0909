@@ -1,4 +1,4 @@
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://dmdnp.co.kr").replace(/\/$/, "");
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://dmdnp.com").replace(/\/$/, "");
 
 export const company = {
   name: "대명DnP",
@@ -6,7 +6,7 @@ export const company = {
   since: "2002년",
   region: "인천광역시 남동구",
   serviceArea: "인천 및 수도권",
-  domain: "dmdnp.co.kr",
+  domain: "dmdnp.com",
   address: "인천광역시 남동구 호구포로 50 엘아이지식산업센터 514호",
   phone: "032-428-4033 / 010-5201-7977",
   email: "sg4033@hanmail.net",

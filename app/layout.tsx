@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     images: [{ url: ogImageUrl, alt: "대명DnP 간판 LED전광판 UV인쇄 사인 제품 제작 안내 이미지" }],
   },
   other: {
+    "naver-site-verification": "6fd889452175153f8c66f542e68a1a624c660267",
     "og:image:secure_url": ogImageUrl,
     "og:image:type": "image/png",
     "og:image:width": "1200",

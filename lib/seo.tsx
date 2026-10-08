@@ -5,7 +5,7 @@ export const defaultSeoTitle = "대명DnP | 간판·LED전광판·UV인쇄 전�
 export const defaultSeoDescription =
   "인천·수도권 간판, LED전광판, 나무현판, 아크릴 안내판, 실사출력, UV인쇄, 촉지도 안내판을 직접 제작·시공하는 대명DnP입니다.";
 
-export const ogImagePath = "/dmdnp-assets/og-image.svg";
+export const ogImagePath = "/dmdnp-assets/og-image.png";
 
 export function absoluteUrl(path = "/") {
   if (/^https?:\/\//.test(path)) return path;

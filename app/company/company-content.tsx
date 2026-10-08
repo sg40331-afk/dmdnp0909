@@ -16,7 +16,7 @@ export function CompanyOverview() {
         <div className="site-container company-intro-video-section">
           <div className="company-intro-copy">
             <h2>대명DnP 회사 소개</h2>
-            <p>대명DnP는 2002년 설립 이후 인천 남동공단 제작시설을 기반으로 다양한 사인 제품을 직접 제작해 온 사인 제품 제조업체입니다.</p>
+            <p>대명DnP는 대명디앤피, 대명dnp, 대명D&amp;P로도 찾는 2002년 설립 사인 제품 제조업체입니다. 인천 남동공단 제작시설을 기반으로 다양한 사인 제품을 직접 제작해 왔습니다.</p>
           </div>
           <CompanyIntroVideo />
         </div>

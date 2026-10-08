@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     template: "%s | 대명DnP",
   },
   description: defaultSeoDescription,
+  keywords: ["대명DnP", "대명디앤피", "대명dnp", "대명D&P", "대명 D&P", "인천 간판", "인천 LED전광판", "UV인쇄", "나무현판", "아크릴 안내판"],
   alternates: { canonical: "/" },
   openGraph: {
     title: defaultSeoTitle,

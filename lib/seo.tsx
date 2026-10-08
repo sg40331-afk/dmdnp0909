@@ -1,9 +1,9 @@
 import { company, siteUrl } from "@/lib/dmdnp-data";
 
-export const defaultSeoTitle = "대명DnP | 간판·LED전광판·UV인쇄 전문 제작";
+export const defaultSeoTitle = "대명DnP | 대명디앤피 간판·LED전광판·UV인쇄 전문 제작";
 
 export const defaultSeoDescription =
-  "인천·수도권 간판, LED전광판, 나무현판, 아크릴 안내판, 실사출력, UV인쇄, 촉지도 안내판을 직접 제작·시공하는 대명DnP입니다.";
+  "대명DnP는 대명디앤피, 대명dnp, 대명D&P로도 찾는 인천·수도권 간판, LED전광판, 나무현판, 아크릴 안내판, 실사출력, UV인쇄 전문 제작 업체입니다.";
 
 export const ogImagePath = "/dmdnp-assets/og-image.png";
 
@@ -34,6 +34,7 @@ export const localBusinessJsonLd = {
   "@type": "LocalBusiness",
   "@id": `${siteUrl}/#localbusiness`,
   name: company.name,
+  alternateName: company.aliases,
   url: siteUrl,
   image: absoluteUrl(ogImagePath),
   founder: company.representative,
@@ -55,6 +56,7 @@ export const websiteJsonLd = {
   "@type": "WebSite",
   "@id": `${siteUrl}/#website`,
   name: company.name,
+  alternateName: company.aliases,
   url: siteUrl,
   inLanguage: "ko-KR",
   publisher: { "@id": `${siteUrl}/#localbusiness` },

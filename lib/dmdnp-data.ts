@@ -2,6 +2,7 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://dmdnp.com")
 
 export const company = {
   name: "대명DnP",
+  aliases: ["대명디앤피", "대명dnp", "대명D&P"],
   representative: "이태윤",
   since: "2002년",
   region: "인천광역시 남동구",

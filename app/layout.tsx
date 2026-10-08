@@ -41,6 +41,7 @@ export const metadata: Metadata = {
   },
   other: {
     "naver-site-verification": "6fd889452175153f8c66f542e68a1a624c660267",
+    "google-site-verification": "tBSzaTv7bhEB5nOOZDfWox6FZmBp5hw-cRBdfLhV8z0",
     "og:image:secure_url": ogImageUrl,
     "og:image:type": "image/png",
     "og:image:width": "1200",

@@ -5,7 +5,7 @@ export const defaultSeoTitle = "대명DnP | 대명디앤피 간판·LED전광판
 export const defaultSeoDescription =
   "대명DnP는 대명디앤피, 대명dnp, 대명D&P로도 찾는 인천·수도권 간판, LED전광판, 나무현판, 아크릴 안내판, 실사출력, UV인쇄 전문 제작 업체입니다.";
 
-export const ogImagePath = "/dmdnp-assets/og-image-dmdnp-20261014.png";
+export const ogImagePath = "/dmdnp-assets/og-image-dmdnp-safe-20261014.png";
 
 export function absoluteUrl(path = "/") {
   if (/^https?:\/\//.test(path)) return path;

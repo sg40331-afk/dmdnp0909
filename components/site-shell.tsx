@@ -139,7 +139,7 @@ export function QuoteCta({ title = "필요한 사인 제품, 편하게 문의하
       </div>
       <div className="cta-actions">
         <Link className="button button-orange" href="/contact">빠른 견적 문의 <ArrowRight size={18} /></Link>
-        <Link className="button button-outline" href="/contact"><Phone size={17} /> 전화 상담</Link>
+        <a className="button button-outline" href="tel:01052017977"><Phone size={17} /> 전화 상담</a>
         <Link className="button button-light" href={company.kakao} target="_blank" rel="noopener noreferrer"><MessageCircle size={17} /> 카카오톡 상담</Link>
       </div>
     </section>

@@ -65,7 +65,7 @@ export function CompanyCta() {
       </div>
       <div className="cta-actions">
         <Link className="button button-orange" href="/contact">맞춤 견적 받기 <ArrowRight size={18} /></Link>
-        <Link className="button button-outline" href="/contact"><Phone size={17} /> 전화 상담</Link>
+        <a className="button button-outline" href="tel:01052017977"><Phone size={17} /> 전화 상담</a>
         <Link className="button button-light" href={company.kakao} target="_blank" rel="noopener noreferrer"><MessageCircle size={17} /> 카카오톡 상담</Link>
         <Link className="button button-light" href="/products">제품 둘러보기</Link>
       </div>

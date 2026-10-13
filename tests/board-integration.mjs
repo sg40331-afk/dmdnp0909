@@ -85,6 +85,22 @@ try {
       .every((value) => /HttpOnly/i.test(value)),
   );
   console.log("PASS approved administrator login");
+  // Only remove records carrying this test suite's reserved markers.
+  for (const entry of ok(await req("/api/board", {}, true))) {
+    if (
+      entry.slug.startsWith("test-verification-") &&
+      entry.title.startsWith("[검증]")
+    )
+      ok(await post("delete", { id: entry.id }, true));
+  }
+  for (const inquiry of ok(await req("/api/board?mode=inquiries", {}, true))) {
+    if (
+      inquiry.name === "검증용 삭제 예정" &&
+      inquiry.contact === "010-0000-0000" &&
+      inquiry.title === "[검증] 운영 테스트"
+    )
+      ok(await post("delete_inquiry", { id: inquiry.id }, true));
+  }
   const pass = "Dnp-test-pass-2026!";
   const receipt = ok(
     await post("inquiry", {
@@ -226,6 +242,21 @@ try {
   assert.equal(gateway.status, 401);
   console.log("PASS unsigned gateway denied");
 } finally {
+  if (cookie) {
+    const cleanupLogin = await req("/api/board/auth", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: credentials.ADMIN_EMAIL,
+        password: credentials.ADMIN_PASSWORD,
+      }),
+    });
+    ok(cleanupLogin);
+    cookie = cleanupLogin.response.headers
+      .getSetCookie()
+      .map((value) => value.split(";")[0])
+      .join("; ");
+  }
   for (const id of entries) ok(await post("delete", { id }, true));
   for (const id of inquiries) ok(await post("delete_inquiry", { id }, true));
   if (cookie)

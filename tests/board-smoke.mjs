@@ -44,6 +44,12 @@ try {
     }
   }
   await page.goto(`${base}/support/inquiries`);
+  assert.equal(
+    await page
+      .getByRole("link", { name: "전화 상담", exact: true })
+      .getAttribute("href"),
+    "tel:01052017977",
+  );
   await page.getByRole("button", { name: "내 문의 확인" }).click();
   assert.ok(await page.getByLabel("접수번호").isVisible());
   const forbidden = await page.request.get(`${base}/api/board`);

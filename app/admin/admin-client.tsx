@@ -29,6 +29,8 @@ type Inquiry = {
   status: string;
   answer: string;
   created_at: string;
+  sheet_synced_at: string | null;
+  sheet_sync_error: string | null;
 };
 const labels: Record<BoardKind, string> = {
   blog: "블로그",
@@ -264,6 +266,24 @@ export default function AdminClient() {
           {error}
         </p>
       )}
+      {mode === "inquiries" && (
+        <div className="board-actions">
+          <button
+            disabled={busy}
+            onClick={() =>
+              run(async () => {
+                const result = await boardPost("sync_sheet", {});
+                await refresh();
+                setMessage(
+                  `구글시트 전송 ${result.sent}건, 실패 ${result.failed}건. 대기 문의가 남으면 다시 눌러 주세요.`,
+                );
+              })
+            }
+          >
+            <Upload size={16} /> 구글시트 미전송 문의 보내기
+          </button>
+        </div>
+      )}
       <div className="board-search-row">
         <Search size={20} />
         <input
@@ -345,6 +365,14 @@ export default function AdminClient() {
                 }}
               >
                 <h2>{selected.title}</h2>
+                <p className="board-meta">
+                  구글시트:{" "}
+                  {inquiries.find((item) => item.id === selected.id)
+                    ?.sheet_synced_at
+                    ? "전송 완료"
+                    : inquiries.find((item) => item.id === selected.id)
+                        ?.sheet_sync_error || "전송 대기"}
+                </p>
                 <p>
                   {selected.name} · {selected.contact} · {selected.product}
                 </p>

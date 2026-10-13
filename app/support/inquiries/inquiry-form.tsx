@@ -110,7 +110,7 @@ export default function InquiryForm() {
         >
           내 문의 확인
         </button>
-        <a className="board-button" href="tel:0324284033">
+        <a className="board-button" href="tel:01052017977">
           전화 상담
         </a>
         <a

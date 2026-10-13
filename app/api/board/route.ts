@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import {
@@ -12,8 +12,10 @@ import {
   signedFile,
 } from "@/lib/board-server";
 import { fail } from "@/lib/board-response";
+import { syncInquirySheet } from "@/lib/inquiry-sheet";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 const kinds = ["blog", "portfolio", "resources", "faq", "notices"] as const;
 const entrySchema = z.object({
   id: z.string().uuid().optional(),
@@ -50,7 +52,7 @@ export async function GET(request: Request) {
     if (mode === "inquiries")
       return NextResponse.json(
         await sb(
-          "/rest/v1/board_inquiries?select=id,receipt,name,contact,product,title,message,size,quantity,location,desired_date,status,answer,created_at&order=created_at.desc&limit=500",
+          "/rest/v1/board_inquiries?select=id,receipt,name,contact,product,title,message,size,quantity,location,desired_date,status,answer,created_at,sheet_synced_at,sheet_sync_error&order=created_at.desc&limit=500",
           {},
           false,
           token,
@@ -95,6 +97,15 @@ export async function POST(request: Request) {
         },
         true,
       );
+      after(async () => {
+        try {
+          await syncInquirySheet();
+        } catch {
+          console.error(
+            "Inquiry sheet synchronization unavailable; inquiry remains saved.",
+          );
+        }
+      });
       return NextResponse.json({ receipt });
     }
     if (input.action === "lookup") {
@@ -124,11 +135,19 @@ export async function POST(request: Request) {
           url: await signedFile(f.id),
         })),
       );
-      const { password_hash, ...safe } = row;
+      const { password_hash, sheet_synced_at, sheet_sync_error, ...safe } = row;
       void password_hash;
+      void sheet_synced_at;
+      void sheet_sync_error;
       return NextResponse.json({ ...safe, files: links });
     }
     const token = await adminToken();
+    if (input.action === "sync_sheet") {
+      const result = await syncInquirySheet();
+      if (!result.configured)
+        throw new Error("구글시트 웹앱 연결 설정이 아직 완료되지 않았습니다.");
+      return NextResponse.json(result);
+    }
     if (input.action === "save") {
       const entry = entrySchema.parse(input.data);
       if (entry.id) {

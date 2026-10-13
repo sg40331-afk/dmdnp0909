@@ -26,7 +26,7 @@ const entrySchema = z.object({
   published: z.boolean(),
   pinned: z.boolean(),
   sort_order: z.number().int().min(0).max(9999),
-  published_at: z.string().datetime(),
+  published_at: z.string().datetime({ offset: true }),
   payload: z.record(z.unknown()).default({}),
 });
 const inquirySchema = z.object({

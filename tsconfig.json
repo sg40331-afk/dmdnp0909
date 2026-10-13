@@ -31,6 +31,7 @@
     "**/*.mts"
   ],
   "exclude": [
+    "supabase/functions/**",
     "node_modules",
     "build/**",
     "db/**",

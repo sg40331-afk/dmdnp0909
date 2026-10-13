@@ -48,6 +48,46 @@ export async function sb(
   privileged = false,
   token?: string,
 ) {
+  if (privileged && !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    const secret = process.env.INQUIRY_RATE_SECRET;
+    if (!secret || !process.env.SUPABASE_URL)
+      throw new Error("게시판 보안 연결 설정이 완료되지 않았습니다.");
+    const headers = new Headers(init.headers);
+    const binary = init.body instanceof Blob;
+    const payload = JSON.stringify({
+      path,
+      method: init.method || "GET",
+      contentType: headers.get("Content-Type") || "application/json",
+      prefer: headers.get("Prefer") || "",
+      binary,
+      body: binary
+        ? Buffer.from(await (init.body as Blob).arrayBuffer()).toString(
+            "base64",
+          )
+        : init.body || null,
+    });
+    const timestamp = String(Date.now());
+    const signature = createHmac("sha256", secret)
+      .update(timestamp + "\n" + payload)
+      .digest("hex");
+    const response = await fetch(
+      process.env.SUPABASE_URL + "/functions/v1/board-gateway",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-board-timestamp": timestamp,
+          "x-board-signature": signature,
+        },
+        body: payload,
+        cache: "no-store",
+      },
+    );
+    if (!response.ok)
+      throw new Error(`게시판 요청에 실패했습니다 (${response.status}).`);
+    const value = await response.text();
+    return value ? JSON.parse(value) : null;
+  }
   const key = privileged
     ? process.env.SUPABASE_SERVICE_ROLE_KEY
     : process.env.SUPABASE_PUBLISHABLE_KEY;

@@ -4,7 +4,7 @@ import { company, siteUrl } from "@/lib/dmdnp-data";
 import { absoluteUrl, defaultSeoDescription, defaultSeoTitle, localBusinessJsonLd, ogImagePath, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
-const ogImageUrl = absoluteUrl(ogImagePath);
+const ogImageUrl = absoluteUrl("/dmdnp-assets/og-image.svg");
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImageUrl,
-        type: "image/png",
+        type: "image/svg+xml",
         width: 1200,
         height: 630,
         alt: "대명DnP 간판 LED전광판 UV인쇄 사인 제품 제작 안내 이미지",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     "naver-site-verification": "6fd889452175153f8c66f542e68a1a624c660267",
     "google-site-verification": "tBSzaTv7bhEB5nOOZDfWox6FZmBp5hw-cRBdfLhV8z0",
     "og:image:secure_url": ogImageUrl,
-    "og:image:type": "image/png",
+    "og:image:type": "image/svg+xml",
     "og:image:width": "1200",
     "og:image:height": "630",
     "og:image:alt": "대명DnP 간판 LED전광판 UV인쇄 사인 제품 제작 안내 이미지",
     "twitter:image:alt": "대명DnP 간판 LED전광판 UV인쇄 사인 제품 제작 안내 이미지",
   },
-  icons: { icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png", sizes: "512x512" }, { url: "/favicon.svg", type: "image/svg+xml" }], shortcut: "/favicon.ico", apple: "/apple-icon.png" },
+  icons: { icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/svg+xml", sizes: "512x512" }, { url: "/favicon.svg", type: "image/svg+xml" }], shortcut: "/favicon.ico", apple: "/apple-icon.png" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

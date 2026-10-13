@@ -26,7 +26,7 @@ export function breadcrumbJsonLd(items: Array<{ name: string; href: string }>) {
 }
 
 export function BreadcrumbJsonLd({ items }: { items: Array<{ name: string; href: string }> }) {
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(items)) }} />;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(items)).replace(/</g,"\\u003c") }} />;
 }
 
 export const localBusinessJsonLd = {

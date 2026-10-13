@@ -30,6 +30,7 @@ export default function ContactPage() {
               <div className="form-row"><label>이름<input name="name" placeholder="성함 또는 업체명" /></label><label>연락처<input name="phone" placeholder="연락 가능한 번호" /></label></div>
               <label>관심 제품<select name="product">{products.map((item) => <option key={item.slug}>{item.name}</option>)}</select></label>
               <label>문의 내용<textarea name="message" placeholder="크기, 수량, 설치 위치, 납기 등을 적어주세요." /></label>
+              <a className="button button-blue" href="/support/inquiries">온라인 견적·제작 문의</a>
               <a className="button button-blue" href={company.kakao} target="_blank" rel="noopener noreferrer">카카오톡으로 문의하기</a>
             </form>
           </div>

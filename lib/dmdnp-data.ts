@@ -20,10 +20,9 @@ export const company = {
 export const navItems = [
   { href: "/company", label: "회사소개" },
   { href: "/products", label: "제품안내" },
-  { href: "/portfolio", label: "제작사례" },
+  { href: "/portfolio", label: "시공사례" },
   { href: "/blog", label: "블로그" },
-  { href: "/contact", label: "문의하기" },
-  { href: "https://smartstore.naver.com/prfirst", label: "쇼핑몰", external: true },
+  { href: "/support", label: "고객지원" },
 ];
 
 export const productCategories = ["나무현판", "아크릴", "LED 전광판", "UV인쇄", "실사출력", "촉지도·안내판"];

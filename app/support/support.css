@@ -1,0 +1,238 @@
+.board-form {
+  display: grid;
+  gap: 16px;
+  max-width: 850px;
+}
+.board-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+}
+.board-form input,
+.board-form textarea,
+.board-form select,
+.board-search {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid #c5ccd1;
+  border-radius: 4px;
+  background: #fff;
+  color: #15191c;
+  font: inherit;
+}
+.board-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.board-form .check-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.board-form input[type="checkbox"] {
+  width: 18px;
+  min-height: 18px;
+}
+.board-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.board-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.board-actions button,
+.board-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid #c5ccd1;
+  background: #fff;
+  border-radius: 4px;
+  color: #15191c;
+  cursor: pointer;
+  font: inherit;
+}
+.board-actions .primary,
+.board-button.primary {
+  background: #17633f;
+  color: #fff;
+  border-color: #17633f;
+}
+.board-actions button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+.board-message {
+  padding: 12px;
+  border-left: 3px solid #17633f;
+  background: #eff7f2;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.board-error {
+  border-color: #bd253c;
+  background: #fff1f3;
+}
+.board-list {
+  display: grid;
+  gap: 0;
+}
+.board-row {
+  display: block;
+  padding: 20px 0;
+  border-bottom: 1px solid #dce1e4;
+}
+.board-illustrated {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 24px;
+}
+.board-thumbnail {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+@media (max-width: 700px) {
+  .board-illustrated {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+.board-row h3 {
+  margin: 6px 0;
+  font-size: 20px;
+}
+.board-row p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.board-meta {
+  font-size: 13px;
+  color: #53616a;
+}
+.board-search-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.board-search-row input {
+  flex: 1;
+  min-width: 160px;
+}
+.support-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.support-links a {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #ccd5cf;
+}
+.board-body {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+}
+.board-photo {
+  max-width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+}
+.board-pager {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 24px;
+}
+.board-shell {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+.board-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ccd5cf;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+.board-tabs button[aria-pressed="true"] {
+  background: #17633f;
+  color: white;
+}
+.admin-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 28px;
+}
+.admin-list {
+  max-height: 75vh;
+  overflow: auto;
+}
+.admin-list button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid #dce1e4;
+  background: white;
+  color: #15191c;
+  cursor: pointer;
+}
+.admin-list button[aria-pressed="true"] {
+  background: #edf5ef;
+}
+.board-honeypot {
+  position: absolute;
+  left: -10000px;
+}
+.board-file {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 12px 0;
+}
+.board-file a {
+  overflow-wrap: anywhere;
+}
+.board-form h2 {
+  font-size: 24px;
+}
+.board-summary {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.board-summary h1 {
+  font-size: 28px;
+}
+@media (max-width: 700px) {
+  .board-grid,
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+  .support-links {
+    grid-template-columns: 1fr 1fr;
+  }
+  .admin-list {
+    max-height: 230px;
+  }
+  .board-shell {
+    padding: 24px 16px;
+  }
+}

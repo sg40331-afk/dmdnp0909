@@ -24,7 +24,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: allowedAgents.map((userAgent) => ({
       userAgent,
       allow: "/",
-      disallow: ["/api/", "/admin/", "/login/"],
+      disallow: ["/api/", "/admin", "/login/", "/support/inquiries"],
     })),
     sitemap: `${siteUrl}/sitemap.xml`,
     host: siteUrl,

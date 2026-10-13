@@ -34,13 +34,13 @@ export function SiteHeader() {
               {companyMenuPages.map((item) => <Link key={item.href} href={item.href} className={pathname === item.href ? "active" : undefined}>{item.label}</Link>)}
             </div>
           </div>
-          {navItems.filter((item) => item.href !== "/company").map((item) => (
-            <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined}>
+          {navItems.filter((item) => item.href !== "/company").map((item) => item.href === "/support" ? <div className="nav-dropdown" key={item.href}><Link href="/support">고객지원 <ChevronDown size={14}/></Link><div className="nav-dropdown-menu"><Link href="/support/inquiries">견적·제작 문의</Link><Link href="/support/resources">자료실</Link><Link href="/faq">자주 묻는 질문</Link><Link href="/support/notices">공지사항</Link></div></div> : (
+            <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined}>
               {item.label}
             </Link>
           ))}
         </nav>
-        <Link href="/contact" className="header-quote">
+        <Link href="/support/inquiries" className="header-quote">
           빠른 견적문의 <ArrowRight size={17} />
         </Link>
         <button className="mobile-menu" aria-label={open ? "메뉴 닫기" : "메뉴 열기"} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
@@ -59,11 +59,12 @@ export function SiteHeader() {
               </Link>
             ))}</div> : null}
             {navItems.filter((item) => item.href !== "/company").map((item) => (
-              <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} onClick={() => setOpen(false)}>
+              <Link key={item.href} href={item.href} className={isActive(pathname, item.href) ? "active" : undefined} onClick={() => setOpen(false)}>
                 {item.label}
               </Link>
             ))}
-            <Link href="/contact" className="button button-orange" onClick={() => setOpen(false)}>
+            <div className="mobile-subnav"><Link href="/support/inquiries" onClick={()=>setOpen(false)}>견적·제작 문의</Link><Link href="/support/resources" onClick={()=>setOpen(false)}>자료실</Link><Link href="/faq" onClick={()=>setOpen(false)}>자주 묻는 질문</Link><Link href="/support/notices" onClick={()=>setOpen(false)}>공지사항</Link></div>
+            <Link href="/support/inquiries" className="button button-orange" onClick={() => setOpen(false)}>
               맞춤 견적 받기 <ArrowRight size={17} />
             </Link>
           </div>
@@ -91,10 +92,11 @@ export function SiteFooter() {
         <div>
           <strong>바로가기</strong>
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined}>{item.label}</Link>
+            <Link key={item.href} href={item.href}>{item.label}</Link>
           ))}
         </div>
         <div>
+          <a href="https://smartstore.naver.com/prfirst" target="_blank" rel="noopener noreferrer">온라인 쇼핑몰</a>
           <strong>회사 정보</strong>
           <p>대표자: {company.representative}</p>
           <p>지역: {company.region}</p>

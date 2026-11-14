@@ -53,14 +53,15 @@ export default async function Page({ params }: Props) {
             <h1>{item.title}</h1>
             <p>{item.summary}</p>
           </header>
-          <ul className={`portfolio-photos${item.photoFolder ? " portfolio-installations" : ""}`} aria-label={`${item.title} 카탈로그 사진`}>
+          {item.photoLabel && <h2 className="portfolio-gallery-label">{item.photoLabel}</h2>}
+          <ul className={`portfolio-photos${item.photoFolder ? " portfolio-installations" : ""}`} aria-label={`${item.title} ${item.photoLabel ?? "카탈로그 사진"}`}>
             {Array.from({ length: item.photos }, (_, index) => {
               const directory = item.photoFolder ? `${item.slug}/${item.photoFolder}` : item.slug;
               const src = `${catalogAssets}/${directory}/photo-${index + 1}.jpg`;
               return (
                 <li key={src}>
-                  <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`${item.title} 사진 ${index + 1} 크게 보기 (새 탭)`}>
-                    <Image src={src} alt={`${item.title} 시공 사례 사진 ${index + 1}`} {...(item.photoFolder ? { fill: true } : { width: 1160, height: 1600 })} sizes="(max-width: 560px) 94vw, (max-width: 1200px) 47vw, 580px" />
+                  <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`${item.title} ${item.photoLabel ?? "사진"} ${index + 1} 크게 보기 (새 탭)`}>
+                    <Image src={src} alt={`${item.title} ${item.photoLabel ?? "카탈로그 사례 사진"} ${index + 1}`} {...(item.photoFolder ? { fill: true } : { width: 1160, height: 1600 })} sizes="(max-width: 560px) 94vw, (max-width: 1200px) 47vw, 580px" />
                   </a>
                 </li>
               );

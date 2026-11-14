@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { companyPages } from "@/lib/company-data";
 import { products, siteUrl } from "@/lib/dmdnp-data";
 import { entries } from "@/lib/board-data";
+import { catalogCases, catalogPath } from "@/lib/portfolio-catalog";
 import { boardPaths, type BoardKind } from "@/lib/board-server";
 export const dynamic = "force-dynamic";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -30,6 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...routes.map((route) => ({ url: `${siteUrl}${route}` })),
     ...companyPages.map((item) => ({ url: `${siteUrl}${item.href}` })),
     ...products.map((item) => ({ url: `${siteUrl}/products/${item.slug}` })),
+    ...catalogCases.map((item) => ({ url: `${siteUrl}${catalogPath(item.slug)}` })),
     ...groups.flat(),
   ];
 }

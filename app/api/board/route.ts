@@ -13,6 +13,7 @@ import {
 } from "@/lib/board-server";
 import { fail } from "@/lib/board-response";
 import { syncInquirySheet } from "@/lib/inquiry-sheet";
+import { sendInquiryKakao } from "@/lib/inquiry-kakao";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -104,6 +105,13 @@ export async function POST(request: Request) {
           console.error(
             "Inquiry sheet synchronization unavailable; inquiry remains saved.",
           );
+        }
+      });
+      after(async () => {
+        try {
+          await sendInquiryKakao(fields.product);
+        } catch {
+          console.error("Kakao memo delivery unavailable; inquiry remains saved.");
         }
       });
       return NextResponse.json({ receipt });

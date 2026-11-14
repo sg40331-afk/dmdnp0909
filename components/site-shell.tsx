@@ -4,9 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ArrowRight, ChevronDown, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { ArrowRight, AtSign, Camera, ChevronDown, FileText, Menu, MessageCircle, NotebookPen, Phone, Users, X } from "lucide-react";
 import { company, navItems, products } from "@/lib/dmdnp-data";
 import { companyMenuPages } from "@/lib/company-data";
+
+const officialChannels = [
+  { label: "Instagram", href: "https://www.instagram.com/daemyungdnp/", Icon: Camera },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61593848344934", Icon: Users },
+  { label: "Threads", href: "https://www.threads.com/@daemyungdnp", Icon: AtSign },
+  { label: "네이버 블로그", href: "https://blog.naver.com/dmdnpstory", Icon: NotebookPen },
+  { label: "티스토리", href: "https://dmdnpsign.tistory.com/", Icon: FileText },
+  { label: "카카오톡 채널", href: "https://pf.kakao.com/_fgxjFX", Icon: MessageCircle },
+];
 
 function isActive(pathname: string, href: string) {
   if (href.startsWith("http")) return false;
@@ -82,6 +91,18 @@ export function SiteFooter() {
           <Link href="/" className="footer-brand">대명DnP</Link>
           <p>사람을 닮은 더 나은 공간, 대명DnP</p>
           <small>상담부터 제작·납품까지 직접 관리하는 사인 제품 제작 업체입니다.</small>
+          <nav className="footer-channels" aria-label="공식 채널">
+            <strong>공식 채널</strong>
+            <ul>
+              {officialChannels.map(({ label, href, Icon }) => (
+                <li key={href}>
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    <Icon size={16} aria-hidden="true" /> {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
         <div>
           <strong>제품안내</strong>

@@ -36,6 +36,9 @@
 .portfolio-photos li:only-child { grid-column: 1 / -1; max-width: 760px; margin-inline: auto; }
 .portfolio-photos a { display: block; }
 .portfolio-photos img { display: block; width: 100%; height: auto; border-radius: 6px; background: #eef1f2; }
+.portfolio-photo-count { margin: 0 0 12px; color: #52626c; font-size: 14px; font-weight: 800; }
+.portfolio-installations a { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; background: #eef1f2; }
+.portfolio-installations img { object-fit: contain; }
 .portfolio-related { padding-top: 30px; margin-top: 36px; border-top: 1px solid #dce4e8; }
 .portfolio-related ul { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-top: 8px; }
 .portfolio-related a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 800; }

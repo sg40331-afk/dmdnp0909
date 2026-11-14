@@ -53,13 +53,15 @@ export default async function Page({ params }: Props) {
             <h1>{item.title}</h1>
             <p>{item.summary}</p>
           </header>
-          <ul className="portfolio-photos" aria-label={`${item.title} 카탈로그 사진`}>
+          {item.photoFolder && <p className="portfolio-photo-count">시공 사진 {item.photos}장</p>}
+          <ul className={`portfolio-photos${item.photoFolder ? " portfolio-installations" : ""}`} aria-label={`${item.title} 카탈로그 사진`}>
             {Array.from({ length: item.photos }, (_, index) => {
-              const src = `${catalogAssets}/${item.slug}/photo-${index + 1}.jpg`;
+              const directory = item.photoFolder ? `${item.slug}/${item.photoFolder}` : item.slug;
+              const src = `${catalogAssets}/${directory}/photo-${index + 1}.jpg`;
               return (
                 <li key={src}>
                   <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`${item.title} 사진 ${index + 1} 크게 보기 (새 탭)`}>
-                    <Image src={src} alt={`${item.title} 카탈로그 사례 사진 ${index + 1}`} width={1160} height={1600} sizes="(max-width: 720px) 94vw, 570px" />
+                    <Image src={src} alt={`${item.title} 시공 사례 사진 ${index + 1}`} {...(item.photoFolder ? { fill: true } : { width: 1160, height: 1600 })} sizes="(max-width: 560px) 94vw, (max-width: 1200px) 47vw, 580px" />
                   </a>
                 </li>
               );

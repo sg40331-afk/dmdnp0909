@@ -11,10 +11,11 @@ type CatalogCase = {
   group: (typeof catalogGroups)[number]["id"];
   summary: string;
   photos: number;
+  photoFolder?: string;
 };
 
 export const catalogCases: readonly CatalogCase[] = [
-  { slug: "channel", title: "채널간판", group: "signs", summary: "매장 외벽과 건물 상단에 적용한 채널 문자 간판 사례입니다.", photos: 2 },
+  { slug: "channel", title: "채널간판", group: "signs", summary: "매장 외벽과 건물 상단에 적용한 채널 문자 간판 사례입니다.", photos: 22, photoFolder: "installations" },
   { slug: "frame", title: "프레임 간판", group: "signs", summary: "가로형 전면 간판과 세로형 돌출 간판 사진을 모았습니다.", photos: 2 },
   { slug: "dimensional", title: "고무 스카시", group: "signs", summary: "상호와 로고를 입체 문자로 표현한 외부 간판 사례입니다.", photos: 2 },
   { slug: "air", title: "에어간판", group: "signs", summary: "매장 입구와 보행로에서 사용하는 에어간판 제작 사례입니다.", photos: 2 },

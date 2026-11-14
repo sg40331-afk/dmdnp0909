@@ -5,11 +5,11 @@
 .portfolio-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(13, 23, 31, .93), rgba(13, 23, 31, .73) 45%, rgba(13, 23, 31, .17)); }
 .portfolio-hero-content { padding-block: 48px; }
 .portfolio-kicker { color: #ad4c0a; font-size: 13px; font-weight: 800; }
-.portfolio-hero .portfolio-kicker { color: #ffc38d; }
+.portfolio-hero .portfolio-kicker { color: #ffc38d; font-weight: 500; }
 .portfolio-hero h1, .portfolio-detail h1 { margin: 8px 0 12px; font-size: 60px; font-weight: 900; line-height: 1.16; letter-spacing: 0; }
-.portfolio-hero h1 { color: #fff; }
+.portfolio-hero h1 { color: #fff; font-weight: 500; }
 .portfolio-hero-content > p:not(.portfolio-kicker) { color: #edf3f5; font-size: 18px; }
-.portfolio-hero-content > a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 20px; padding-bottom: 2px; border-bottom: 2px solid #ff9f5a; font-weight: 800; }
+.portfolio-hero-content > a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 20px; padding-bottom: 2px; border-bottom: 2px solid #ff9f5a; font-weight: 500; }
 .portfolio-jump { display: flex; flex-wrap: wrap; gap: 4px 24px; padding-block: 12px; border-bottom: 1px solid #dce4e8; }
 .portfolio-jump a, .portfolio-back { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; font-weight: 800; }
 .portfolio-jump a:hover, .portfolio-back:hover, .portfolio-related a:hover { color: #ad4c0a; text-decoration: underline; }

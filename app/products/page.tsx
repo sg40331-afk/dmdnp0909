@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
-import { products } from "@/lib/dmdnp-data";
+import { products, woodSignImage } from "@/lib/dmdnp-data";
 import { PageHero, QuoteCta, SiteFooter, SiteHeader, VisualBlock } from "@/components/site-shell";
 import { BreadcrumbJsonLd } from "@/lib/seo";
 
@@ -22,8 +22,8 @@ export default function ProductsPage() {
           <div className="site-container grid-3">
             {products.map((item) => (
               <article className="card" key={item.slug}>
-                <VisualBlock label={item.name} />
-                <div className="card-body"><h3>{item.name}</h3><p>{item.summary}</p><Link className="text-link" href="/contact">견적 문의 <ArrowRight size={16} /></Link></div>
+                <VisualBlock label={item.name} source={item.slug === "wood-sign-menu" ? woodSignImage : undefined} />
+                <div className="card-body"><h3>{item.name}</h3><p>{item.summary}</p><Link className="text-link" href={item.slug === "wood-sign-menu" ? `/products/${item.slug}` : "/contact"}>{item.slug === "wood-sign-menu" ? "자세히 보기" : "견적 문의"} <ArrowRight size={16} /></Link></div>
               </article>
             ))}
           </div>

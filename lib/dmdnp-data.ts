@@ -26,15 +26,18 @@ export const navItems = [
 
 export const productCategories = ["나무현판", "아크릴", "LED 전광판", "UV인쇄", "실사출력", "촉지도·안내판"];
 
+export const woodSignImage = "/dmdnp-assets/wood-sign-meridian.webp";
+export const woodSignStoreUrl = "https://smartstore.naver.com/prfirst/products/10730875164";
+
 export const products = [
   {
     slug: "wood-sign-menu",
-    name: "나무현판·메뉴판",
+    name: "나무현판",
     category: "나무현판",
-    summary: "원목의 질감과 브랜드 분위기를 살린 현판, 메뉴판, 매장 사인입니다.",
+    summary: "목재의 질감을 살려 상호와 로고를 담는 맞춤 현판입니다. 설치 장소에 맞춰 모양, 크기, 색상과 마감을 상담해 드립니다.",
     uses: ["카페", "음식점", "공방", "숙박업소", "브랜드 매장"],
     materials: ["원목", "합판", "우드 필름", "무광 코팅", "각인 및 UV 인쇄"],
-    custom: ["문구", "크기", "두께", "마감", "걸이 방식"],
+    custom: ["상호·로고", "모양", "크기", "색상과 마감", "설치 방식"],
     period: "사양과 수량 확인 후 안내합니다.",
   },
   {

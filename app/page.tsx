@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, CheckCircle2, Eye, Factory, MessageCircle, PenTool, Printer, Settings, ShieldCheck, Truck, Wrench } from "lucide-react";
-import { faqs, portfolioItems, products } from "@/lib/dmdnp-data";
+import { faqs, portfolioItems, products, woodSignImage } from "@/lib/dmdnp-data";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 const productCards = [
-  { image: "/dmdnp-assets/wood-sign.png", category: "나무현판", title: "나무현판·메뉴판", benefit: "원목의 질감과 맞춤 디자인", description: "매장 분위기와 브랜드 톤에 맞춰 현판과 메뉴판을 제작합니다.", tags: ["카페", "음식점"], position: "center 45%" },
+  { image: woodSignImage, category: "나무현판", title: "나무현판", benefit: "상호와 로고를 담은 맞춤 제작", description: "설치 공간과 브랜드 분위기에 맞춰 나무현판을 제작합니다.", tags: ["카페", "음식점"], position: "center 45%" },
   { image: "/dmdnp-assets/acrylic-sign.png", category: "아크릴", title: "아크릴 안내판", benefit: "깔끔하고 세련된 공간 안내", description: "회의실, 사무실, 건물 안내에 어울리는 정돈된 사인을 제작합니다.", tags: ["사무실", "병원"], position: "center 48%" },
   { image: "/dmdnp-assets/led-sign.png", category: "LED 전광판", title: "LED 전광판", benefit: "주야간 선명한 홍보 효과", description: "매장 홍보와 공지 문구를 멀리서도 잘 보이게 표현합니다.", tags: ["매장", "홍보"], position: "center 50%" },
   { image: "/dmdnp-assets/uv-print.png", category: "UV인쇄", title: "UV 평판인쇄", benefit: "다양한 소재에 직접 고해상도 출력", description: "아크릴, 목재, 금속, 포맥스 등 평판 소재에 직접 출력합니다.", tags: ["패널", "전시"], position: "center 56%" },

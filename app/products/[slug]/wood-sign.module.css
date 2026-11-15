@@ -1,0 +1,32 @@
+.hero, .order { background: #f6f0e7; color: #34271f; }
+.hero { padding: clamp(34px, 6vw, 84px) 0; }
+.heroGrid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 6vw, 82px); align-items: center; }
+.intro nav { font-size: 14px; color: #634d3e; }
+.intro nav a { text-decoration: underline; text-underline-offset: 3px; }
+.intro h1 { margin: 18px 0 14px; font-size: clamp(36px, 5vw, 66px); line-height: 1.12; letter-spacing: -.045em; }
+.intro p { max-width: 44ch; font-size: 17px; line-height: 1.8; word-break: keep-all; }
+.photo { margin: 0; border-radius: 18px; overflow: hidden; background: #fff; }
+.photo img { display: block; width: 100%; height: auto; }
+.photo figcaption { padding: 12px 16px; font-size: 14px; color: #634d3e; }
+.heading { margin: 0 0 20px; }
+.options, .checklist { display: grid; gap: 18px; }
+.options { grid-template-columns: 1fr 1fr; }
+.panel { border: 1px solid #e8ded0; border-radius: 16px; padding: clamp(18px, 3vw, 32px); }
+.panel h3 { margin: 0 0 8px; }
+.panel p { line-height: 1.7; }
+.shapes, .colors, .checklist { list-style: none; padding: 0; }
+.shapes, .colors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 8px; margin: 18px 0; }
+.shapes li, .colors li { display: grid; justify-items: center; align-items: center; gap: 7px; text-align: center; font-size: 13px; }
+.shape { display: block; width: 28px; height: 28px; background: #b98049; }
+.shape[data-shape="circle"], .shape[data-shape="oval"] { border-radius: 50%; }
+.shape[data-shape="hexagon"] { clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); }
+.shape[data-shape="octagon"] { clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); }
+.shape[data-shape="triangle"] { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.shape[data-shape="rectangle"], .shape[data-shape="rounded"], .shape[data-shape="oval"] { width: 33px; height: 21px; }
+.shape[data-shape="rounded"] { border-radius: 6px; }
+.colors li > span { width: 26px; height: 26px; border-radius: 50%; border: 1px solid #0002; }
+.checklist { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0 0 18px; }
+.checklist li { display: grid; align-content: start; gap: 8px; padding: 18px; border-radius: 12px; background: #fff; line-height: 1.65; }
+@media (max-width: 760px) {
+  .heroGrid, .options, .checklist { grid-template-columns: 1fr; }
+}

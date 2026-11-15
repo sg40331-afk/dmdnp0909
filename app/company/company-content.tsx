@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ClipboardCheck, FileSearch, MessageCircle, PackageCheck, Palette, Ruler, ScanLine, Settings, ShieldCheck, Truck } from "lucide-react";
 import { VisualBlock } from "@/components/site-shell";
-import { CompanyCta, CompanyPageFrame, CompanyTabs } from "@/components/company-shell";
+import { CompanyPageFrame, CompanyTabs } from "@/components/company-shell";
 import { CompanyIntroVideo } from "@/components/company-intro-video";
 import { businessAreas, companyHistory, companyIntro, companyStats, facilities, qualityNotes, qualitySteps } from "@/lib/company-data";
 import { company } from "@/lib/dmdnp-data";
@@ -62,7 +62,6 @@ export function CompanyGreeting() {
           <article><ShieldCheck /><div><h2>책임 있는 품질</h2><p>제작부터 납품까지 끝까지 책임지는 품질 관리를 약속드립니다.</p></div></article>
         </div>
       </section>
-      <CompanyCta />
     </>
   );
 }

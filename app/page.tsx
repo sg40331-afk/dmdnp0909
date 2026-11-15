@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, CheckCircle2, Eye, Factory, MessageCircle, PenTool, Printer, Settings, ShieldCheck, Truck, Wrench } from "lucide-react";
 import { faqs, portfolioItems, products } from "@/lib/dmdnp-data";
-import { QuoteCta, SiteFooter, SiteHeader } from "@/components/site-shell";
+import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 const productCards = [
   { image: "/dmdnp-assets/wood-sign.png", category: "나무현판", title: "나무현판·메뉴판", benefit: "원목의 질감과 맞춤 디자인", description: "매장 분위기와 브랜드 톤에 맞춰 현판과 메뉴판을 제작합니다.", tags: ["카페", "음식점"], position: "center 45%" },
@@ -238,7 +238,6 @@ export default function Home() {
             })}</div>
           </div>
         </section>
-        <QuoteCta />
       </main>
       <SiteFooter />
     </>

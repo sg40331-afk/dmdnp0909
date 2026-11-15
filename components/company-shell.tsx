@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
-import { company } from "@/lib/dmdnp-data";
 import { companyMenuPages, companyPages } from "@/lib/company-data";
 import { BreadcrumbJsonLd } from "@/lib/seo";
 
@@ -50,25 +48,7 @@ export function CompanyPageFrame({ currentPath, children }: { currentPath: strin
     <>
       <CompanyHero currentPath={currentPath} title={page.title} description={page.description} />
       {children}
-      <CompanyCta />
       <BreadcrumbJsonLd items={breadcrumbItems} />
     </>
-  );
-}
-
-export function CompanyCta() {
-  return (
-    <section className="quote-cta site-container company-cta">
-      <div>
-        <h2>필요한 사인 제품, 대명DnP에 편하게 문의하세요</h2>
-        <p>용도와 설치 장소를 알려주시면 적합한 소재와 제작 방법을 안내해 드립니다.</p>
-      </div>
-      <div className="cta-actions">
-        <Link className="button button-orange" href="/contact">맞춤 견적 받기 <ArrowRight size={18} /></Link>
-        <a className="button button-outline" href="tel:01052017977"><Phone size={17} /> 전화 상담</a>
-        <Link className="button button-light" href={company.kakao} target="_blank" rel="noopener noreferrer"><MessageCircle size={17} /> 카카오톡 상담</Link>
-        <Link className="button button-light" href="/products">제품 둘러보기</Link>
-      </div>
-    </section>
   );
 }

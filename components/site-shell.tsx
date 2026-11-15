@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ArrowRight, AtSign, Camera, ChevronDown, FileText, Menu, MessageCircle, NotebookPen, Phone, Users, X } from "lucide-react";
-import { company, navItems, products } from "@/lib/dmdnp-data";
+import { company, navItems } from "@/lib/dmdnp-data";
 import { companyMenuPages } from "@/lib/company-data";
 
 const officialChannels = [
@@ -87,44 +87,36 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-container footer-grid">
-        <div>
+        <div className="footer-intro">
           <Link href="/" className="footer-brand">대명DnP</Link>
-          <p>사람을 닮은 더 나은 공간, 대명DnP</p>
-          <small>상담부터 제작·납품까지 직접 관리하는 사인 제품 제작 업체입니다.</small>
-          <nav className="footer-channels" aria-label="공식 채널">
-            <strong>공식 채널</strong>
-            <ul>
-              {officialChannels.map(({ label, href, Icon }) => (
-                <li key={href}>
-                  <a href={href} target="_blank" rel="noopener noreferrer">
-                    <Icon size={16} aria-hidden="true" /> {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <p>사람을 닮은 더 나은 공간</p>
         </div>
-        <div>
-          <strong>제품안내</strong>
-          {products.slice(0, 6).map((item) => (
-            <Link key={item.slug} href={`/products/${item.slug}`}>{item.name}</Link>
-          ))}
-        </div>
-        <div>
-          <strong>바로가기</strong>
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>{item.label}</Link>
-          ))}
-        </div>
-        <div>
-          <a href="https://smartstore.naver.com/prfirst" target="_blank" rel="noopener noreferrer">온라인 쇼핑몰</a>
+        <div className="footer-contact">
           <strong>회사 정보</strong>
-          <p>대표자: {company.representative}</p>
-          <p>지역: {company.region}</p>
-          <p>주소: {company.address}</p>
-          <p>전화: {company.phone}</p>
-          <p>이메일: {company.email}</p>
+          <p>대표 {company.representative}</p>
+          <p>{company.address}</p>
+          <address>
+            {company.phone.split(" / ").map((phone) => (
+              <a key={phone} href={`tel:${phone.replace(/[^+\d]/g, "")}`}>{phone}</a>
+            ))}
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+          </address>
         </div>
+        <nav className="footer-channels" aria-label="공식 채널">
+          <strong>공식 채널</strong>
+          <ul>
+            {officialChannels.map(({ label, href, Icon }) => (
+              <li key={href}>
+                <a href={href} target="_blank" rel="noopener noreferrer">
+                  <Icon size={16} aria-hidden="true" /> {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a className="footer-shop" href="https://smartstore.naver.com/prfirst" target="_blank" rel="noopener noreferrer">
+            온라인 쇼핑몰 <ArrowRight size={14} aria-hidden="true" />
+          </a>
+        </nav>
       </div>
       <div className="site-container copyright">
         <span>© 2026 대명DnP. All rights reserved.</span>

@@ -62,6 +62,7 @@ function blank(kind: BoardKind): Partial<BoardEntry> {
   };
 }
 export default function AdminClient() {
+  const [changingPassword, setChangingPassword] = useState(false);
   const [localDrafts, setLocalDrafts] = useState<Record<string, unknown>[]>([]);
   const [logged, setLogged] = useState(false),
     [busy, setBusy] = useState(false),
@@ -162,6 +163,7 @@ export default function AdminClient() {
     return (
       <main className="board-shell">
         <h1>대명DnP 관리자</h1>
+        {message && <p role="status" className="board-message">{message}</p>}
         <form
           className="board-form"
           onSubmit={(e) => {
@@ -219,6 +221,10 @@ export default function AdminClient() {
         <h1>대명DnP 관리자</h1>
         <div className="board-actions">
           <Link href="/">홈페이지</Link>
+          <button type="button" disabled={busy} aria-expanded={changingPassword}
+            aria-controls="admin-password-form" onClick={() => setChangingPassword((open) => !open)}>
+            비밀번호 변경
+          </button>
           <button
             onClick={() =>
               run(async () => {
@@ -227,6 +233,7 @@ export default function AdminClient() {
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ action: "logout" }),
                 });
+                setChangingPassword(false);
                 setLogged(false);
               })
             }
@@ -236,6 +243,43 @@ export default function AdminClient() {
           </button>
         </div>
       </div>
+      {changingPassword && (
+        <form id="admin-password-form" className="board-form" aria-label="비밀번호 변경"
+          onSubmit={(event) => {
+            event.preventDefault();
+            const form = new FormData(event.currentTarget);
+            run(async () => {
+              if (form.get("newPassword") !== form.get("confirmPassword"))
+                throw new Error("새 비밀번호와 확인 입력이 일치하지 않습니다.");
+              await boardRequest("/api/board/auth", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  action: "change-password",
+                  currentPassword: form.get("currentPassword"),
+                  newPassword: form.get("newPassword"),
+                }),
+              });
+              setChangingPassword(false);
+              setLogged(false);
+              setMessage("비밀번호를 변경했습니다. 새 비밀번호로 로그인해 주세요.");
+            });
+          }}
+        >
+          <label>현재 비밀번호
+            <input name="currentPassword" type="password" autoComplete="current-password" required maxLength={128} />
+          </label>
+          <label>새 비밀번호 (12자 이상)
+            <input name="newPassword" type="password" autoComplete="new-password" required minLength={12} maxLength={72} />
+          </label>
+          <label>새 비밀번호 확인
+            <input name="confirmPassword" type="password" autoComplete="new-password" required minLength={12} maxLength={72} />
+          </label>
+          <div className="board-actions">
+            <button className="primary" disabled={busy}>변경 저장</button>
+          </div>
+        </form>
+      )}
       <div className="board-actions board-tabs">
         {(
           ["inquiries", ...Object.keys(labels)] as (BoardKind | "inquiries")[]

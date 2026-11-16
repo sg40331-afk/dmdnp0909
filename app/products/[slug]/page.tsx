@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AcrylicDetailFrame } from "@/components/acrylic-detail-frame";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 import { products, woodSignImage, woodSignStoreUrl } from "@/lib/dmdnp-data";
 import type { Metadata } from "next";
@@ -113,6 +114,11 @@ function LetterCuttingDetail({ slug }: { slug: string }) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === "acrylic-letters") {
+    const title = "아크릴 글자 맞춤 제작";
+    const description = "상호와 로고, 공간에 어울리는 아크릴 입체글자 맞춤 제작 안내입니다. 크기·두께·색상·설치 환경을 확인하고 상담합니다.";
+    return { title, description, alternates: { canonical: "/products/acrylic-letters" }, openGraph: { title: `대명DnP ${title}`, description, url: "/products/acrylic-letters", images: ["/acrylic-letters-card.jpg"] } };
+  }
   const cuttingKind = letterCuttingKinds.find((item) => item.slug === slug);
   if (slug === "letter-cutting" || cuttingKind) {
     const title = cuttingKind?.title ?? "글자커팅 · 글자크기·전체크기 맞춤 제작";
@@ -137,6 +143,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProductDetailPage({ params }: Props) {
   const { slug } = await params;
+  if (slug === "acrylic-letters") {
+    return <>
+      <SiteHeader />
+      <main style={{ padding: 0 }}><AcrylicDetailFrame /><BreadcrumbJsonLd items={[{ name: "홈", href: "/" }, { name: "제품안내", href: "/products" }, { name: "아크릴 글자", href: "/products/acrylic-letters" }]} /></main>
+      <SiteFooter />
+    </>;
+  }
   if (slug === "letter-cutting" || letterCuttingKinds.some((item) => item.slug === slug)) return <LetterCuttingDetail slug={slug} />;
   if (slug === woodSign.slug) {
     return (

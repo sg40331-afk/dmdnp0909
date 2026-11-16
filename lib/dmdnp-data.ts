@@ -24,7 +24,7 @@ export const navItems = [
   { href: "/support", label: "고객지원" },
 ];
 
-export const productCategories = ["나무현판", "아크릴", "LED 전광판", "UV인쇄", "실사출력", "촉지도·안내판"];
+export const productCategories = ["나무현판", "아크릴", "LED 전광판", "UV인쇄", "실사출력", "촉지도·안내판", "시트지"];
 
 export const woodSignImage = "/dmdnp-assets/wood-sign-meridian.webp";
 export const woodSignStoreUrl = "https://smartstore.naver.com/prfirst/products/10730875164";
@@ -89,6 +89,16 @@ export const products = [
     materials: ["아크릴", "점자 부속", "스테인리스", "UV 인쇄", "양각 가공"],
     custom: ["평면도", "점자 표기", "설치 높이", "규격", "법정 기준 확인"],
     period: "도면과 표기 내용을 확인한 뒤 안내합니다.",
+  },
+  {
+    slug: "letter-cutting",
+    name: "글자커팅",
+    category: "시트지",
+    summary: "유리창·벽면·매장에 붙이는 맞춤 레터링 스티커입니다. 글자 크기·개수 기준의 자당과 전체 규격 기준의 사이즈당으로 제작합니다.",
+    uses: ["매장 영업시간", "유리창 문구", "벽면 레터링", "공간 안내", "인테리어"],
+    materials: ["커팅 시트지", "투명 보조 시트지"],
+    custom: ["자당·사이즈당", "문구", "크기", "색상·서체", "기본·반전커팅"],
+    period: "시안 확정 후 사양과 수량에 따라 안내합니다.",
   },
   {
     slug: "metal-factory-sign",

@@ -49,19 +49,9 @@ function LetterCuttingDetail({ slug }: { slug: string }) {
     <>
       <SiteHeader />
       <main>
-        <section className="section" style={{ paddingBottom: "2rem" }}>
-          <div className="site-container">
-            <nav aria-label="현재 위치"><Link href="/products">제품안내</Link> / {selected ? <><Link href="/products/letter-cutting">글자커팅</Link> / {selected.label}</> : "글자커팅"}</nav>
-            <h1 style={{ marginTop: "1rem", marginBottom: "1rem", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 600 }}>{title}</h1>
-            <p style={{ maxWidth: 760, lineHeight: 1.8 }}>{selected?.summary ?? "빈 공간에 디자인을 더하는 레터링 스티커·시트지 커팅입니다. 매장 영업시간, 유리창 문구, 벽면 레터링과 안내 문구를 원하는 스타일로 제작합니다. 주문 기준에 따라 글자크기과 전체크기 두 종류 중 선택해 주세요."}</p>
-            <div className="hero-actions">
-              {letterCuttingKinds.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} className={selected?.slug === item.slug ? "button button-orange" : "button button-light"} aria-current={selected?.slug === item.slug ? "page" : undefined}>{item.label} 상세 보기</Link>)}
-              <Link className="button button-orange" href="/support/inquiries">제작 견적 문의</Link>
-            </div>
-          </div>
-        </section>
+        <AcrylicDetailFrame src={`/${selected?.slug ?? "letter-cutting"}-overview.html`} title={`${title} 상품 소개`} background="#ffffff" />
         {!selected ? (
-          <section className="section" style={{ paddingTop: 0 }}>
+          <section id="letter-cutting-details" className="section" style={{ paddingTop: 0 }}>
             <div className="site-container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "1.5rem" }}>
               {letterCuttingKinds.map((item) => (
                 <article className="card" key={item.slug}>
@@ -80,12 +70,12 @@ function LetterCuttingDetail({ slug }: { slug: string }) {
           </section>
         ) : (
           <>
-            <section className="section" style={{ paddingTop: 0, paddingBottom: "2rem" }}>
+            <section id="letter-cutting-details" className="section" style={{ paddingTop: 0, paddingBottom: "2rem" }}>
               <div className="site-container">
                 <div className="card"><div className="card-body"><h2>주문 기준</h2><p>{selected.guide}</p><p>기본커팅과 반전커팅, 색상·서체를 선택한 뒤 들어갈 문구를 보내 주세요. 반전커팅은 실내 유리에 부착하고 실외에서 바르게 보이도록 제작하는 방식입니다.</p></div></div>
               </div>
             </section>
-            <section className="section" aria-label={selected.title + " 원본 상세 안내"} style={{ paddingTop: 0 }}>
+            <section id="letter-cutting-original" className="section" aria-label={selected.title + " 원본 상세 안내"} style={{ paddingTop: 0 }}>
               <div className="site-container">
                 <p style={{ textAlign: "center", marginBottom: "1.5rem" }}>제품 구성, 주문 방법, 색상·서체 견본과 제작 예시는 아래 상세 이미지를 확인해 주세요. 이미지를 누르면 원본 크기로 볼 수 있습니다.</p>
                 <figure style={{ maxWidth: 874, margin: "0 auto" }}>
@@ -97,7 +87,7 @@ function LetterCuttingDetail({ slug }: { slug: string }) {
             </section>
           </>
         )}
-        <section className="section" style={{ paddingTop: 0 }}>
+        <section id="letter-cutting-checklist" className="section" style={{ paddingTop: 0 }}>
           <div className="site-container">
             <h2>제작 전 확인해 주세요</h2>
             <p>문구·크기·글자 수 또는 전체 규격, 색상·서체, 기본커팅·반전커팅 여부를 알려 주세요. 주문 내용 확인과 시안 교정을 마친 뒤 제작합니다.</p>
@@ -156,23 +146,7 @@ export default async function ProductDetailPage({ params }: Props) {
       <>
         <SiteHeader />
         <main>
-          <section className={styles.hero}>
-            <div className={`site-container ${styles.heroGrid}`}>
-              <div className={styles.intro}>
-                <nav aria-label="현재 위치"><Link href="/products">제품안내</Link> / 나무현판</nav>
-                <h1>맞춤 나무현판</h1>
-                <p>소중한 공간에 따뜻한 감성 한 스푼. 나무결을 살린 바탕에 상호·로고·문구를 UV 인쇄로 선명하게 담는 맞춤 나무현판입니다. 카페·음식점·학원·공방의 간판부터 문패, 객실명·공간 안내판과 팻말까지 원하는 모양·크기·색상·서체로 제작합니다.</p>
-                <div className="hero-actions">
-                  <Link className="button button-orange" href="/support/inquiries">제작 견적 문의</Link>
-                  <a className="button button-light" href={woodSignStoreUrl} target="_blank" rel="noopener noreferrer">스마트스토어 상품 보기</a>
-                </div>
-              </div>
-              <figure className={styles.photo}>
-                <Image src={woodSignImage} alt="Meridian Wine Bar 상호와 와인잔 로고를 넣은 분홍색 원형 나무현판" width={587} height={592} sizes="(max-width: 760px) 100vw, 48vw" preload />
-                <figcaption>원형 현판에 상호와 와인잔 로고를 넣은 제작 예시</figcaption>
-              </figure>
-            </div>
-          </section>
+          <AcrylicDetailFrame src="/wood-sign-overview.html" title="나무현판 상품 소개" background="#ffffff" />
           <section className="section" aria-labelledby="wood-sign-options">
             <div className="site-container">
               <h2 id="wood-sign-options" className={styles.heading}>공간에 맞춰 고르는 맞춤 제작</h2>
@@ -208,7 +182,7 @@ export default async function ProductDetailPage({ params }: Props) {
               </div>
             </div>
           </section>
-          <section className={`section ${styles.order}`}>
+          <section id="wood-sign-order" className={`section ${styles.order}`}>
             <div className="site-container">
               <h2 className={styles.heading}>견적 문의 전 준비할 내용</h2>
               <ul className={styles.checklist}>

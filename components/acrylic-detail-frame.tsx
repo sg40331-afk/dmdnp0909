@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function AcrylicDetailFrame() {
+export function AcrylicDetailFrame({ src = "/acrylic-letters-content.html", title = "아크릴 글자 상세 안내", background = "#e6e7e2" }: { src?: string; title?: string; background?: string }) {
   const frameRef = useRef<HTMLIFrameElement>(null);
   const [height, setHeight] = useState(1000);
 
@@ -45,7 +45,7 @@ export function AcrylicDetailFrame() {
       observer?.disconnect();
       cancelAnimationFrame(animationFrame);
     };
-  }, []);
+  }, [src]);
 
-  return <iframe ref={frameRef} src="/acrylic-letters-content.html" title="아크릴 글자 상세 안내" height={height} scrolling="no" style={{ display: "block", width: "100%", border: 0, background: "#e6e7e2" }} />;
+  return <iframe ref={frameRef} src={src} title={title} height={height} scrolling="no" style={{ display: "block", width: "100%", border: 0, background }} />;
 }

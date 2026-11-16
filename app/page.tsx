@@ -137,6 +137,21 @@ export default function Home() {
                   <span className="text-link">자세히 보기 <ArrowRight size={16} /></span>
                 </div>
               </Link>
+              <Link className="product-card" href="/products/silicone-led-neon">
+                <div className="product-card-image">
+                  <Image src="/silicone-led-neon-card.jpg" alt="실리콘 LED 네온사인 AI 디자인 시안" fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" style={{ objectPosition: "center 46%" }} />
+                  <div className="product-card-overlay">
+                    <span>네온사인</span>
+                    <strong>실리콘 LED 네온사인</strong>
+                    <small>빛으로 완성하는 매장 분위기</small>
+                  </div>
+                </div>
+                <div className="product-card-body">
+                  <p>매장 상호와 로고, 포토존을 빛으로 표현하는 맞춤 네온사인입니다.</p>
+                  <div className="product-tags"><span>맞춤 문구</span><span>로고·포토존</span><span>AI 시안</span></div>
+                  <span className="text-link">자세히 보기 <ArrowRight size={16} /></span>
+                </div>
+              </Link>
             </div>
           </div>
         </section>

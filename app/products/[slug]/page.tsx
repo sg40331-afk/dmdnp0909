@@ -23,8 +23,8 @@ type Props = { params: Promise<{ slug: string }> };
 const letterCuttingKinds = [
   {
     slug: "letter-cutting-character",
-    label: "1. 자당",
-    title: "글자커팅 · 자당",
+    label: "1. 글자크기",
+    title: "글자커팅 · 글자크기",
     summary: "원하는 글자 크기를 선택하고, 글자 수만큼 수량을 정하는 맞춤 레터링 스티커입니다.",
     guide: "글자별 높이를 기준으로 크기를 정합니다. 3cm 글자 10개라면 3cm 옵션에서 수량 10개를 선택합니다. 크기가 섞여 있다면 5cm 글자 4개, 3cm 글자 6개처럼 크기별로 나누어 알려 주세요.",
     image: "/letter-cutting-character.jpg",
@@ -32,8 +32,8 @@ const letterCuttingKinds = [
   },
   {
     slug: "letter-cutting-size",
-    label: "2. 사이즈당",
-    title: "글자커팅 · 사이즈당",
+    label: "2. 전체크기",
+    title: "글자커팅 · 전체크기",
     summary: "문구와 디자인이 들어갈 전체 가로·세로 크기를 기준으로 제작하는 맞춤 레터링 스티커입니다.",
     guide: "전체 디자인의 가로·세로 규격을 선택합니다. 상세 이미지의 규격 예시는 A4 29×21cm, A3 42×29cm, A2 59×42cm입니다. 그 외 크기는 희망 규격을 보내 주시면 확인 후 안내합니다.",
     image: "/letter-cutting-size.jpg",
@@ -52,7 +52,7 @@ function LetterCuttingDetail({ slug }: { slug: string }) {
           <div className="site-container">
             <nav aria-label="현재 위치"><Link href="/products">제품안내</Link> / {selected ? <><Link href="/products/letter-cutting">글자커팅</Link> / {selected.label}</> : "글자커팅"}</nav>
             <h1 style={{ marginTop: "1rem", marginBottom: "1rem", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 600 }}>{title}</h1>
-            <p style={{ maxWidth: 760, lineHeight: 1.8 }}>{selected?.summary ?? "빈 공간에 디자인을 더하는 레터링 스티커·시트지 커팅입니다. 매장 영업시간, 유리창 문구, 벽면 레터링과 안내 문구를 원하는 스타일로 제작합니다. 주문 기준에 따라 자당과 사이즈당 두 종류 중 선택해 주세요."}</p>
+            <p style={{ maxWidth: 760, lineHeight: 1.8 }}>{selected?.summary ?? "빈 공간에 디자인을 더하는 레터링 스티커·시트지 커팅입니다. 매장 영업시간, 유리창 문구, 벽면 레터링과 안내 문구를 원하는 스타일로 제작합니다. 주문 기준에 따라 글자크기과 전체크기 두 종류 중 선택해 주세요."}</p>
             <div className="hero-actions">
               {letterCuttingKinds.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} className={selected?.slug === item.slug ? "button button-orange" : "button button-light"} aria-current={selected?.slug === item.slug ? "page" : undefined}>{item.label} 상세 보기</Link>)}
               <Link className="button button-orange" href="/support/inquiries">제작 견적 문의</Link>
@@ -115,8 +115,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const cuttingKind = letterCuttingKinds.find((item) => item.slug === slug);
   if (slug === "letter-cutting" || cuttingKind) {
-    const title = cuttingKind?.title ?? "글자커팅 · 자당·사이즈당 맞춤 제작";
-    const description = cuttingKind?.summary ?? "맞춤 레터링 스티커와 시트지 커팅을 자당과 사이즈당 두 종류로 안내합니다.";
+    const title = cuttingKind?.title ?? "글자커팅 · 글자크기·전체크기 맞춤 제작";
+    const description = cuttingKind?.summary ?? "맞춤 레터링 스티커와 시트지 커팅을 글자크기과 전체크기 두 종류로 안내합니다.";
     return { title, description, alternates: { canonical: `/products/${slug}` }, openGraph: { title: `대명DnP ${title}`, description, url: `/products/${slug}`, images: ["/letter-cutting-preview.jpg"] } };
   }
   if (slug === woodSign.slug) {

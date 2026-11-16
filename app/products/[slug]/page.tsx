@@ -20,8 +20,105 @@ const woodSignDetails = [
 
 type Props = { params: Promise<{ slug: string }> };
 
+const letterCuttingKinds = [
+  {
+    slug: "letter-cutting-character",
+    label: "1. 자당",
+    title: "글자커팅 · 자당",
+    summary: "원하는 글자 크기를 선택하고, 글자 수만큼 수량을 정하는 맞춤 레터링 스티커입니다.",
+    guide: "글자별 높이를 기준으로 크기를 정합니다. 3cm 글자 10개라면 3cm 옵션에서 수량 10개를 선택합니다. 크기가 섞여 있다면 5cm 글자 4개, 3cm 글자 6개처럼 크기별로 나누어 알려 주세요.",
+    image: "/letter-cutting-character.jpg",
+    height: 11198,
+  },
+  {
+    slug: "letter-cutting-size",
+    label: "2. 사이즈당",
+    title: "글자커팅 · 사이즈당",
+    summary: "문구와 디자인이 들어갈 전체 가로·세로 크기를 기준으로 제작하는 맞춤 레터링 스티커입니다.",
+    guide: "전체 디자인의 가로·세로 규격을 선택합니다. 상세 이미지의 규격 예시는 A4 29×21cm, A3 42×29cm, A2 59×42cm입니다. 그 외 크기는 희망 규격을 보내 주시면 확인 후 안내합니다.",
+    image: "/letter-cutting-size.jpg",
+    height: 10376,
+  },
+] as const;
+
+function LetterCuttingDetail({ slug }: { slug: string }) {
+  const selected = letterCuttingKinds.find((item) => item.slug === slug);
+  const title = selected?.title ?? "글자커팅";
+  return (
+    <>
+      <SiteHeader />
+      <main>
+        <section className="section" style={{ paddingBottom: "2rem" }}>
+          <div className="site-container">
+            <nav aria-label="현재 위치"><Link href="/products">제품안내</Link> / {selected ? <><Link href="/products/letter-cutting">글자커팅</Link> / {selected.label}</> : "글자커팅"}</nav>
+            <h1 style={{ marginTop: "1rem", marginBottom: "1rem", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 600 }}>{title}</h1>
+            <p style={{ maxWidth: 760, lineHeight: 1.8 }}>{selected?.summary ?? "빈 공간에 디자인을 더하는 레터링 스티커·시트지 커팅입니다. 매장 영업시간, 유리창 문구, 벽면 레터링과 안내 문구를 원하는 스타일로 제작합니다. 주문 기준에 따라 자당과 사이즈당 두 종류 중 선택해 주세요."}</p>
+            <div className="hero-actions">
+              {letterCuttingKinds.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} className={selected?.slug === item.slug ? "button button-orange" : "button button-light"} aria-current={selected?.slug === item.slug ? "page" : undefined}>{item.label} 상세 보기</Link>)}
+              <Link className="button button-orange" href="/support/inquiries">제작 견적 문의</Link>
+            </div>
+          </div>
+        </section>
+        {!selected ? (
+          <section className="section" style={{ paddingTop: 0 }}>
+            <div className="site-container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "1.5rem" }}>
+              {letterCuttingKinds.map((item) => (
+                <article className="card" key={item.slug}>
+                  <Link href={`/products/${item.slug}`} aria-label={item.label + " 글자커팅 상세 보기"}>
+                    <Image src="/letter-cutting-preview.jpg" alt={item.title + " 레터링 스티커"} width={874} height={653} sizes="(max-width: 760px) 100vw, 50vw" style={{ display: "block", width: "100%", height: "auto" }} />
+                  </Link>
+                  <div className="card-body">
+                    <h2>{item.label}</h2>
+                    <p>{item.summary}</p>
+                    <p>{item.guide}</p>
+                    <Link className="text-link" href={`/products/${item.slug}`}>{item.label} 상세 보기 →</Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <>
+            <section className="section" style={{ paddingTop: 0, paddingBottom: "2rem" }}>
+              <div className="site-container">
+                <div className="card"><div className="card-body"><h2>주문 기준</h2><p>{selected.guide}</p><p>기본커팅과 반전커팅, 색상·서체를 선택한 뒤 들어갈 문구를 보내 주세요. 반전커팅은 실내 유리에 부착하고 실외에서 바르게 보이도록 제작하는 방식입니다.</p></div></div>
+              </div>
+            </section>
+            <section className="section" aria-label={selected.title + " 원본 상세 안내"} style={{ paddingTop: 0 }}>
+              <div className="site-container">
+                <p style={{ textAlign: "center", marginBottom: "1.5rem" }}>제품 구성, 주문 방법, 색상·서체 견본과 제작 예시는 아래 상세 이미지를 확인해 주세요. 이미지를 누르면 원본 크기로 볼 수 있습니다.</p>
+                <figure style={{ maxWidth: 874, margin: "0 auto" }}>
+                  <a href={selected.image} target="_blank" rel="noopener noreferrer" aria-label={selected.title + " 원본 상세 이미지 보기"}>
+                    <Image src={selected.image} alt={selected.title + " 제품 구성, 주문 기준, 기본·반전커팅, 주문 방법, 색상·서체 견본, 제작 예시와 주의사항"} width={874} height={selected.height} sizes="(max-width: 874px) 100vw, 874px" unoptimized style={{ display: "block", width: "100%", height: "auto" }} />
+                  </a>
+                </figure>
+              </div>
+            </section>
+          </>
+        )}
+        <section className="section" style={{ paddingTop: 0 }}>
+          <div className="site-container">
+            <h2>제작 전 확인해 주세요</h2>
+            <p>문구·크기·글자 수 또는 전체 규격, 색상·서체, 기본커팅·반전커팅 여부를 알려 주세요. 주문 내용 확인과 시안 교정을 마친 뒤 제작합니다.</p>
+            <p>제품 구성은 커팅 시트지, 투명 보조 시트지와 밀대입니다. 보조 시트지는 접착력이 강하므로 벽지 등 손상되기 쉬운 표면에 부착할 때 주의해 주세요. 제작 금액과 일정은 선택한 사양과 수량을 확인한 뒤 안내합니다.</p>
+            <div className="hero-actions"><Link href="/support/inquiries" className="button button-orange">글자커팅 제작 문의</Link><Link href="/products" className="button button-light">전체 제품 보기</Link></div>
+          </div>
+        </section>
+        <BreadcrumbJsonLd items={[{ name: "홈", href: "/" }, { name: "제품안내", href: "/products" }, ...(selected ? [{ name: "글자커팅", href: "/products/letter-cutting" }] : []), { name: title, href: `/products/${slug}` }]} />
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  const cuttingKind = letterCuttingKinds.find((item) => item.slug === slug);
+  if (slug === "letter-cutting" || cuttingKind) {
+    const title = cuttingKind?.title ?? "글자커팅 · 자당·사이즈당 맞춤 제작";
+    const description = cuttingKind?.summary ?? "맞춤 레터링 스티커와 시트지 커팅을 자당과 사이즈당 두 종류로 안내합니다.";
+    return { title, description, alternates: { canonical: `/products/${slug}` }, openGraph: { title: `대명DnP ${title}`, description, url: `/products/${slug}`, images: ["/letter-cutting-preview.jpg"] } };
+  }
   if (slug === woodSign.slug) {
     return {
       title: "나무현판 맞춤 제작",
@@ -40,6 +137,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProductDetailPage({ params }: Props) {
   const { slug } = await params;
+  if (slug === "letter-cutting" || letterCuttingKinds.some((item) => item.slug === slug)) return <LetterCuttingDetail slug={slug} />;
   if (slug === woodSign.slug) {
     return (
       <>

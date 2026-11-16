@@ -24,7 +24,7 @@ export default function ProductsPage() {
               <article className="card" key={item.slug}>
                 {item.slug === "letter-cutting" ? <Link href="/products/letter-cutting" aria-label="글자커팅 두 종류 보기"><VisualBlock label={item.name} source="/letter-cutting-preview.jpg" /></Link> : <VisualBlock label={item.name} source={item.slug === "wood-sign-menu" ? woodSignImage : undefined} />}
                 <div className="card-body"><h3>{item.name}</h3><p>{item.summary}</p>
-                  {item.slug === "letter-cutting" ? <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}><Link className="text-link" href="/products/letter-cutting-character">1. 자당 <ArrowRight size={16} /></Link><Link className="text-link" href="/products/letter-cutting-size">2. 사이즈당 <ArrowRight size={16} /></Link></div> : <Link className="text-link" href={item.slug === "wood-sign-menu" ? `/products/${item.slug}` : "/contact"}>{item.slug === "wood-sign-menu" ? "자세히 보기" : "견적 문의"} <ArrowRight size={16} /></Link>}
+                  {item.slug === "letter-cutting" ? <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}><Link className="text-link" href="/products/letter-cutting-character">1. 글자크기 <ArrowRight size={16} /></Link><Link className="text-link" href="/products/letter-cutting-size">2. 전체크기 <ArrowRight size={16} /></Link></div> : <Link className="text-link" href={item.slug === "wood-sign-menu" ? `/products/${item.slug}` : "/contact"}>{item.slug === "wood-sign-menu" ? "자세히 보기" : "견적 문의"} <ArrowRight size={16} /></Link>}
                 </div>
               </article>
             ))}

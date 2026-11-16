@@ -122,6 +122,21 @@ export default function Home() {
                   </div>
                 </Link>
               ))}
+              <Link className="product-card" href="/acrylic-letters.html">
+                <div className="product-card-image">
+                  <Image src="/acrylic-letters-card.jpg" alt="아크릴 입체글자 AI 연출 이미지" fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" style={{ objectPosition: "center 48%" }} />
+                  <div className="product-card-overlay">
+                    <span>아크릴 글자</span>
+                    <strong>아크릴 글자</strong>
+                    <small>공간에 입체감을 더하는 맞춤 문자</small>
+                  </div>
+                </div>
+                <div className="product-card-body">
+                  <p>상호와 로고를 입체감 있게 표현하는 맞춤 아크릴 글자입니다.</p>
+                  <div className="product-tags"><span>상호·로고</span><span>입체글자</span><span>AI 연출</span></div>
+                  <span className="text-link">자세히 보기 <ArrowRight size={16} /></span>
+                </div>
+              </Link>
             </div>
           </div>
         </section>

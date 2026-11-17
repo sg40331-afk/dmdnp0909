@@ -3,113 +3,113 @@ export const designProposals = [
     "id": "S01",
     "title": "카페·커피",
     "description": "따뜻한 커피 그래픽과 간결한 매장 안내",
-    "image": "/led-display-assets/S01-cafe.jpg",
-    "alt": "카페·커피 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S01-cafe.jpg",
+    "alt": "카페·커피 공간의 SMD LED 전광판"
   },
   {
     "id": "S02",
     "title": "음식점·메뉴",
     "description": "오늘의 메뉴를 전달하는 짧고 굵은 화면 구성",
-    "image": "/led-display-assets/S02-restaurant.jpg",
-    "alt": "음식점·메뉴 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S02-restaurant.jpg",
+    "alt": "음식점·메뉴 공간의 SMD LED 전광판"
   },
   {
     "id": "S03",
     "title": "베이커리",
     "description": "빵 그래픽과 매장명을 조합한 따뜻한 컬러",
-    "image": "/led-display-assets/S03-bakery.jpg",
-    "alt": "베이커리 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S03-bakery.jpg",
+    "alt": "베이커리 공간의 SMD LED 전광판"
   },
   {
     "id": "S04",
     "title": "패션·세일",
     "description": "세일 안내를 강조하는 선명한 대비",
-    "image": "/led-display-assets/S04-fashion.jpg",
-    "alt": "패션·세일 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S04-fashion.jpg",
+    "alt": "패션·세일 공간의 SMD LED 전광판"
   },
   {
     "id": "S05",
     "title": "미용실·세로형",
     "description": "좁은 입구 옆 공간을 활용하는 세로 배치",
-    "image": "/led-display-assets/S05-salon.jpg",
-    "alt": "미용실·세로형 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S05-salon.jpg",
+    "alt": "미용실·세로형 공간의 SMD LED 전광판"
   },
   {
     "id": "S06",
     "title": "피트니스",
     "description": "운동 공간에 어울리는 역동적인 컬러 그래픽",
-    "image": "/led-display-assets/S06-gym.jpg",
-    "alt": "피트니스 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S06-gym.jpg",
+    "alt": "피트니스 공간의 SMD LED 전광판"
   },
   {
     "id": "S07",
     "title": "학원·모집 안내",
     "description": "수업·모집 안내를 정돈해 전달하는 구성",
-    "image": "/led-display-assets/S07-academy.jpg",
-    "alt": "학원·모집 안내 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S07-academy.jpg",
+    "alt": "학원·모집 안내 공간의 SMD LED 전광판"
   },
   {
     "id": "S08",
     "title": "반려동물 매장",
     "description": "발자국 그래픽으로 업종을 직관적으로 표현",
-    "image": "/led-display-assets/S08-pet.jpg",
-    "alt": "반려동물 매장 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S08-pet.jpg",
+    "alt": "반려동물 매장 공간의 SMD LED 전광판"
   },
   {
     "id": "S09",
     "title": "자동차 정비",
     "description": "차량 그래픽과 서비스명을 조합한 안내",
-    "image": "/led-display-assets/S09-auto-care.jpg",
-    "alt": "자동차 정비 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S09-auto-care.jpg",
+    "alt": "자동차 정비 공간의 SMD LED 전광판"
   },
   {
     "id": "S10",
     "title": "주차장 입구",
     "description": "방향과 영업 안내를 단순하게 표현",
-    "image": "/led-display-assets/S10-parking.jpg",
-    "alt": "주차장 입구 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S10-parking.jpg",
+    "alt": "주차장 입구 공간의 SMD LED 전광판"
   },
   {
     "id": "S11",
     "title": "셀프 빨래방",
     "description": "세탁 그래픽과 서비스명을 명확하게 표시",
-    "image": "/led-display-assets/S11-laundry.jpg",
-    "alt": "셀프 빨래방 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S11-laundry.jpg",
+    "alt": "셀프 빨래방 공간의 SMD LED 전광판"
   },
   {
     "id": "S12",
     "title": "숙박·세로형",
     "description": "건물 외벽의 세로 공간을 활용한 상호 안내",
-    "image": "/led-display-assets/S12-stay.jpg",
-    "alt": "숙박·세로형 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S12-stay.jpg",
+    "alt": "숙박·세로형 공간의 SMD LED 전광판"
   },
   {
     "id": "S13",
     "title": "마트·신선식품",
     "description": "신선식품 그래픽을 활용한 입구 홍보",
-    "image": "/led-display-assets/S13-market.jpg",
-    "alt": "마트·신선식품 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S13-market.jpg",
+    "alt": "마트·신선식품 공간의 SMD LED 전광판"
   },
   {
     "id": "S14",
     "title": "문화시설·로비",
-    "description": "방문객 환영과 시설 공지 화면 제안",
-    "image": "/led-display-assets/S14-community.jpg",
-    "alt": "문화시설·로비 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "description": "방문객 환영과 시설 공지 화면",
+    "image": "/led-display-assets/flush-v2/S14-community.jpg",
+    "alt": "문화시설·로비 공간의 SMD LED 전광판"
   },
   {
     "id": "S15",
     "title": "전시·행사",
-    "description": "행사명과 그래픽을 보여주는 등록 공간 제안",
-    "image": "/led-display-assets/S15-exhibition.jpg",
-    "alt": "전시·행사 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "description": "행사명과 그래픽을 보여주는 등록 공간",
+    "image": "/led-display-assets/flush-v2/S15-exhibition.jpg",
+    "alt": "전시·행사 공간의 SMD LED 전광판"
   },
   {
     "id": "S16",
     "title": "공장·안전 안내",
     "description": "안전 메시지를 간결하게 전달하는 입구 안내",
-    "image": "/led-display-assets/S16-factory.jpg",
-    "alt": "공장·안전 안내 공간의 SMD LED 전광판 AI 제작 제안 이미지"
+    "image": "/led-display-assets/flush-v2/S16-factory.jpg",
+    "alt": "공장·안전 안내 공간의 SMD LED 전광판"
   }
 ];
 

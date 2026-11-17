@@ -1,4 +1,5 @@
 import Image from "next/image";
+import "./home-products.css";
 import Link from "next/link";
 import { ArrowRight, Award, CheckCircle2, Eye, Factory, MessageCircle, PenTool, Printer, Settings, ShieldCheck, Truck, Wrench } from "lucide-react";
 import { faqs, portfolioItems, products, woodSignImage } from "@/lib/dmdnp-data";
@@ -98,7 +99,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section product-section">
+        <section className="section product-section fresh-products">
           <div className="site-container">
             <div className="section-heading">
               <div><p className="kicker">PRODUCT</p><h2>대명DnP 주요 제작 제품</h2></div>
@@ -109,47 +110,29 @@ export default function Home() {
                 <Link className="product-card" key={item.slug} href={`/products/${item.slug}`}>
                   <div className="product-card-image">
                     <Image src={productCards[i].image} alt={item.slug === "braille-tactile-map" ? "출입구 지주형 촉지도 실제 작업사진" : item.slug === "banner-large-print" ? "실사출력·현수막 디자인 구성" : item.slug === "metal-factory-sign" ? "금속·공장 안내판 디자인 구성" : item.slug === "uv-flatbed-print" ? "UV 평판인쇄 아크릴 메뉴 패널" : item.slug === "led-display" ? "카페 SMD LED 전광판" : `${productCards[i].title} 제작 사진`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" style={{ objectPosition: productCards[i].position }} />
-                    <div className="product-card-overlay">
-                      <span>{productCards[i].category}</span>
-                      <strong>{productCards[i].title}</strong>
-                      <small>{productCards[i].benefit}</small>
-                    </div>
                   </div>
                   <div className="product-card-body">
+                    <h3>{productCards[i].title}</h3>
                     <p>{productCards[i].description}</p>
-                    <div className="product-tags">{productCards[i].tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                    <span className="text-link">자세히 보기 <ArrowRight size={16} /></span>
                   </div>
                 </Link>
               ))}
               <Link className="product-card" href="/acrylic-letters.html">
                 <div className="product-card-image">
                   <Image src="/acrylic-letters-card.jpg" alt="아크릴 입체글자 AI 연출 이미지" fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" style={{ objectPosition: "center 48%" }} />
-                  <div className="product-card-overlay">
-                    <span>아크릴 글자</span>
-                    <strong>아크릴 글자</strong>
-                    <small>공간에 입체감을 더하는 맞춤 문자</small>
-                  </div>
                 </div>
                 <div className="product-card-body">
+                  <h3>아크릴 글자</h3>
                   <p>상호와 로고를 입체감 있게 표현하는 맞춤 아크릴 글자입니다.</p>
-                  <div className="product-tags"><span>상호·로고</span><span>입체글자</span><span>AI 연출</span></div>
-                  <span className="text-link">자세히 보기 <ArrowRight size={16} /></span>
                 </div>
               </Link>
               <Link className="product-card" href="/products/silicone-led-neon">
                 <div className="product-card-image">
                   <Image src="/silicone-led-neon-card.jpg" alt="실리콘 LED 네온사인 AI 디자인 시안" fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" style={{ objectPosition: "center 46%" }} />
-                  <div className="product-card-overlay">
-                    <span>네온사인</span>
-                    <strong>실리콘 LED 네온사인</strong>
-                    <small>빛으로 완성하는 매장 분위기</small>
-                  </div>
                 </div>
                 <div className="product-card-body">
+                  <h3>실리콘 LED 네온사인</h3>
                   <p>매장 상호와 로고, 포토존을 빛으로 표현하는 맞춤 네온사인입니다.</p>
-                  <div className="product-tags"><span>맞춤 문구</span><span>로고·포토존</span><span>AI 시안</span></div>
-                  <span className="text-link">자세히 보기 <ArrowRight size={16} /></span>
                 </div>
               </Link>
             </div>

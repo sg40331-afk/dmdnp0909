@@ -35,7 +35,7 @@ function CaseCard({ href, title, summary, image }: { href: string; title: string
 }
 
 export default async function Page() {
-  const existing = (await entries("portfolio")).filter((item) => item.slug !== "sample-cafe-wood-sign");
+  const existing = (await entries("portfolio")).filter((item) => item.slug !== "sample-cafe-wood-sign" && item.slug !== "sample-tactile-map");
   const ids = existing.filter((item) => !item.id.startsWith("legacy-")).map((item) => item.id);
   const covers: { id: string; entry_id: string }[] = configured() && ids.length
     ? await sb(`/rest/v1/board_files?entry_id=in.(${ids.join(",")})&mime=like.image%2F*&select=id,entry_id&order=created_at.asc`)
@@ -71,7 +71,7 @@ export default async function Page() {
                 </div>
                 <ul className="portfolio-grid-new">
                   {cases.map((item) => (
-                    <CaseCard key={item.slug} href={catalogPath(item.slug)} title={item.title} summary={item.slug === "wood-plaque" ? "주변 공간까지 넓게 담은 나무현판 디자인 사진 14장을 살펴보세요." : item.summary} image={item.slug === "wood-plaque" ? "/wood-portfolio-assets/wide-v3/W04-space.jpg" : `${catalogAssets}/${item.slug}/cover.jpg`} />
+                    <CaseCard key={item.slug} href={catalogPath(item.slug)} title={item.title} summary={item.slug === "braille-tactile-map" ? "촉지도·점자안내판의 실제 제작·설치 작업사진 50장을 살펴보세요." : item.slug === "wood-plaque" ? "주변 공간까지 넓게 담은 나무현판 디자인 사진 14장을 살펴보세요." : item.summary} image={item.slug === "braille-tactile-map" ? "/braille-portfolio-assets/v1/B01-wide.jpg" : item.slug === "wood-plaque" ? "/wood-portfolio-assets/wide-v3/W04-space.jpg" : `${catalogAssets}/${item.slug}/cover.jpg`} />
                   ))}
                 </ul>
               </section>

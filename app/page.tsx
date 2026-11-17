@@ -31,7 +31,7 @@ const portfolioTitles = [
   "매장용 LED 전광판",
   "UV 출력 안내 패널",
   "행사 안내 현수막",
-  "공공시설 촉지도",
+  "점자안내판",
 ] as const;
 
 const reasonItems = [
@@ -150,13 +150,13 @@ export default function Home() {
               <Link className="button button-outline" href="/portfolio">전체 제작사례 보기 <ArrowRight size={17} /></Link>
             </div>
             <div className="portfolio-card-grid">{portfolioItems.slice(0, 6).map((item, i) => (
-              <Link className="portfolio-card" key={item.slug} href={item.slug === "sample-cafe-wood-sign" ? "/portfolio/catalog/wood-plaque" : `/portfolio/${item.slug}`}>
-                <div className="portfolio-card-image"><Image src={item.slug === "sample-cafe-wood-sign" ? "/wood-portfolio-assets/wide-v3/W04-space.jpg" : portfolioImages[i]} alt={item.slug === "sample-cafe-wood-sign" ? "나무현판 공간별 설치 디자인" : `${portfolioTitles[i]} 제작사례 이미지`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" /></div>
+              <Link className="portfolio-card" key={item.slug} href={item.slug === "sample-tactile-map" ? "/portfolio/catalog/braille-tactile-map" : item.slug === "sample-cafe-wood-sign" ? "/portfolio/catalog/wood-plaque" : `/portfolio/${item.slug}`}>
+                <div className="portfolio-card-image"><Image src={item.slug === "sample-tactile-map" ? "/braille-portfolio-assets/v1/B01-wide.jpg" : item.slug === "sample-cafe-wood-sign" ? "/wood-portfolio-assets/wide-v3/W04-space.jpg" : portfolioImages[i]} alt={item.slug === "sample-tactile-map" ? "점자안내판·촉지도 실제 작업사진" : item.slug === "sample-cafe-wood-sign" ? "나무현판 공간별 설치 디자인" : `${portfolioTitles[i]} 제작사례 이미지`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" /></div>
                 <div className="portfolio-card-body">
-                  <span>{item.slug === "sample-cafe-wood-sign" ? "나무현판 · 공간 디자인" : item.category}</span>
+                  <span>{item.slug === "sample-tactile-map" ? "점자안내판·촉지도" : item.slug === "sample-cafe-wood-sign" ? "나무현판 · 공간 디자인" : item.category}</span>
                   <h3>{portfolioTitles[i]}</h3>
-                  <p>{item.slug === "sample-cafe-wood-sign" ? "공간별 설치 디자인 사진 14장" : `${item.material} / ${item.place}`}</p>
-                  <small>{item.slug === "sample-cafe-wood-sign" ? "현판과 주변 공간의 분위기를 함께 살펴보세요." : item.method}</small>
+                  <p>{item.slug === "sample-tactile-map" ? "실제 작업사진 50장" : item.slug === "sample-cafe-wood-sign" ? "공간별 설치 디자인 사진 14장" : `${item.material} / ${item.place}`}</p>
+                  <small>{item.slug === "sample-tactile-map" ? "안내판과 주변 설치 공간을 함께 살펴보세요." : item.slug === "sample-cafe-wood-sign" ? "현판과 주변 공간의 분위기를 함께 살펴보세요." : item.method}</small>
                   <strong className="text-link">상세보기 <ArrowRight size={16} /></strong>
                 </div>
               </Link>

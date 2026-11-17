@@ -1,0 +1,124 @@
+.bt-page *{box-sizing: border-box;}
+.bt-page{margin: 0px; color: rgb(20, 40, 61); background: rgb(255, 255, 255); font-family: "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.75; word-break: keep-all;}
+.bt-page button,.bt-page a{font: inherit;}
+.bt-page a{color: inherit; text-decoration: none;}
+.bt-page button{cursor: pointer;}
+.bt-page img{max-width: 100%; height: auto; display: block;}
+.bt-page button:focus-visible,.bt-page a:focus-visible,.bt-page summary:focus-visible{outline: rgb(45, 127, 249) solid 3px; outline-offset: 4px;}
+.bt-page .container{max-width: 1180px; margin: auto;}
+.bt-page .draft{padding: 10px 24px; background: rgb(241, 244, 248); text-align: center; font-size: 13px;}
+.bt-page .brandbar{border-bottom: 1px solid rgb(228, 233, 239); padding: 20px 0px;}
+.bt-page .brandbar .container{display: flex; justify-content: space-between; gap: 16px;}
+.bt-page .brand{font-size: 25px; font-weight: 900;}
+.bt-page .brandbar small{font-size: 13px; color: rgb(86, 103, 122);}
+.bt-page .overview{padding: 30px 0px 60px;}
+.bt-page .crumb{font-size: 13px; color: rgb(98, 113, 132); margin-bottom: 22px;}
+.bt-page .overviewGrid{display: grid; grid-template-columns: 700px 440px; gap: 28px 40px; grid-template-areas: "media summary" "guide guide";}
+.bt-page .media{grid-area: media; min-width: 0px;}
+.bt-page .summary{grid-area: summary;}
+.bt-page .guide{grid-area: guide; border: 2px solid rgb(45, 127, 249); border-radius: 14px; padding: 25px 30px; background: rgb(255, 255, 255);}
+.bt-page .guide h2{font-size: 21px; margin: 0px 0px 12px;}
+.bt-page .guide ol{display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 0px; padding-left: 24px; font-size: 14px;}
+.bt-page .mainPhoto{border: 0px; padding: 0px; display: block; width: 100%; background: rgb(17, 17, 17); border-radius: 14px; overflow: hidden;}
+.bt-page .mainPhoto img{width: 100%; aspect-ratio: 3 / 2; object-fit: cover;}
+.bt-page .muted,.bt-page .bt-note{color: rgb(91, 108, 126);}
+.bt-page .bt-note{font-size: 12px; margin: 10px 0px;}
+.bt-page .thumbs{display: flex; gap: 10px; margin-top: 12px;}
+.bt-page .thumbs button{border: 2px solid transparent; background: none; padding: 0px; width: calc(20% - 8px); border-radius: 7px; overflow: hidden;}
+.bt-page .thumbs button[aria-pressed="true"]{border-color: rgb(45, 127, 249);}
+.bt-page .thumbs img{aspect-ratio: 3 / 2; object-fit: cover; width: 100%;}
+.bt-page .eyebrow{color: rgb(40, 107, 211); font-size: 13px; font-weight: 800; margin: 0px 0px 14px;}
+.bt-page h1{font-size: 38px; line-height: 1.3; letter-spacing: -0.045em; margin: 0px 0px 20px;}
+.bt-page h2{font-size: 36px; line-height: 1.35; letter-spacing: -0.04em; margin: 0px 0px 22px;}
+.bt-page h3{line-height: 1.4;}
+.bt-page .pills{display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0px;}
+.bt-page .pills span{padding: 5px 10px; background: rgb(241, 244, 248); border-radius: 5px; font-size: 12px;}
+.bt-page .quote{border-top: 1px solid rgb(224, 230, 238); padding-top: 20px; margin-top: 22px;}
+.bt-page .quote strong{font-size: 20px;}
+.bt-page .btn{display: inline-block; border: 1px solid rgb(20, 40, 61); background: rgb(20, 40, 61); color: rgb(255, 255, 255); padding: 12px 20px; border-radius: 7px; font-weight: 700;}
+.bt-page .btn.secondary{background: white; color: rgb(20, 40, 61);}
+.bt-page .ctas{display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0px 8px;}
+.bt-page .sectionnav{position: sticky; top: 0px; z-index: 2; background: rgb(255, 255, 255); border-top: 1px solid rgb(226, 232, 240); border-bottom: 1px solid rgb(226, 232, 240);}
+.bt-page .sectionnav .container{display: flex; gap: 26px; overflow: auto; white-space: nowrap; padding: 17px 0px; font-size: 14px;}
+.bt-page .story{padding: 85px 0px; border-bottom: 1px solid rgb(232, 237, 243);}
+.bt-page .story.soft{background: rgb(247, 249, 252);}
+.bt-page .story.dark{background: rgb(17, 29, 45); color: rgb(255, 255, 255);}
+.bt-page .lead{font-size: 20px; max-width: 850px; margin: 0px 0px 30px;}
+.bt-page .three{display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;}
+.bt-page .tile{padding: 24px; background: rgb(247, 249, 252); border: 1px solid rgb(226, 232, 240); border-radius: 10px;}
+.bt-page .dark .tile{background: rgb(27, 43, 62); border-color: rgb(51, 71, 91);}
+.bt-page .tile h3{margin: 0px 0px 12px; font-size: 20px;}
+.bt-page .tile p{margin: 0px; font-size: 14px;}
+.bt-page .intro{max-width: 850px;}
+.bt-page .filters{display: flex; flex-wrap: wrap; gap: 8px; margin: 25px 0px;}
+.bt-page .filters button{padding: 8px 16px; background: rgb(255, 255, 255); color: rgb(20, 40, 61); border: 1px solid rgb(204, 213, 225); border-radius: 22px; font-size: 14px;}
+.bt-page .filters button[aria-pressed="true"]{background: rgb(20, 40, 61); color: rgb(255, 255, 255);}
+.bt-page .galleryGrid{display: grid; grid-template-columns: repeat(4, minmax(0px, 1fr)); gap: 24px 18px;}
+.bt-page .designCard{border: 1px solid rgb(225, 231, 239); border-radius: 10px; overflow: hidden; background: rgb(255, 255, 255);}
+.bt-page .designCard[hidden]{display: none;}
+.bt-page .designCard button{border: 0px; background: none; padding: 0px; width: 100%;}
+.bt-page .designCard img{aspect-ratio: 3 / 2; width: 100%; object-fit: cover;}
+.bt-page .designText{padding: 16px;}
+.bt-page .designText h3{font-size: 16px; margin: 0px 0px 8px;}
+.bt-page .designText p{font-size: 12px; margin: 0px; color: rgb(83, 102, 121);}
+.bt-page .designText small{font-size: 11px; color: rgb(40, 107, 211);}
+.bt-page .pitch{margin: 30px 0px;}
+.bt-page .pitch svg{width: 100%; height: auto;}
+.bt-page .tablewrap{overflow: auto;}
+.bt-page table{width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;}
+.bt-page th,.bt-page td{padding: 15px; border: 1px solid rgb(220, 228, 237); vertical-align: top;}
+.bt-page th{background: rgb(240, 244, 249);}
+.bt-page .steps{display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: step 0;}
+.bt-page .step{padding: 20px; border-top: 3px solid rgb(45, 127, 249); background: rgb(247, 249, 252); font-size: 14px;}
+.bt-page .step b{display: block; font-size: 19px; margin-bottom: 10px;}
+.bt-page .faq{max-width: 940px;}
+.bt-page .faq details{border-bottom: 1px solid rgb(220, 228, 237); padding: 18px 0px;}
+.bt-page .faq summary{cursor: pointer; font-weight: 700;}
+.bt-page .faq details p{color: rgb(70, 91, 112); font-size: 15px; margin-bottom: 0px;}
+.bt-page .consult{background: rgb(247, 249, 252); padding: 40px; border: 2px solid rgb(45, 127, 249); border-radius: 14px;}
+.bt-page .sources{font-size: 12px; color: rgb(83, 102, 121);}
+.bt-page .sources a{text-decoration: underline; overflow-wrap: anywhere;}
+.bt-page .footer{padding: 35px 0px; background: rgb(241, 244, 248); font-size: 13px;}
+.bt-page dialog{position: fixed; inset: 0px; margin: auto; width: min(1000px, 92vw); max-height: 90vh; padding: 22px; border: 0px; border-radius: 12px; overflow: auto; color: rgb(20, 40, 61);}
+.bt-page dialog::backdrop{background: rgba(0, 0, 0, 0.7);}
+.bt-page dialog img{max-height: 70vh; margin: auto; object-fit: contain;}
+.bt-page dialog button{float: right; background: rgb(20, 40, 61); color: white; border: 0px; border-radius: 5px; padding: 7px 15px;}
+.bt-page dialog h2{font-size: 20px; margin: 0px 0px 15px;}
+.bt-page .disclaimer{border-left: 3px solid rgb(45, 127, 249); padding-left: 18px; font-size: 14px; margin-top: 26px;}
+@media (max-width: 1230px){.bt-page .container{margin-left: 24px; margin-right: 24px;}
+.bt-page .overviewGrid{grid-template-columns: minmax(0px, 1.59fr) minmax(0px, 1fr); gap: 28px;}
+.bt-page h1{font-size: 33px;}
+}
+@media (max-width: 850px){.bt-page .overviewGrid{grid-template-columns: minmax(0px, 1fr); grid-template-areas: "media" "summary" "guide";}
+.bt-page .guide ol,.bt-page .three{grid-template-columns: 1fr;}
+.bt-page .galleryGrid{grid-template-columns: repeat(2, minmax(0px, 1fr));}
+.bt-page .steps{grid-template-columns: 1fr 1fr;}
+.bt-page .story{padding: 52px 0px;}
+.bt-page h2{font-size: 29px;}
+.bt-page .sectionnav .container{gap: 22px;}
+.bt-page .guide{padding: 22px;}
+.bt-page .lead{font-size: 18px;}
+.bt-page .consult{padding: 24px;}
+.bt-page .brandbar small{max-width: 155px;}
+.bt-page .designText{padding: 12px;}
+.bt-page h1{font-size: 32px;}
+.bt-page .container{margin-left: 20px; margin-right: 20px;}
+}
+@media print{.bt-page .draft,.bt-page .sectionnav,.bt-page dialog{display: none;}
+.bt-page .story{padding: 35px 0px;}
+.bt-page .galleryGrid{grid-template-columns: repeat(4, 1fr);}
+.bt-page .designCard{break-inside: avoid;}
+.bt-page .container{max-width: none; margin: 0px;}
+.bt-page{font-size: 11pt;}
+}
+.bt-page .summaryHeadline{font-size: 20px; font-weight: 700; line-height: 1.5; margin: 18px 0px;}
+
+.bt-page{--bt-header-offset:64px;box-sizing:border-box;font-family:inherit}.bt-page [id]{scroll-margin-top:calc(var(--bt-header-offset) + 84px)}.bt-page .sectionnav{top:var(--bt-header-offset);z-index:20}.bt-page .bt-galleryControls{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:13px;color:#536679}.bt-page .bt-galleryControls button{border:1px solid #cbd5e1;background:#fff;color:#14283d;border-radius:5px;padding:4px 12px}.bt-page .bt-sourceTitle{font-size:18px;line-height:1.5;margin-bottom:14px}.bt-page .bt-pitchExample{font-size:14px;color:#536679;margin:14px 0 0}.bt-page .crumb nav{display:flex;gap:5px;flex-wrap:wrap}.bt-page .crumb a:hover{text-decoration:underline}
+
+.bt-page h1,.bt-page h2{font-weight:800}.bt-page h3{font-weight:700}.bt-page .guide ol{list-style:decimal}
+
+/* Preserve auto sizing when the shared utility bundle includes .container width rules. */
+.bt-page .container{width:auto}
+
+/* Real photographs retain all of the original image inside each frame. */
+.bt-page .mainPhoto{background:#edf2f6}.bt-page .mainPhoto img{aspect-ratio:16/9;object-fit:contain}.bt-page .thumbs img{object-fit:contain;background:#edf2f6}.bt-page .designCard button{aspect-ratio:4/5;display:block;background:#edf2f6}.bt-page .designCard img{aspect-ratio:4/5;height:100%;width:100%;object-fit:contain}.bt-page .photoSplit{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.bt-page .photoSplit figure{margin:0;border-radius:14px;overflow:hidden;background:#edf2f6}.bt-page .photoSplit img{width:100%;max-height:580px;object-fit:contain}.bt-page .photoSplit figcaption{font-size:12px;padding:12px 16px;color:#536679;background:#f5f7fa}.bt-page .photoSplit .lead{font-size:18px}.bt-page .checklist{padding-left:20px}.bt-page .checklist li{margin:12px 0}.bt-page .relatedLinks{display:flex;flex-wrap:wrap;gap:12px}.bt-page .relatedLinks a{border-bottom:1px solid #8195ac;font-size:14px}.bt-page .photoBadge{font-size:12px;color:#376593;margin-top:14px}.bt-page .photoSplit.reverse figure{order:2}@media(max-width:850px){.bt-page .photoSplit{grid-template-columns:1fr;gap:24px}.bt-page .photoSplit.reverse figure{order:0}.bt-page .photoSplit img{max-height:520px}}

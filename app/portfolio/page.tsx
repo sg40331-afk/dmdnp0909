@@ -71,7 +71,7 @@ export default async function Page() {
                 </div>
                 <ul className="portfolio-grid-new">
                   {cases.map((item) => (
-                    <CaseCard key={item.slug} href={catalogPath(item.slug)} title={item.title} summary={item.slug === "wood-plaque" ? "원본 제작사진 13장과 설치 연출 14종을 비교해 보세요. 배경은 공간 연출 이미지입니다." : item.summary} image={item.slug === "wood-plaque" ? "/wood-portfolio-assets/v2/W04-installation.jpg" : `${catalogAssets}/${item.slug}/cover.jpg`} />
+                    <CaseCard key={item.slug} href={catalogPath(item.slug)} title={item.title} summary={item.slug === "wood-plaque" ? "주변 공간까지 넓게 담은 나무현판 디자인 사진 14장을 살펴보세요." : item.summary} image={item.slug === "wood-plaque" ? "/wood-portfolio-assets/wide-v3/W04-space.jpg" : `${catalogAssets}/${item.slug}/cover.jpg`} />
                   ))}
                 </ul>
               </section>

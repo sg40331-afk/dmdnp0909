@@ -162,18 +162,18 @@ export default function Home() {
               <div>
                 <p className="kicker">PORTFOLIO</p>
                 <h2>대명DnP 제작·시공사례</h2>
-                <p>분야별 원본 제작사진과 공간 연출 자료를 확인해 보세요.</p>
+                <p>분야별 원본 제작사진과 공간 디자인을 확인해 보세요.</p>
               </div>
               <Link className="button button-outline" href="/portfolio">전체 제작사례 보기 <ArrowRight size={17} /></Link>
             </div>
             <div className="portfolio-card-grid">{portfolioItems.slice(0, 6).map((item, i) => (
               <Link className="portfolio-card" key={item.slug} href={item.slug === "sample-cafe-wood-sign" ? "/portfolio/catalog/wood-plaque" : `/portfolio/${item.slug}`}>
-                <div className="portfolio-card-image"><Image src={item.slug === "sample-cafe-wood-sign" ? "/wood-portfolio-assets/v2/W04-installation.jpg" : portfolioImages[i]} alt={item.slug === "sample-cafe-wood-sign" ? "나무현판 설치 연출 이미지" : `${portfolioTitles[i]} 제작사례 이미지`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" /></div>
+                <div className="portfolio-card-image"><Image src={item.slug === "sample-cafe-wood-sign" ? "/wood-portfolio-assets/wide-v3/W04-space.jpg" : portfolioImages[i]} alt={item.slug === "sample-cafe-wood-sign" ? "나무현판 공간별 설치 디자인" : `${portfolioTitles[i]} 제작사례 이미지`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" /></div>
                 <div className="portfolio-card-body">
-                  <span>{item.slug === "sample-cafe-wood-sign" ? "나무현판 · 설치 연출" : item.category}</span>
+                  <span>{item.slug === "sample-cafe-wood-sign" ? "나무현판 · 공간 디자인" : item.category}</span>
                   <h3>{portfolioTitles[i]}</h3>
-                  <p>{item.slug === "sample-cafe-wood-sign" ? "원본 사진 13장 · 설치 연출 14종" : `${item.material} / ${item.place}`}</p>
-                  <small>{item.slug === "sample-cafe-wood-sign" ? "형태·색상·설치 배경을 비교해 보세요." : item.method}</small>
+                  <p>{item.slug === "sample-cafe-wood-sign" ? "공간별 설치 디자인 사진 14장" : `${item.material} / ${item.place}`}</p>
+                  <small>{item.slug === "sample-cafe-wood-sign" ? "현판과 주변 공간의 분위기를 함께 살펴보세요." : item.method}</small>
                   <strong className="text-link">상세보기 <ArrowRight size={16} /></strong>
                 </div>
               </Link>

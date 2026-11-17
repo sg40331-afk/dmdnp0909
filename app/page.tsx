@@ -9,10 +9,10 @@ const productCards = [
   { image: "/dmdnp-assets/acrylic-sign.png", category: "아크릴", title: "아크릴 안내판", benefit: "깔끔하고 세련된 공간 안내", description: "회의실, 사무실, 건물 안내에 어울리는 정돈된 사인을 제작합니다.", tags: ["사무실", "병원"], position: "center 48%" },
   { image: "/led-display-assets/flush-v2/S01-cafe.jpg", category: "LED 전광판", title: "SMD LED 전광판", benefit: "매장의 소식을 담는 맞춤 화면", description: "영업·메뉴·행사 안내를 공간에 맞는 전광판 화면으로 전달합니다.", tags: ["매장", "홍보"], position: "center 50%" },
   { image: "/uv-flatbed-print-assets/v1/U01-acrylic-menu.jpg", category: "UV인쇄", title: "UV 평판인쇄", benefit: "소재 위에 담는 맞춤 컬러", description: "아크릴·목재·금속·포맥스 등 소재와 인쇄 조건을 확인해 제작합니다.", tags: ["소재별 인쇄", "맞춤 제작"], position: "center 50%" },
-  { image: "/dmdnp-assets/banner-print.png", category: "실사출력", title: "실사출력·현수막", benefit: "대형 출력부터 후가공까지", description: "현수막, 배너, 홍보 출력물을 용도와 설치 환경에 맞게 제작합니다.", tags: ["행사", "배너"], position: "center 62%" },
+  { image: "/large-format-print-assets/v1/P01-cafe-banner.jpg", category: "실사출력", title: "실사출력·현수막", benefit: "공간과 목적에 맞춘 홍보 출력물", description: "디자인 16종과 원단·파일·후가공·설치 조건을 확인하고 상담하세요.", tags: ["현수막·배너", "맞춤 출력"], position: "center 50%" },
   { image: "/dmdnp-assets/tactile-map.png", category: "촉지도", title: "촉지도·점자안내판", benefit: "공공시설 맞춤형 안내 제작", description: "도면과 이용 동선을 확인해 촉지도와 점자 안내판을 제작합니다.", tags: ["공공시설", "안내"], position: "center 58%" },
   { image: "/letter-cutting-preview.jpg", category: "글자커팅", title: "글자커팅", benefit: "글자크기 · 전체크기 맞춤 레터링", description: "유리창·벽면·매장 문구를 원하는 스타일로 제작합니다. 글자크기과 전체크기 두 종류를 선택해 보세요.", tags: ["1. 글자크기", "2. 전체크기"], position: "center 50%" },
-  { image: "/dmdnp-assets/hero-workshop.png", category: "금속·안내판", title: "금속·공장 안내판", benefit: "현장에 맞춘 안전표지와 안내판", description: "공장, 창고, 건설현장에 필요한 안전표지와 금속 안내판입니다.", tags: ["공장", "안전표지"], position: "center 50%" },
+  { image: "/metal-factory-sign-assets/v1/M01-production-building.jpg", category: "금속·안내판", title: "금속·공장 안내판", benefit: "공장과 현장의 정보를 또렷하게", description: "디자인 16종과 소재·문구·부착 방식·사용 환경을 확인하고 상담하세요.", tags: ["구역·설비 안내", "맞춤 제작"], position: "center 50%" },
 ] as const;
 
 const portfolioImages = [
@@ -108,7 +108,7 @@ export default function Home() {
               {products.slice(0, productCards.length).map((item, i) => (
                 <Link className="product-card" key={item.slug} href={`/products/${item.slug}`}>
                   <div className="product-card-image">
-                    <Image src={productCards[i].image} alt={item.slug === "uv-flatbed-print" ? "UV 평판인쇄 아크릴 메뉴 패널" : item.slug === "led-display" ? "카페 SMD LED 전광판" : `${productCards[i].title} 제작 사진`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" style={{ objectPosition: productCards[i].position }} />
+                    <Image src={productCards[i].image} alt={item.slug === "banner-large-print" ? "실사출력·현수막 디자인 구성" : item.slug === "metal-factory-sign" ? "금속·공장 안내판 디자인 구성" : item.slug === "uv-flatbed-print" ? "UV 평판인쇄 아크릴 메뉴 패널" : item.slug === "led-display" ? "카페 SMD LED 전광판" : `${productCards[i].title} 제작 사진`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" style={{ objectPosition: productCards[i].position }} />
                     <div className="product-card-overlay">
                       <span>{productCards[i].category}</span>
                       <strong>{productCards[i].title}</strong>

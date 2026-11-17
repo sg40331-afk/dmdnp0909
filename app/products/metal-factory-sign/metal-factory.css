@@ -1,0 +1,123 @@
+.mf-page *{box-sizing: border-box;}
+.mf-page{margin: 0px; color: rgb(20, 40, 61); background: rgb(255, 255, 255); font-family: "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.75; word-break: keep-all;}
+.mf-page button,.mf-page a{font: inherit;}
+.mf-page a{color: inherit; text-decoration: none;}
+.mf-page button{cursor: pointer;}
+.mf-page img{max-width: 100%; height: auto; display: block;}
+.mf-page button:focus-visible,.mf-page a:focus-visible,.mf-page summary:focus-visible{outline: rgb(45, 127, 249) solid 3px; outline-offset: 4px;}
+.mf-page .container{max-width: 1180px; margin: auto;}
+.mf-page .draft{padding: 10px 24px; background: rgb(241, 244, 248); text-align: center; font-size: 13px;}
+.mf-page .brandbar{border-bottom: 1px solid rgb(228, 233, 239); padding: 20px 0px;}
+.mf-page .brandbar .container{display: flex; justify-content: space-between; gap: 16px;}
+.mf-page .brand{font-size: 25px; font-weight: 900;}
+.mf-page .brandbar small{font-size: 13px; color: rgb(86, 103, 122);}
+.mf-page .overview{padding: 30px 0px 60px;}
+.mf-page .crumb{font-size: 13px; color: rgb(98, 113, 132); margin-bottom: 22px;}
+.mf-page .overviewGrid{display: grid; grid-template-columns: 700px 440px; gap: 28px 40px; grid-template-areas: "media summary" "guide guide";}
+.mf-page .media{grid-area: media; min-width: 0px;}
+.mf-page .summary{grid-area: summary;}
+.mf-page .guide{grid-area: guide; border: 2px solid rgb(45, 127, 249); border-radius: 14px; padding: 25px 30px; background: rgb(255, 255, 255);}
+.mf-page .guide h2{font-size: 21px; margin: 0px 0px 12px;}
+.mf-page .guide ol{display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 0px; padding-left: 24px; font-size: 14px;}
+.mf-page .mainPhoto{border: 0px; padding: 0px; display: block; width: 100%; background: rgb(17, 17, 17); border-radius: 14px; overflow: hidden;}
+.mf-page .mainPhoto img{width: 100%; aspect-ratio: 3 / 2; object-fit: cover;}
+.mf-page .muted,.mf-page .mf-note{color: rgb(91, 108, 126);}
+.mf-page .mf-note{font-size: 12px; margin: 10px 0px;}
+.mf-page .thumbs{display: flex; gap: 10px; margin-top: 12px;}
+.mf-page .thumbs button{border: 2px solid transparent; background: none; padding: 0px; width: calc(20% - 8px); border-radius: 7px; overflow: hidden;}
+.mf-page .thumbs button[aria-pressed="true"]{border-color: rgb(45, 127, 249);}
+.mf-page .thumbs img{aspect-ratio: 3 / 2; object-fit: cover; width: 100%;}
+.mf-page .eyebrow{color: rgb(40, 107, 211); font-size: 13px; font-weight: 800; margin: 0px 0px 14px;}
+.mf-page h1{font-size: 38px; line-height: 1.3; letter-spacing: -0.045em; margin: 0px 0px 20px;}
+.mf-page h2{font-size: 36px; line-height: 1.35; letter-spacing: -0.04em; margin: 0px 0px 22px;}
+.mf-page h3{line-height: 1.4;}
+.mf-page .pills{display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0px;}
+.mf-page .pills span{padding: 5px 10px; background: rgb(241, 244, 248); border-radius: 5px; font-size: 12px;}
+.mf-page .quote{border-top: 1px solid rgb(224, 230, 238); padding-top: 20px; margin-top: 22px;}
+.mf-page .quote strong{font-size: 20px;}
+.mf-page .btn{display: inline-block; border: 1px solid rgb(20, 40, 61); background: rgb(20, 40, 61); color: rgb(255, 255, 255); padding: 12px 20px; border-radius: 7px; font-weight: 700;}
+.mf-page .btn.secondary{background: white; color: rgb(20, 40, 61);}
+.mf-page .ctas{display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0px 8px;}
+.mf-page .sectionnav{position: sticky; top: 0px; z-index: 2; background: rgb(255, 255, 255); border-top: 1px solid rgb(226, 232, 240); border-bottom: 1px solid rgb(226, 232, 240);}
+.mf-page .sectionnav .container{display: flex; gap: 26px; overflow: auto; white-space: nowrap; padding: 17px 0px; font-size: 14px;}
+.mf-page .story{padding: 85px 0px; border-bottom: 1px solid rgb(232, 237, 243);}
+.mf-page .story.soft{background: rgb(247, 249, 252);}
+.mf-page .story.dark{background: rgb(17, 29, 45); color: rgb(255, 255, 255);}
+.mf-page .lead{font-size: 20px; max-width: 850px; margin: 0px 0px 30px;}
+.mf-page .three{display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;}
+.mf-page .tile{padding: 24px; background: rgb(247, 249, 252); border: 1px solid rgb(226, 232, 240); border-radius: 10px;}
+.mf-page .dark .tile{background: rgb(27, 43, 62); border-color: rgb(51, 71, 91);}
+.mf-page .tile h3{margin: 0px 0px 12px; font-size: 20px;}
+.mf-page .tile p{margin: 0px; font-size: 14px;}
+.mf-page .intro{max-width: 850px;}
+.mf-page .filters{display: flex; gap: 8px; margin: 25px 0px;}
+.mf-page .filters button{padding: 8px 16px; background: rgb(255, 255, 255); color: rgb(20, 40, 61); border: 1px solid rgb(204, 213, 225); border-radius: 22px; font-size: 14px;}
+.mf-page .filters button[aria-pressed="true"]{background: rgb(20, 40, 61); color: rgb(255, 255, 255);}
+.mf-page .galleryGrid{display: grid; grid-template-columns: repeat(4, minmax(0px, 1fr)); gap: 24px 18px;}
+.mf-page .designCard{border: 1px solid rgb(225, 231, 239); border-radius: 10px; overflow: hidden; background: rgb(255, 255, 255);}
+.mf-page .designCard[hidden]{display: none;}
+.mf-page .designCard button{border: 0px; background: none; padding: 0px; width: 100%;}
+.mf-page .designCard img{aspect-ratio: 3 / 2; width: 100%; object-fit: cover;}
+.mf-page .designText{padding: 16px;}
+.mf-page .designText h3{font-size: 16px; margin: 0px 0px 8px;}
+.mf-page .designText p{font-size: 12px; margin: 0px; color: rgb(83, 102, 121);}
+.mf-page .designText small{font-size: 11px; color: rgb(40, 107, 211);}
+.mf-page .pitch{margin: 30px 0px;}
+.mf-page .pitch svg{width: 100%; height: auto;}
+.mf-page .tablewrap{overflow: auto;}
+.mf-page table{width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;}
+.mf-page th,.mf-page td{padding: 15px; border: 1px solid rgb(220, 228, 237); vertical-align: top;}
+.mf-page th{background: rgb(240, 244, 249);}
+.mf-page .steps{display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: step 0;}
+.mf-page .step{padding: 20px; border-top: 3px solid rgb(45, 127, 249); background: rgb(247, 249, 252); font-size: 14px;}
+.mf-page .step b{display: block; font-size: 19px; margin-bottom: 10px;}
+.mf-page .faq{max-width: 940px;}
+.mf-page .faq details{border-bottom: 1px solid rgb(220, 228, 237); padding: 18px 0px;}
+.mf-page .faq summary{cursor: pointer; font-weight: 700;}
+.mf-page .faq details p{color: rgb(70, 91, 112); font-size: 15px; margin-bottom: 0px;}
+.mf-page .consult{background: rgb(247, 249, 252); padding: 40px; border: 2px solid rgb(45, 127, 249); border-radius: 14px;}
+.mf-page .sources{font-size: 12px; color: rgb(83, 102, 121);}
+.mf-page .sources a{text-decoration: underline; overflow-wrap: anywhere;}
+.mf-page .footer{padding: 35px 0px; background: rgb(241, 244, 248); font-size: 13px;}
+.mf-page dialog{position: fixed; inset: 0px; margin: auto; width: min(1000px, 92vw); max-height: 90vh; padding: 22px; border: 0px; border-radius: 12px; overflow: auto; color: rgb(20, 40, 61);}
+.mf-page dialog::backdrop{background: rgba(0, 0, 0, 0.7);}
+.mf-page dialog img{max-height: 70vh; margin: auto; object-fit: contain;}
+.mf-page dialog button{float: right; background: rgb(20, 40, 61); color: white; border: 0px; border-radius: 5px; padding: 7px 15px;}
+.mf-page dialog h2{font-size: 20px; margin: 0px 0px 15px;}
+.mf-page .disclaimer{border-left: 3px solid rgb(45, 127, 249); padding-left: 18px; font-size: 14px; margin-top: 26px;}
+@media (max-width: 1230px){.mf-page .container{margin-left: 24px; margin-right: 24px;}
+.mf-page .overviewGrid{grid-template-columns: minmax(0px, 1.59fr) minmax(0px, 1fr); gap: 28px;}
+.mf-page h1{font-size: 33px;}
+}
+@media (max-width: 850px){.mf-page .overviewGrid{grid-template-columns: minmax(0px, 1fr); grid-template-areas: "media" "summary" "guide";}
+.mf-page .guide ol,.mf-page .three{grid-template-columns: 1fr;}
+.mf-page .galleryGrid{grid-template-columns: repeat(2, minmax(0px, 1fr));}
+.mf-page .steps{grid-template-columns: 1fr 1fr;}
+.mf-page .story{padding: 52px 0px;}
+.mf-page h2{font-size: 29px;}
+.mf-page .sectionnav .container{gap: 22px;}
+.mf-page .guide{padding: 22px;}
+.mf-page .lead{font-size: 18px;}
+.mf-page .consult{padding: 24px;}
+.mf-page .brandbar small{max-width: 155px;}
+.mf-page .designText{padding: 12px;}
+.mf-page h1{font-size: 32px;}
+.mf-page .container{margin-left: 20px; margin-right: 20px;}
+}
+@media print{.mf-page .draft,.mf-page .sectionnav,.mf-page dialog{display: none;}
+.mf-page .story{padding: 35px 0px;}
+.mf-page .galleryGrid{grid-template-columns: repeat(4, 1fr);}
+.mf-page .designCard{break-inside: avoid;}
+.mf-page .container{max-width: none; margin: 0px;}
+.mf-page{font-size: 11pt;}
+}
+.mf-page .summaryHeadline{font-size: 20px; font-weight: 700; line-height: 1.5; margin: 18px 0px;}
+
+.mf-page{--mf-header-offset:64px;box-sizing:border-box;font-family:inherit}.mf-page [id]{scroll-margin-top:calc(var(--mf-header-offset) + 84px)}.mf-page .sectionnav{top:var(--mf-header-offset);z-index:20}.mf-page .mf-galleryControls{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:13px;color:#536679}.mf-page .mf-galleryControls button{border:1px solid #cbd5e1;background:#fff;color:#14283d;border-radius:5px;padding:4px 12px}.mf-page .mf-sourceTitle{font-size:18px;line-height:1.5;margin-bottom:14px}.mf-page .mf-pitchExample{font-size:14px;color:#536679;margin:14px 0 0}.mf-page .crumb nav{display:flex;gap:5px;flex-wrap:wrap}.mf-page .crumb a:hover{text-decoration:underline}
+
+.mf-page h1,.mf-page h2{font-weight:800}.mf-page h3{font-weight:700}.mf-page .guide ol{list-style:decimal}
+
+/* Preserve auto sizing when the shared utility bundle includes .container width rules. */
+.mf-page .container{width:auto}
+
+.mf-page .filters{flex-wrap:wrap}

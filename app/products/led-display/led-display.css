@@ -116,3 +116,6 @@
 .sp-page{--sp-header-offset:64px;box-sizing:border-box;font-family:inherit}.sp-page [id]{scroll-margin-top:calc(var(--sp-header-offset) + 84px)}.sp-page .sectionnav{top:var(--sp-header-offset);z-index:20}.sp-page .sp-galleryControls{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:13px;color:#536679}.sp-page .sp-galleryControls button{border:1px solid #cbd5e1;background:#fff;color:#14283d;border-radius:5px;padding:4px 12px}.sp-page .sp-sourceTitle{font-size:18px;line-height:1.5;margin-bottom:14px}.sp-page .sp-pitchExample{font-size:14px;color:#536679;margin:14px 0 0}.sp-page .crumb nav{display:flex;gap:5px;flex-wrap:wrap}.sp-page .crumb a:hover{text-decoration:underline}
 
 .sp-page h1,.sp-page h2{font-weight:800}.sp-page h3{font-weight:700}.sp-page .guide ol{list-style:decimal}
+
+/* Preserve auto sizing when the shared utility bundle includes .container width rules. */
+.sp-page .container{width:auto}

@@ -35,7 +35,7 @@ function CaseCard({ href, title, summary, image }: { href: string; title: string
 }
 
 export default async function Page() {
-  const existing = await entries("portfolio");
+  const existing = (await entries("portfolio")).filter((item) => item.slug !== "sample-cafe-wood-sign");
   const ids = existing.filter((item) => !item.id.startsWith("legacy-")).map((item) => item.id);
   const covers: { id: string; entry_id: string }[] = configured() && ids.length
     ? await sb(`/rest/v1/board_files?entry_id=in.(${ids.join(",")})&mime=like.image%2F*&select=id,entry_id&order=created_at.asc`)
@@ -71,7 +71,7 @@ export default async function Page() {
                 </div>
                 <ul className="portfolio-grid-new">
                   {cases.map((item) => (
-                    <CaseCard key={item.slug} href={catalogPath(item.slug)} title={item.title} summary={item.summary} image={`${catalogAssets}/${item.slug}/cover.jpg`} />
+                    <CaseCard key={item.slug} href={catalogPath(item.slug)} title={item.title} summary={item.slug === "wood-plaque" ? "원본 제작사진 13장과 설치 연출 14종을 비교해 보세요. 배경은 공간 연출 이미지입니다." : item.summary} image={item.slug === "wood-plaque" ? "/wood-portfolio-assets/v2/W04-installation.jpg" : `${catalogAssets}/${item.slug}/cover.jpg`} />
                   ))}
                 </ul>
               </section>

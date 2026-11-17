@@ -25,7 +25,7 @@ const portfolioImages = [
 ] as const;
 
 const portfolioTitles = [
-  "카페용 원목 현판",
+  "나무현판",
   "사무실 아크릴 안내판",
   "매장용 LED 전광판",
   "UV 출력 안내 패널",
@@ -161,19 +161,19 @@ export default function Home() {
             <div className="section-heading">
               <div>
                 <p className="kicker">PORTFOLIO</p>
-                <h2>대명DnP 실제 제작사례</h2>
-                <p>직접 제작하고 납품한 다양한 사인 제품을 확인해 보세요.</p>
+                <h2>대명DnP 제작·시공사례</h2>
+                <p>분야별 원본 제작사진과 공간 연출 자료를 확인해 보세요.</p>
               </div>
               <Link className="button button-outline" href="/portfolio">전체 제작사례 보기 <ArrowRight size={17} /></Link>
             </div>
             <div className="portfolio-card-grid">{portfolioItems.slice(0, 6).map((item, i) => (
-              <Link className="portfolio-card" key={item.slug} href={`/portfolio/${item.slug}`}>
-                <div className="portfolio-card-image"><Image src={portfolioImages[i]} alt={`${portfolioTitles[i]} 제작사례 이미지`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" /></div>
+              <Link className="portfolio-card" key={item.slug} href={item.slug === "sample-cafe-wood-sign" ? "/portfolio/catalog/wood-plaque" : `/portfolio/${item.slug}`}>
+                <div className="portfolio-card-image"><Image src={item.slug === "sample-cafe-wood-sign" ? "/wood-portfolio-assets/v2/W04-installation.jpg" : portfolioImages[i]} alt={item.slug === "sample-cafe-wood-sign" ? "나무현판 설치 연출 이미지" : `${portfolioTitles[i]} 제작사례 이미지`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" /></div>
                 <div className="portfolio-card-body">
-                  <span>{item.category}</span>
+                  <span>{item.slug === "sample-cafe-wood-sign" ? "나무현판 · 설치 연출" : item.category}</span>
                   <h3>{portfolioTitles[i]}</h3>
-                  <p>{item.material} / {item.place}</p>
-                  <small>{item.method}</small>
+                  <p>{item.slug === "sample-cafe-wood-sign" ? "원본 사진 13장 · 설치 연출 14종" : `${item.material} / ${item.place}`}</p>
+                  <small>{item.slug === "sample-cafe-wood-sign" ? "형태·색상·설치 배경을 비교해 보세요." : item.method}</small>
                   <strong className="text-link">상세보기 <ArrowRight size={16} /></strong>
                 </div>
               </Link>

@@ -13,7 +13,7 @@ type Props = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return catalogCases.map(({ slug }) => ({ slug }));
+  return catalogCases.filter(({ slug }) => slug !== "wood-plaque").map(({ slug }) => ({ slug }));
 }
 
 async function getCase(params: Props["params"]) {

@@ -1,0 +1,118 @@
+.sp-page *{box-sizing: border-box;}
+.sp-page{margin: 0px; color: rgb(20, 40, 61); background: rgb(255, 255, 255); font-family: "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.75; word-break: keep-all;}
+.sp-page button,.sp-page a{font: inherit;}
+.sp-page a{color: inherit; text-decoration: none;}
+.sp-page button{cursor: pointer;}
+.sp-page img{max-width: 100%; height: auto; display: block;}
+.sp-page button:focus-visible,.sp-page a:focus-visible,.sp-page summary:focus-visible{outline: rgb(45, 127, 249) solid 3px; outline-offset: 4px;}
+.sp-page .container{max-width: 1180px; margin: auto;}
+.sp-page .draft{padding: 10px 24px; background: rgb(241, 244, 248); text-align: center; font-size: 13px;}
+.sp-page .brandbar{border-bottom: 1px solid rgb(228, 233, 239); padding: 20px 0px;}
+.sp-page .brandbar .container{display: flex; justify-content: space-between; gap: 16px;}
+.sp-page .brand{font-size: 25px; font-weight: 900;}
+.sp-page .brandbar small{font-size: 13px; color: rgb(86, 103, 122);}
+.sp-page .overview{padding: 30px 0px 60px;}
+.sp-page .crumb{font-size: 13px; color: rgb(98, 113, 132); margin-bottom: 22px;}
+.sp-page .overviewGrid{display: grid; grid-template-columns: 700px 440px; gap: 28px 40px; grid-template-areas: "media summary" "guide guide";}
+.sp-page .media{grid-area: media; min-width: 0px;}
+.sp-page .summary{grid-area: summary;}
+.sp-page .guide{grid-area: guide; border: 2px solid rgb(45, 127, 249); border-radius: 14px; padding: 25px 30px; background: rgb(255, 255, 255);}
+.sp-page .guide h2{font-size: 21px; margin: 0px 0px 12px;}
+.sp-page .guide ol{display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 0px; padding-left: 24px; font-size: 14px;}
+.sp-page .mainPhoto{border: 0px; padding: 0px; display: block; width: 100%; background: rgb(17, 17, 17); border-radius: 14px; overflow: hidden;}
+.sp-page .mainPhoto img{width: 100%; aspect-ratio: 3 / 2; object-fit: cover;}
+.sp-page .muted,.sp-page .ai{color: rgb(91, 108, 126);}
+.sp-page .ai{font-size: 12px; margin: 10px 0px;}
+.sp-page .thumbs{display: flex; gap: 10px; margin-top: 12px;}
+.sp-page .thumbs button{border: 2px solid transparent; background: none; padding: 0px; width: calc(20% - 8px); border-radius: 7px; overflow: hidden;}
+.sp-page .thumbs button[aria-pressed="true"]{border-color: rgb(45, 127, 249);}
+.sp-page .thumbs img{aspect-ratio: 3 / 2; object-fit: cover; width: 100%;}
+.sp-page .eyebrow{color: rgb(40, 107, 211); font-size: 13px; font-weight: 800; margin: 0px 0px 14px;}
+.sp-page h1{font-size: 38px; line-height: 1.3; letter-spacing: -0.045em; margin: 0px 0px 20px;}
+.sp-page h2{font-size: 36px; line-height: 1.35; letter-spacing: -0.04em; margin: 0px 0px 22px;}
+.sp-page h3{line-height: 1.4;}
+.sp-page .pills{display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0px;}
+.sp-page .pills span{padding: 5px 10px; background: rgb(241, 244, 248); border-radius: 5px; font-size: 12px;}
+.sp-page .quote{border-top: 1px solid rgb(224, 230, 238); padding-top: 20px; margin-top: 22px;}
+.sp-page .quote strong{font-size: 20px;}
+.sp-page .btn{display: inline-block; border: 1px solid rgb(20, 40, 61); background: rgb(20, 40, 61); color: rgb(255, 255, 255); padding: 12px 20px; border-radius: 7px; font-weight: 700;}
+.sp-page .btn.secondary{background: white; color: rgb(20, 40, 61);}
+.sp-page .ctas{display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0px 8px;}
+.sp-page .sectionnav{position: sticky; top: 0px; z-index: 2; background: rgb(255, 255, 255); border-top: 1px solid rgb(226, 232, 240); border-bottom: 1px solid rgb(226, 232, 240);}
+.sp-page .sectionnav .container{display: flex; gap: 26px; overflow: auto; white-space: nowrap; padding: 17px 0px; font-size: 14px;}
+.sp-page .story{padding: 85px 0px; border-bottom: 1px solid rgb(232, 237, 243);}
+.sp-page .story.soft{background: rgb(247, 249, 252);}
+.sp-page .story.dark{background: rgb(17, 29, 45); color: rgb(255, 255, 255);}
+.sp-page .lead{font-size: 20px; max-width: 850px; margin: 0px 0px 30px;}
+.sp-page .three{display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;}
+.sp-page .tile{padding: 24px; background: rgb(247, 249, 252); border: 1px solid rgb(226, 232, 240); border-radius: 10px;}
+.sp-page .dark .tile{background: rgb(27, 43, 62); border-color: rgb(51, 71, 91);}
+.sp-page .tile h3{margin: 0px 0px 12px; font-size: 20px;}
+.sp-page .tile p{margin: 0px; font-size: 14px;}
+.sp-page .intro{max-width: 850px;}
+.sp-page .filters{display: flex; gap: 8px; margin: 25px 0px;}
+.sp-page .filters button{padding: 8px 16px; background: rgb(255, 255, 255); color: rgb(20, 40, 61); border: 1px solid rgb(204, 213, 225); border-radius: 22px; font-size: 14px;}
+.sp-page .filters button[aria-pressed="true"]{background: rgb(20, 40, 61); color: rgb(255, 255, 255);}
+.sp-page .galleryGrid{display: grid; grid-template-columns: repeat(4, minmax(0px, 1fr)); gap: 24px 18px;}
+.sp-page .designCard{border: 1px solid rgb(225, 231, 239); border-radius: 10px; overflow: hidden; background: rgb(255, 255, 255);}
+.sp-page .designCard[hidden]{display: none;}
+.sp-page .designCard button{border: 0px; background: none; padding: 0px; width: 100%;}
+.sp-page .designCard img{aspect-ratio: 3 / 2; width: 100%; object-fit: cover;}
+.sp-page .designText{padding: 16px;}
+.sp-page .designText h3{font-size: 16px; margin: 0px 0px 8px;}
+.sp-page .designText p{font-size: 12px; margin: 0px; color: rgb(83, 102, 121);}
+.sp-page .designText small{font-size: 11px; color: rgb(40, 107, 211);}
+.sp-page .pitch{margin: 30px 0px;}
+.sp-page .pitch svg{width: 100%; height: auto;}
+.sp-page .tablewrap{overflow: auto;}
+.sp-page table{width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;}
+.sp-page th,.sp-page td{padding: 15px; border: 1px solid rgb(220, 228, 237); vertical-align: top;}
+.sp-page th{background: rgb(240, 244, 249);}
+.sp-page .steps{display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: step 0;}
+.sp-page .step{padding: 20px; border-top: 3px solid rgb(45, 127, 249); background: rgb(247, 249, 252); font-size: 14px;}
+.sp-page .step b{display: block; font-size: 19px; margin-bottom: 10px;}
+.sp-page .faq{max-width: 940px;}
+.sp-page .faq details{border-bottom: 1px solid rgb(220, 228, 237); padding: 18px 0px;}
+.sp-page .faq summary{cursor: pointer; font-weight: 700;}
+.sp-page .faq details p{color: rgb(70, 91, 112); font-size: 15px; margin-bottom: 0px;}
+.sp-page .consult{background: rgb(247, 249, 252); padding: 40px; border: 2px solid rgb(45, 127, 249); border-radius: 14px;}
+.sp-page .sources{font-size: 12px; color: rgb(83, 102, 121);}
+.sp-page .sources a{text-decoration: underline; overflow-wrap: anywhere;}
+.sp-page .footer{padding: 35px 0px; background: rgb(241, 244, 248); font-size: 13px;}
+.sp-page dialog{position: fixed; inset: 0px; margin: auto; width: min(1000px, 92vw); max-height: 90vh; padding: 22px; border: 0px; border-radius: 12px; overflow: auto; color: rgb(20, 40, 61);}
+.sp-page dialog::backdrop{background: rgba(0, 0, 0, 0.7);}
+.sp-page dialog img{max-height: 70vh; margin: auto; object-fit: contain;}
+.sp-page dialog button{float: right; background: rgb(20, 40, 61); color: white; border: 0px; border-radius: 5px; padding: 7px 15px;}
+.sp-page dialog h2{font-size: 20px; margin: 0px 0px 15px;}
+.sp-page .disclaimer{border-left: 3px solid rgb(45, 127, 249); padding-left: 18px; font-size: 14px; margin-top: 26px;}
+@media (max-width: 1230px){.sp-page .container{margin-left: 24px; margin-right: 24px;}
+.sp-page .overviewGrid{grid-template-columns: minmax(0px, 1.59fr) minmax(0px, 1fr); gap: 28px;}
+.sp-page h1{font-size: 33px;}
+}
+@media (max-width: 850px){.sp-page .overviewGrid{grid-template-columns: minmax(0px, 1fr); grid-template-areas: "media" "summary" "guide";}
+.sp-page .guide ol,.sp-page .three{grid-template-columns: 1fr;}
+.sp-page .galleryGrid{grid-template-columns: repeat(2, minmax(0px, 1fr));}
+.sp-page .steps{grid-template-columns: 1fr 1fr;}
+.sp-page .story{padding: 52px 0px;}
+.sp-page h2{font-size: 29px;}
+.sp-page .sectionnav .container{gap: 22px;}
+.sp-page .guide{padding: 22px;}
+.sp-page .lead{font-size: 18px;}
+.sp-page .consult{padding: 24px;}
+.sp-page .brandbar small{max-width: 155px;}
+.sp-page .designText{padding: 12px;}
+.sp-page h1{font-size: 32px;}
+.sp-page .container{margin-left: 20px; margin-right: 20px;}
+}
+@media print{.sp-page .draft,.sp-page .sectionnav,.sp-page dialog{display: none;}
+.sp-page .story{padding: 35px 0px;}
+.sp-page .galleryGrid{grid-template-columns: repeat(4, 1fr);}
+.sp-page .designCard{break-inside: avoid;}
+.sp-page .container{max-width: none; margin: 0px;}
+.sp-page{font-size: 11pt;}
+}
+.sp-page .summaryHeadline{font-size: 20px; font-weight: 700; line-height: 1.5; margin: 18px 0px;}
+
+.sp-page{--sp-header-offset:64px;box-sizing:border-box;font-family:inherit}.sp-page [id]{scroll-margin-top:calc(var(--sp-header-offset) + 84px)}.sp-page .sectionnav{top:var(--sp-header-offset);z-index:20}.sp-page .sp-galleryControls{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:13px;color:#536679}.sp-page .sp-galleryControls button{border:1px solid #cbd5e1;background:#fff;color:#14283d;border-radius:5px;padding:4px 12px}.sp-page .sp-sourceTitle{font-size:18px;line-height:1.5;margin-bottom:14px}.sp-page .sp-pitchExample{font-size:14px;color:#536679;margin:14px 0 0}.sp-page .crumb nav{display:flex;gap:5px;flex-wrap:wrap}.sp-page .crumb a:hover{text-decoration:underline}
+
+.sp-page h1,.sp-page h2{font-weight:800}.sp-page h3{font-weight:700}.sp-page .guide ol{list-style:decimal}

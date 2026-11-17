@@ -1,0 +1,121 @@
+.uv-page *{box-sizing: border-box;}
+.uv-page{margin: 0px; color: rgb(20, 40, 61); background: rgb(255, 255, 255); font-family: "Malgun Gothic", sans-serif; font-size: 16px; line-height: 1.75; word-break: keep-all;}
+.uv-page button,.uv-page a{font: inherit;}
+.uv-page a{color: inherit; text-decoration: none;}
+.uv-page button{cursor: pointer;}
+.uv-page img{max-width: 100%; height: auto; display: block;}
+.uv-page button:focus-visible,.uv-page a:focus-visible,.uv-page summary:focus-visible{outline: rgb(45, 127, 249) solid 3px; outline-offset: 4px;}
+.uv-page .container{max-width: 1180px; margin: auto;}
+.uv-page .draft{padding: 10px 24px; background: rgb(241, 244, 248); text-align: center; font-size: 13px;}
+.uv-page .brandbar{border-bottom: 1px solid rgb(228, 233, 239); padding: 20px 0px;}
+.uv-page .brandbar .container{display: flex; justify-content: space-between; gap: 16px;}
+.uv-page .brand{font-size: 25px; font-weight: 900;}
+.uv-page .brandbar small{font-size: 13px; color: rgb(86, 103, 122);}
+.uv-page .overview{padding: 30px 0px 60px;}
+.uv-page .crumb{font-size: 13px; color: rgb(98, 113, 132); margin-bottom: 22px;}
+.uv-page .overviewGrid{display: grid; grid-template-columns: 700px 440px; gap: 28px 40px; grid-template-areas: "media summary" "guide guide";}
+.uv-page .media{grid-area: media; min-width: 0px;}
+.uv-page .summary{grid-area: summary;}
+.uv-page .guide{grid-area: guide; border: 2px solid rgb(45, 127, 249); border-radius: 14px; padding: 25px 30px; background: rgb(255, 255, 255);}
+.uv-page .guide h2{font-size: 21px; margin: 0px 0px 12px;}
+.uv-page .guide ol{display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 0px; padding-left: 24px; font-size: 14px;}
+.uv-page .mainPhoto{border: 0px; padding: 0px; display: block; width: 100%; background: rgb(17, 17, 17); border-radius: 14px; overflow: hidden;}
+.uv-page .mainPhoto img{width: 100%; aspect-ratio: 3 / 2; object-fit: cover;}
+.uv-page .muted,.uv-page .uv-note{color: rgb(91, 108, 126);}
+.uv-page .uv-note{font-size: 12px; margin: 10px 0px;}
+.uv-page .thumbs{display: flex; gap: 10px; margin-top: 12px;}
+.uv-page .thumbs button{border: 2px solid transparent; background: none; padding: 0px; width: calc(20% - 8px); border-radius: 7px; overflow: hidden;}
+.uv-page .thumbs button[aria-pressed="true"]{border-color: rgb(45, 127, 249);}
+.uv-page .thumbs img{aspect-ratio: 3 / 2; object-fit: cover; width: 100%;}
+.uv-page .eyebrow{color: rgb(40, 107, 211); font-size: 13px; font-weight: 800; margin: 0px 0px 14px;}
+.uv-page h1{font-size: 38px; line-height: 1.3; letter-spacing: -0.045em; margin: 0px 0px 20px;}
+.uv-page h2{font-size: 36px; line-height: 1.35; letter-spacing: -0.04em; margin: 0px 0px 22px;}
+.uv-page h3{line-height: 1.4;}
+.uv-page .pills{display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0px;}
+.uv-page .pills span{padding: 5px 10px; background: rgb(241, 244, 248); border-radius: 5px; font-size: 12px;}
+.uv-page .quote{border-top: 1px solid rgb(224, 230, 238); padding-top: 20px; margin-top: 22px;}
+.uv-page .quote strong{font-size: 20px;}
+.uv-page .btn{display: inline-block; border: 1px solid rgb(20, 40, 61); background: rgb(20, 40, 61); color: rgb(255, 255, 255); padding: 12px 20px; border-radius: 7px; font-weight: 700;}
+.uv-page .btn.secondary{background: white; color: rgb(20, 40, 61);}
+.uv-page .ctas{display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0px 8px;}
+.uv-page .sectionnav{position: sticky; top: 0px; z-index: 2; background: rgb(255, 255, 255); border-top: 1px solid rgb(226, 232, 240); border-bottom: 1px solid rgb(226, 232, 240);}
+.uv-page .sectionnav .container{display: flex; gap: 26px; overflow: auto; white-space: nowrap; padding: 17px 0px; font-size: 14px;}
+.uv-page .story{padding: 85px 0px; border-bottom: 1px solid rgb(232, 237, 243);}
+.uv-page .story.soft{background: rgb(247, 249, 252);}
+.uv-page .story.dark{background: rgb(17, 29, 45); color: rgb(255, 255, 255);}
+.uv-page .lead{font-size: 20px; max-width: 850px; margin: 0px 0px 30px;}
+.uv-page .three{display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;}
+.uv-page .tile{padding: 24px; background: rgb(247, 249, 252); border: 1px solid rgb(226, 232, 240); border-radius: 10px;}
+.uv-page .dark .tile{background: rgb(27, 43, 62); border-color: rgb(51, 71, 91);}
+.uv-page .tile h3{margin: 0px 0px 12px; font-size: 20px;}
+.uv-page .tile p{margin: 0px; font-size: 14px;}
+.uv-page .intro{max-width: 850px;}
+.uv-page .filters{display: flex; gap: 8px; margin: 25px 0px;}
+.uv-page .filters button{padding: 8px 16px; background: rgb(255, 255, 255); color: rgb(20, 40, 61); border: 1px solid rgb(204, 213, 225); border-radius: 22px; font-size: 14px;}
+.uv-page .filters button[aria-pressed="true"]{background: rgb(20, 40, 61); color: rgb(255, 255, 255);}
+.uv-page .galleryGrid{display: grid; grid-template-columns: repeat(4, minmax(0px, 1fr)); gap: 24px 18px;}
+.uv-page .designCard{border: 1px solid rgb(225, 231, 239); border-radius: 10px; overflow: hidden; background: rgb(255, 255, 255);}
+.uv-page .designCard[hidden]{display: none;}
+.uv-page .designCard button{border: 0px; background: none; padding: 0px; width: 100%;}
+.uv-page .designCard img{aspect-ratio: 3 / 2; width: 100%; object-fit: cover;}
+.uv-page .designText{padding: 16px;}
+.uv-page .designText h3{font-size: 16px; margin: 0px 0px 8px;}
+.uv-page .designText p{font-size: 12px; margin: 0px; color: rgb(83, 102, 121);}
+.uv-page .designText small{font-size: 11px; color: rgb(40, 107, 211);}
+.uv-page .pitch{margin: 30px 0px;}
+.uv-page .pitch svg{width: 100%; height: auto;}
+.uv-page .tablewrap{overflow: auto;}
+.uv-page table{width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;}
+.uv-page th,.uv-page td{padding: 15px; border: 1px solid rgb(220, 228, 237); vertical-align: top;}
+.uv-page th{background: rgb(240, 244, 249);}
+.uv-page .steps{display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: step 0;}
+.uv-page .step{padding: 20px; border-top: 3px solid rgb(45, 127, 249); background: rgb(247, 249, 252); font-size: 14px;}
+.uv-page .step b{display: block; font-size: 19px; margin-bottom: 10px;}
+.uv-page .faq{max-width: 940px;}
+.uv-page .faq details{border-bottom: 1px solid rgb(220, 228, 237); padding: 18px 0px;}
+.uv-page .faq summary{cursor: pointer; font-weight: 700;}
+.uv-page .faq details p{color: rgb(70, 91, 112); font-size: 15px; margin-bottom: 0px;}
+.uv-page .consult{background: rgb(247, 249, 252); padding: 40px; border: 2px solid rgb(45, 127, 249); border-radius: 14px;}
+.uv-page .sources{font-size: 12px; color: rgb(83, 102, 121);}
+.uv-page .sources a{text-decoration: underline; overflow-wrap: anywhere;}
+.uv-page .footer{padding: 35px 0px; background: rgb(241, 244, 248); font-size: 13px;}
+.uv-page dialog{position: fixed; inset: 0px; margin: auto; width: min(1000px, 92vw); max-height: 90vh; padding: 22px; border: 0px; border-radius: 12px; overflow: auto; color: rgb(20, 40, 61);}
+.uv-page dialog::backdrop{background: rgba(0, 0, 0, 0.7);}
+.uv-page dialog img{max-height: 70vh; margin: auto; object-fit: contain;}
+.uv-page dialog button{float: right; background: rgb(20, 40, 61); color: white; border: 0px; border-radius: 5px; padding: 7px 15px;}
+.uv-page dialog h2{font-size: 20px; margin: 0px 0px 15px;}
+.uv-page .disclaimer{border-left: 3px solid rgb(45, 127, 249); padding-left: 18px; font-size: 14px; margin-top: 26px;}
+@media (max-width: 1230px){.uv-page .container{margin-left: 24px; margin-right: 24px;}
+.uv-page .overviewGrid{grid-template-columns: minmax(0px, 1.59fr) minmax(0px, 1fr); gap: 28px;}
+.uv-page h1{font-size: 33px;}
+}
+@media (max-width: 850px){.uv-page .overviewGrid{grid-template-columns: minmax(0px, 1fr); grid-template-areas: "media" "summary" "guide";}
+.uv-page .guide ol,.uv-page .three{grid-template-columns: 1fr;}
+.uv-page .galleryGrid{grid-template-columns: repeat(2, minmax(0px, 1fr));}
+.uv-page .steps{grid-template-columns: 1fr 1fr;}
+.uv-page .story{padding: 52px 0px;}
+.uv-page h2{font-size: 29px;}
+.uv-page .sectionnav .container{gap: 22px;}
+.uv-page .guide{padding: 22px;}
+.uv-page .lead{font-size: 18px;}
+.uv-page .consult{padding: 24px;}
+.uv-page .brandbar small{max-width: 155px;}
+.uv-page .designText{padding: 12px;}
+.uv-page h1{font-size: 32px;}
+.uv-page .container{margin-left: 20px; margin-right: 20px;}
+}
+@media print{.uv-page .draft,.uv-page .sectionnav,.uv-page dialog{display: none;}
+.uv-page .story{padding: 35px 0px;}
+.uv-page .galleryGrid{grid-template-columns: repeat(4, 1fr);}
+.uv-page .designCard{break-inside: avoid;}
+.uv-page .container{max-width: none; margin: 0px;}
+.uv-page{font-size: 11pt;}
+}
+.uv-page .summaryHeadline{font-size: 20px; font-weight: 700; line-height: 1.5; margin: 18px 0px;}
+
+.uv-page{--uv-header-offset:64px;box-sizing:border-box;font-family:inherit}.uv-page [id]{scroll-margin-top:calc(var(--uv-header-offset) + 84px)}.uv-page .sectionnav{top:var(--uv-header-offset);z-index:20}.uv-page .uv-galleryControls{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:13px;color:#536679}.uv-page .uv-galleryControls button{border:1px solid #cbd5e1;background:#fff;color:#14283d;border-radius:5px;padding:4px 12px}.uv-page .uv-sourceTitle{font-size:18px;line-height:1.5;margin-bottom:14px}.uv-page .uv-pitchExample{font-size:14px;color:#536679;margin:14px 0 0}.uv-page .crumb nav{display:flex;gap:5px;flex-wrap:wrap}.uv-page .crumb a:hover{text-decoration:underline}
+
+.uv-page h1,.uv-page h2{font-weight:800}.uv-page h3{font-weight:700}.uv-page .guide ol{list-style:decimal}
+
+/* Preserve auto sizing when the shared utility bundle includes .container width rules. */
+.uv-page .container{width:auto}

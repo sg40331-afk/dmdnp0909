@@ -71,7 +71,7 @@ export default async function Page() {
                 </div>
                 <ul className="portfolio-grid-new">
                   {cases.map((item) => (
-                    <CaseCard key={item.slug} href={catalogPath(item.slug)} title={item.title} summary={item.slug === "braille-tactile-map" ? "촉지도·점자안내판의 실제 제작·설치 작업사진 50장을 살펴보세요." : item.slug === "wood-plaque" ? "주변 공간까지 넓게 담은 나무현판 디자인 사진 14장을 살펴보세요." : item.summary} image={item.slug === "braille-tactile-map" ? "/braille-portfolio-assets/v1/B01-wide.jpg" : item.slug === "wood-plaque" ? "/wood-portfolio-assets/wide-v3/W04-space.jpg" : `${catalogAssets}/${item.slug}/cover.jpg`} />
+                    <CaseCard key={item.slug} href={catalogPath(item.slug)} title={item.title} summary={item.slug === "braille-tactile-map" ? "점자안내판·촉지도 사진 50장을 넓은 구도로 살펴보세요." : item.slug === "wood-plaque" ? "주변 공간까지 넓게 담은 나무현판 디자인 사진 14장을 살펴보세요." : item.summary} image={item.slug === "braille-tactile-map" ? "/braille-portfolio-assets/v2/B01-space.jpg" : item.slug === "wood-plaque" ? "/wood-portfolio-assets/wide-v3/W04-space.jpg" : `${catalogAssets}/${item.slug}/cover.jpg`} />
                   ))}
                 </ul>
               </section>

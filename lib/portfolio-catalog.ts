@@ -30,7 +30,7 @@ export const catalogCases: readonly CatalogCase[] = [
   { slug: "wood-menu", title: "나무 메뉴판", group: "wood", summary: "벽걸이형 메뉴판부터 개별 메뉴 표기판까지 나무 메뉴판 사례를 모았습니다.", photos: 12, photoFolder: "installations" },
   { slug: "tree-sign", title: "수목표찰·나무 입간판", group: "wood", summary: "식물 이름을 표시하는 수목표찰과 야외에 세우는 나무 안내판 사례입니다.", photos: 32, photoFolder: "installations" },
   { slug: "wood-plaque", title: "나무현판", group: "wood", summary: "매장 상호와 로고를 담은 다양한 형태와 색상의 나무현판 사례입니다.", photos: 13, photoFolder: "installations" },
-  { slug: "braille-tactile-map", title: "점자안내판·촉지도", group: "wood", summary: "촉지도와 점자안내판의 실제 제작·설치 작업사진을 모았습니다.", photos: 50, photoLabel: "실제 작업사진" },
+  { slug: "braille-tactile-map", title: "점자안내판·촉지도", group: "wood", summary: "촉지도와 점자안내판 사진 50장을 모았습니다.", photos: 50, photoLabel: "사진" },
   { slug: "information", title: "안내판", group: "wood", summary: "시설 안내와 이용 수칙을 표시하는 실내외 안내판 사례입니다.", photos: 26, photoFolder: "installations" },
 ];
 
